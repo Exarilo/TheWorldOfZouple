@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -26,6 +27,26 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <TextView
+                android:id="@+id/premier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:foregroundGravity="top"
+                android:shadowColor="#FF0000"
+                android:text="Bienvenue The World Of Zouple élu meilleur jeu de l'année 2068"
+                android:textColorHighlight="@color/colorPrimary"
+                android:textColorHint="#FF1100"
+                android:textStyle="bold"
+                app:drawableTint="@color/black_overlay" />
+
+
+        </RelativeLayout>
 
         <LinearLayout
             android:id="@+id/fullscreen_content_controls"
