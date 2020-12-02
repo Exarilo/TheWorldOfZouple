@@ -38,12 +38,8 @@
                 android:layout_height="wrap_content"
                 android:background="#FFFFFF"
                 android:foregroundGravity="top"
-                android:shadowColor="#FF0000"
                 android:text="Bienvenue The World Of Zouple élu meilleur jeu de l'année 2068"
-                android:textColorHighlight="@color/colorPrimary"
-                android:textColorHint="#FF1100"
-                android:textStyle="bold"
-                app:drawableTint="@color/black_overlay" />
+                android:textStyle="bold"/>
 
             <ImageView
                 android:id="@+id/imageView4"
