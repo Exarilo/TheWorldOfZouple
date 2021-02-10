@@ -28,28 +28,37 @@
         android:layout_height="match_parent"
         android:fitsSystemWindows="true">
 
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent" >
+            android:layout_height="fill_parent">
 
             <TextView
                 android:id="@+id/premier"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
+                android:layout_width="390dp"
+                android:layout_height="426dp"
+
+                android:layout_marginTop="40dp"
+                android:background="#D4CCCB"
                 android:foregroundGravity="top"
-                android:text="Bienvenue The World Of Zouple élu meilleur jeu de l'année 2068"
-                android:textStyle="bold"/>
+                android:text="@string/txtHistoire"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/imageView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/premier"
-                app:srcCompat="@mipmap/pika_image" />
+            <Button
+                android:id="@+id/btPlay"
+                android:layout_width="331dp"
+                android:layout_height="103dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="484dp"
+                android:text="@string/btLancerJeu"
+                android:textColor="@android:color/holo_red_dark"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
-        </RelativeLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout
             android:id="@+id/fullscreen_content_controls"
