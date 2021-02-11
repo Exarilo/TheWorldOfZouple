@@ -129,7 +129,7 @@
         android:layout_marginStart="45dp"
         android:layout_marginLeft="45dp"
         android:layout_marginTop="577dp"
-        android:text="Nombre de zouple tués :"
+        android:text="Nombre de zouples tués :"
         android:textColor="@android:color/background_dark"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
