@@ -26,7 +26,8 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fitsSystemWindows="true">
+        android:fitsSystemWindows="true"
+        tools:visibility="visible">
 
         <RelativeLayout
             android:layout_width="fill_parent"
@@ -72,9 +73,20 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/dummy_button" />
+                android:text="@string/dummy_button"
+                tools:visibility="invisible" />
 
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="400dp"
+            android:layout_height="45dp"
+            android:background="@android:drawable/editbox_dropdown_dark_frame"
+            android:text="Bienvenue dans 'The World Of Zouple'"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="#FFFFFF" />
+
     </FrameLayout>
 
 </FrameLayout>
