@@ -7,20 +7,6 @@
     android:background="@android:color/holo_blue_dark"
     tools:context=".SecondActivity">
 
-    <ProgressBar
-        android:id="@+id/progressBar3"
-        style="@android:style/Widget.ProgressBar.Horizontal"
-        android:layout_width="300dp"
-        android:layout_height="31dp"
-        android:layout_marginStart="44dp"
-        android:layout_marginLeft="44dp"
-        android:layout_marginBottom="151dp"
-        android:indeterminate="false"
-        android:progress="100"
-        android:progressDrawable="@android:color/holo_green_dark"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
@@ -29,9 +15,11 @@
         android:layout_marginLeft="17dp"
         android:layout_marginTop="28dp"
         android:text="LvL :"
-
         android:textColor="@android:color/background_dark"
+
+
         android:textStyle="bold"
+        android:translationZ="90dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -45,6 +33,7 @@
         android:text="1"
         android:textColor="@android:color/background_dark"
         android:textStyle="bold"
+        android:translationZ="90dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -58,6 +47,7 @@
         android:text="Xp :"
         android:textColor="@android:color/background_dark"
         android:textStyle="bold"
+        android:translationZ="90dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -71,6 +61,7 @@
         android:text="0"
         android:textColor="@android:color/background_dark"
         android:textStyle="bold"
+        android:translationZ="90dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -84,6 +75,7 @@
         android:text="/"
         android:textColor="@android:color/background_dark"
         android:textStyle="bold"
+        android:translationZ="90dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -97,11 +89,12 @@
         android:text="100"
         android:textColor="@android:color/background_dark"
         android:textStyle="bold"
+        android:translationZ="90dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btInventory"
         android:layout_width="83dp"
         android:layout_height="86dp"
         android:layout_marginStart="108dp"
@@ -112,7 +105,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textViewGold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -121,6 +114,7 @@
         android:text="Gold :"
         android:textColor="@android:color/background_dark"
         android:textStyle="bold"
+        android:translationZ="90dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -134,6 +128,7 @@
         android:text="0"
         android:textColor="@android:color/background_dark"
         android:textStyle="bold"
+        android:translationZ="90dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -149,7 +144,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btShop"
         android:layout_width="75dp"
         android:layout_height="78dp"
         android:layout_marginStart="208dp"
@@ -196,26 +191,13 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/tvMaxEnnemiHP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="204dp"
-        android:layout_marginLeft="204dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginStart="332dp"
+        android:layout_marginLeft="332dp"
+        android:layout_marginTop="144dp"
         android:text="1000"
-        android:textColor="@android:color/background_dark"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="124dp"
-        android:layout_marginLeft="124dp"
-        android:layout_marginTop="104dp"
-        android:text="HP :"
         android:textColor="@android:color/background_dark"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -225,9 +207,9 @@
         android:id="@+id/tvCurrentEnnemiHP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="156dp"
-        android:layout_marginLeft="156dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginStart="284dp"
+        android:layout_marginLeft="284dp"
+        android:layout_marginTop="144dp"
         android:text="1000"
         android:textColor="@android:color/background_dark"
         android:textStyle="bold"
@@ -238,10 +220,23 @@
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="196dp"
-        android:layout_marginLeft="196dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginStart="324dp"
+        android:layout_marginLeft="324dp"
+        android:layout_marginTop="144dp"
         android:text="/"
+        android:textColor="@android:color/background_dark"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="252dp"
+        android:layout_marginLeft="252dp"
+        android:layout_marginTop="144dp"
+        android:text="HP :"
         android:textColor="@android:color/background_dark"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -257,7 +252,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btCraft"
         android:layout_width="75dp"
         android:layout_height="68dp"
         android:layout_marginStart="292dp"
@@ -316,9 +311,9 @@
         android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="124dp"
-        android:layout_marginLeft="124dp"
-        android:layout_marginBottom="160dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginBottom="480dp"
         android:text="HP :"
         android:textColor="@android:color/background_dark"
         android:textStyle="bold"
@@ -326,12 +321,12 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView19"
+        android:id="@+id/tvCurrentCarHP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="152dp"
-        android:layout_marginLeft="152dp"
-        android:layout_marginBottom="160dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginBottom="480dp"
         android:text="1000"
         android:textColor="@android:color/background_dark"
         android:textStyle="bold"
@@ -342,9 +337,9 @@
         android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="192dp"
-        android:layout_marginLeft="192dp"
-        android:layout_marginBottom="160dp"
+        android:layout_marginStart="76dp"
+        android:layout_marginLeft="76dp"
+        android:layout_marginBottom="480dp"
         android:text="/"
         android:textColor="@android:color/background_dark"
         android:textStyle="bold"
@@ -352,12 +347,12 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView21"
+        android:id="@+id/tvMaxHP"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="200dp"
-        android:layout_marginLeft="200dp"
-        android:layout_marginBottom="160dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginLeft="88dp"
+        android:layout_marginBottom="480dp"
         android:text="1000"
         android:textColor="@android:color/background_dark"
         android:textStyle="bold"
@@ -365,13 +360,12 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="289dp"
-        android:layout_height="306dp"
-        android:layout_marginStart="47dp"
-        android:layout_marginLeft="47dp"
-        android:layout_marginBottom="265dp"
-        android:background="@mipmap/larve_foreground"
+        android:id="@+id/imgMonster"
+        android:layout_width="230dp"
+        android:layout_height="243dp"
+        android:layout_marginStart="180dp"
+        android:layout_marginLeft="180dp"
+        android:layout_marginBottom="276dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -379,41 +373,90 @@
         android:id="@+id/pbEnnemiHP"
         style="@android:style/Widget.ProgressBar.Horizontal"
 
-        android:layout_width="249dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="72dp"
-        android:layout_marginLeft="72dp"
-        android:layout_marginTop="132dp"
+        android:layout_width="138dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="232dp"
+        android:layout_marginLeft="232dp"
+        android:layout_marginTop="164dp"
         android:max="1000"
         android:progress="1000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imgEpeeAttack"
-        android:layout_width="168dp"
-        android:layout_height="165dp"
-        android:layout_marginStart="160dp"
-        android:layout_marginLeft="160dp"
-        android:layout_marginTop="144dp"
+        android:id="@+id/imgPenguAttack"
+        android:layout_width="87dp"
+        android:layout_height="107dp"
+        android:layout_marginStart="132dp"
+        android:layout_marginLeft="132dp"
+        android:layout_marginBottom="312dp"
         android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/epeeattack_foreground" />
+        app:srcCompat="@mipmap/attackcaracter_foreground" />
 
     <TextView
         android:id="@+id/tvDamages"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="160dp"
-        android:layout_marginLeft="160dp"
-        android:layout_marginTop="196dp"
+        android:layout_marginStart="272dp"
+        android:layout_marginLeft="272dp"
+        android:layout_marginBottom="532dp"
         android:textColor="@android:color/holo_red_dark"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="-" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="123dp"
+        android:layout_height="177dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginBottom="276dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@mipmap/pingucaracter_foreground" />
+
+    <ProgressBar
+        android:id="@+id/pbCarHP"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="111dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginBottom="456dp"
+        android:max="1000"
+        android:progress="1000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="388dp"
+        android:layout_height="85dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:drawable/dialog_holo_light_frame"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imLvlUp"
+        android:layout_width="22dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="68dp"
+        android:layout_marginLeft="68dp"
+        android:layout_marginTop="28dp"
         android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="-" />
+        app:srcCompat="@mipmap/lvlup_foreground" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

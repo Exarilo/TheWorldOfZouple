@@ -78,14 +78,6 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="400dp"
-            android:layout_height="45dp"
-            android:background="@android:drawable/editbox_dropdown_dark_frame"
-            android:text="Bienvenue dans 'The World Of Zouple'"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large"
-            android:textColor="#FFFFFF" />
 
     </FrameLayout>
 

@@ -1,5 +1,13 @@
 <resources>
     <string name="app_name">The World of Zouple</string>
+    <string name="btLancerJeu">Partir a la conquête des Zouples</string>
+    <string name="txtHistoire">-Nombreuses sont les histoires racontant le mythe de la tribu des Zouples.\n\n
+    Le Zouple serait selon les dire une créature assoiffée de sang au physique disgracieux.\n\n
+    Jusqu\'a présent  tout laissait a penser que ce n\'était qu\'une légende et que les fameux Zouples n\'existaient pas...\n\n
+    Imaginez la stupeur de Mamie Nova lorsque ses petits yeux croisèrent ceux d\'un grans Zouple alors même qu\'elle partait faire ses courses a l\'extérieur du village\n\n
+    Le chef du village a imédiattement été averti de cet incident et il fallut envisager une solution rapide pour éradiquer cette éspèce a tout jamais.\n\n
+    Etrangement c\'est sur vous (grand pinguoin musclé et vaillant), que ce lourd fardeau est tombé.\n\n
+    En espèrant qu\'il ne vous arrive pas malheur...</string>
 
     <string name="dummy_content"></string>
     <string name="dummy_button">dummy_button</string>
