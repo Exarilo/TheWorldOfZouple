@@ -3,6 +3,7 @@ package com.example.theworldofzouple;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -29,6 +30,7 @@ public class SecondActivity extends AppCompatActivity {
     private Button btInventory;
     private Button btShop;
     private Button btCraft;
+    private Button btSpells;
     private Button btRunAway;
 
     private ProgressBar pbHPennemi;
@@ -64,6 +66,7 @@ public class SecondActivity extends AppCompatActivity {
     static int gold;
     static int nbZoupleTue;
     static int nbGolds;
+    static int lvlUPMonster;
 
     HashMap<String, Loot> dic_loots = new HashMap<String, Loot>();
     HashMap<String, Monster> dic_monsters = new HashMap<String,Monster>();
@@ -76,6 +79,7 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         //Function create loot
 
@@ -108,6 +112,7 @@ public class SecondActivity extends AppCompatActivity {
         btInventory= findViewById(R.id.btInventory);
         btShop= findViewById(R.id.btShop);
         btCraft= findViewById(R.id.btCraft);
+        btSpells= findViewById(R.id.btSpells);
         btRunAway= findViewById(R.id.btRunAway);
 
         pbHPennemi= findViewById(R.id.pbEnnemiHP);
@@ -139,7 +144,7 @@ public class SecondActivity extends AppCompatActivity {
         gold=0;
         nbZoupleTue=0;
         nbGolds=0;
-
+        lvlUPMonster=0;
 
         initialEnnemiHP= pbHPennemi.getProgress();
         currentEnnemiHP= initialEnnemiHP;
@@ -186,7 +191,12 @@ public class SecondActivity extends AppCompatActivity {
                 moveToShop();
             }
         });
-
+        btSpells.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                moveToSpells();
+            }
+        });
         btCraft.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -224,7 +234,10 @@ public class SecondActivity extends AppCompatActivity {
         Intent intent =new Intent(SecondActivity.this,CraftActivity.class);
         startActivity(intent);
     }
-
+    private void moveToSpells(){
+        Intent intent =new Intent(SecondActivity.this,SpellsActivity.class);
+        startActivity(intent);
+    }
     //endregion
 
 
@@ -242,6 +255,7 @@ public class SecondActivity extends AppCompatActivity {
 
         imgMonster.setImageResource(id);
         tvEnnemiLVL.setText(String.valueOf(currentMonster.caracteristic.lvl));
+
 
 
         return true;
@@ -304,6 +318,7 @@ public class SecondActivity extends AppCompatActivity {
             int randomMonster =new Random().nextInt(3);
             changeMonster("Monster"+String.valueOf(randomMonster));
             resetEnnemiHp();
+            //currentMonster.caracteristic.setLvl(currentMonster.caracteristic.getLvl()+lvlUPMonster);
 
 
         }
@@ -356,6 +371,7 @@ public class SecondActivity extends AppCompatActivity {
         setCaracterAttack();
         setEnnemiAttack();
 
+
     }
 
 
@@ -388,6 +404,7 @@ public class SecondActivity extends AppCompatActivity {
                 imgLvlUp.setVisibility(View.INVISIBLE);
             }
         }, 2000);
+
 
     }
 

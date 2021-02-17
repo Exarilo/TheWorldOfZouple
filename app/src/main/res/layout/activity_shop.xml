@@ -67,7 +67,7 @@
         android:layout_marginRight="148dp"
         android:layout_marginBottom="588dp"
         android:text="Golds :"
-        android:textColor="@android:color/background_dark"
+        android:textColor="@android:color/black"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
