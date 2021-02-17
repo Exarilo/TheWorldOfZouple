@@ -3,6 +3,7 @@ package com.example.theworldofzouple;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -16,6 +17,7 @@ import java.net.URL;
 import java.util.Dictionary;
 import java.util.Enumeration;
 import java.util.HashMap;
+import java.util.Random;
 
 
 public class SecondActivity extends AppCompatActivity {
@@ -27,21 +29,25 @@ public class SecondActivity extends AppCompatActivity {
     private Button btInventory;
     private Button btShop;
     private Button btCraft;
+    private Button btRunAway;
 
     private ProgressBar pbHPennemi;
     private ProgressBar pbHPCar;
+    private ProgressBar pbXP;
+
 
     private TextView tvMaxHPOfCaracter;
 
-
+    private TextView tvEnnemiLVL;
+    private TextView tvMaxEnnemiHP;
     private TextView tvCurrentHPEnnemi;
     private TextView tvCurrentCarHP;
 
-    private TextView tvCurrentXP;
-    private TextView tvMaxXP;
+
     private TextView tvLVL;
     private TextView tvGold;
     private TextView tvDamages;
+    private TextView tvMalusDamages;
 
     private ImageView imgMonster;
     private ImageView imgEpeeAttack;
@@ -80,13 +86,18 @@ public class SecondActivity extends AppCompatActivity {
         //Function create monster
 
         Monster monster;
-        monster=new Monster("Monster1","larve_foreground",null,60,50);
-        monster.setCaracteristic(1,1000,0,60,0,0);
+        monster=new Monster("Monster0","larve_foreground",null,49,50);
+        monster.setCaracteristic(1,1000,0,40,0,0);
+        dic_monsters.put("Monster0",monster);
+
+        monster=new Monster("Monster1","souris_foreground",null,62,100);
+        monster.setCaracteristic(2,1500,0,60,0,0);
         dic_monsters.put("Monster1",monster);
 
-        monster=new Monster("Monster2","marchand_foreground",null,60,50);
-        monster.setCaracteristic(1,1000,0,60,0,0);
+        monster=new Monster("Monster2","alien_foreground",null,800,1400);
+        monster.setCaracteristic(5,3000,0,200,0,0);
         dic_monsters.put("Monster2",monster);
+
 
 
 
@@ -97,14 +108,14 @@ public class SecondActivity extends AppCompatActivity {
         btInventory= findViewById(R.id.btInventory);
         btShop= findViewById(R.id.btShop);
         btCraft= findViewById(R.id.btCraft);
+        btRunAway= findViewById(R.id.btRunAway);
 
         pbHPennemi= findViewById(R.id.pbEnnemiHP);
         pbHPCar=findViewById(R.id.pbCarHP);
+        pbXP=findViewById(R.id.pbXP);
 
         tvCurrentCarHP=findViewById(R.id.tvCurrentCarHP);
         tvCurrentHPEnnemi=findViewById(R.id.tvCurrentEnnemiHP);
-        tvCurrentXP=findViewById(R.id.tvCurrentXP);
-        tvMaxXP=findViewById(R.id.tvMaxXP);
         tvLVL=findViewById(R.id.tvLVL);
         tvGold=findViewById(R.id.tvGold);
 
@@ -112,8 +123,13 @@ public class SecondActivity extends AppCompatActivity {
         imgLvlUp=findViewById(R.id.imLvlUp);
         imgMonster=findViewById(R.id.imgMonster);
 
+        tvMalusDamages=findViewById(R.id.tvMalusDamages);
         tvDamages=findViewById(R.id.tvDamages);
         tvMaxHPOfCaracter=findViewById(R.id.tvMaxHP);
+        tvMaxEnnemiHP=findViewById(R.id.tvMaxEnnemiHP);
+
+        tvEnnemiLVL=findViewById(R.id.tvEnnemiLVL);
+
 
         //endregion
 
@@ -132,7 +148,7 @@ public class SecondActivity extends AppCompatActivity {
         setDamages();
         //endregion
 
-        changeMonster("Monster1");
+        changeMonster("Monster0");
 
 
         //region click
@@ -142,7 +158,13 @@ public class SecondActivity extends AppCompatActivity {
                 setAttack();
             }
         });
-
+        btRunAway.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int randomMonster =new Random().nextInt(3);
+                changeMonster("Monster"+String.valueOf(randomMonster));
+            }
+        });
 
 
         btMenuCaracter.setOnClickListener(new View.OnClickListener() {
@@ -219,6 +241,8 @@ public class SecondActivity extends AppCompatActivity {
             return false;
 
         imgMonster.setImageResource(id);
+        tvEnnemiLVL.setText(String.valueOf(currentMonster.caracteristic.lvl));
+
 
         return true;
 
@@ -226,7 +250,7 @@ public class SecondActivity extends AppCompatActivity {
 
 
     private void setDamages(){
-        damages=100;
+        damages=400;
     }
 
 
@@ -236,12 +260,14 @@ public class SecondActivity extends AppCompatActivity {
     private void setAnimation(){
         imgEpeeAttack.setVisibility(View.VISIBLE);
         tvDamages.setVisibility(View.VISIBLE);
+        tvMalusDamages.setVisibility(View.VISIBLE);
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 imgEpeeAttack.setVisibility(View.INVISIBLE);
                 tvDamages.setVisibility(View.INVISIBLE);
+                tvMalusDamages.setVisibility(View.INVISIBLE);
             }
         }, 300);
     }
@@ -251,6 +277,11 @@ public class SecondActivity extends AppCompatActivity {
         tvGold.setText(String.valueOf(gold));
     }
     private  void resetEnnemiHp(){
+        pbHPennemi.setMax(currentMonster.caracteristic.hp);
+        initialEnnemiHP=currentMonster.caracteristic.hp;
+        pbHPennemi.setProgress(initialEnnemiHP);
+        tvMaxEnnemiHP.setText(String.valueOf(currentMonster.caracteristic.hp));
+        tvCurrentHPEnnemi.setText(String.valueOf(currentMonster.caracteristic.hp));
         currentEnnemiHP=initialEnnemiHP;
         tvCurrentHPEnnemi.setText(String.valueOf(currentEnnemiHP));
     }
@@ -269,20 +300,42 @@ public class SecondActivity extends AppCompatActivity {
         if(currentEnnemiHP<=0){
             nbZoupleTue++;
             setGold();
-            resetEnnemiHp();
             setXP();
-            changeMonster("Monster2");
+            int randomMonster =new Random().nextInt(3);
+            changeMonster("Monster"+String.valueOf(randomMonster));
+            resetEnnemiHp();
+
 
         }
-
         pbHPennemi.setProgress(currentEnnemiHP);
+
+
+
     }
 
+    public void setDeath(){
+
+        int Malus= Integer.parseInt(tvGold.getText().toString());
+        Malus=Malus/2;
+        gold=gold-Malus;
+        tvGold.setText(String.valueOf(Malus));
+
+
+        tvGold.setTextColor(Color.parseColor("#FF2D00"));
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                tvGold.setTextColor(Color.parseColor("#000000"));
+            }
+        }, 2000);
+    }
     private  void setEnnemiAttack(){
-        currentCarHP=currentCarHP-60;
+        currentCarHP=currentCarHP- currentMonster.caracteristic.damages;
         tvCurrentCarHP.setText(String.valueOf(currentCarHP));
         if(currentCarHP<=0){
             resetCarHp();
+            setDeath();
         }
 
         //tvDamages.setText(String.valueOf(damages));
@@ -302,29 +355,31 @@ public class SecondActivity extends AppCompatActivity {
     private void setAttack(){
         setCaracterAttack();
         setEnnemiAttack();
+
     }
 
 
 
 
     private void setXP(){
-        xp=xp+48; //TODOO We should set the xp with the value in the MonsterClass
+        xp=xp+currentMonster.xp;
+        //xp=xp+48; //TODOO We should set the xp with the value in the MonsterClass
 
 
-        if(xp>=Integer.parseInt(tvMaxXP.getText().toString()))
+        if(xp>=pbXP.getMax())
         {
-            xp = xp%Integer.parseInt(tvMaxXP.getText().toString());
+            xp = xp%pbXP.getMax();
             setLVL();
         }
-        tvCurrentXP.setText(String.valueOf(xp));
+
+        pbXP.setProgress(xp);
     }
 
     private void setLVL(){
         lvl++;
         maxXP=maxXP*2;
         tvLVL.setText(String.valueOf(lvl));
-        tvMaxXP.setText(String.valueOf(maxXP));
-
+        pbXP.setMax(maxXP);
         imgLvlUp.setVisibility(View.VISIBLE);
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
