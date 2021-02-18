@@ -10,7 +10,7 @@ public class Monster {
     String name;
     String monsterImg;
     String monsterAttackImg;
-
+    String monsterDamagesImg;
     Caracteristic caracteristic;
     int xp;
     int gold;
@@ -20,11 +20,12 @@ public class Monster {
 
     //endregion
     //region constructor
-    public Monster(String name,String monsterImg,String monsterAttackImg,int xp,int gold)
+    public Monster(String name,String monsterImg,String monsterAttackImg,String monsterDamagesImg,int xp,int gold)
     {
         this.name=name;
         this.monsterImg=monsterImg;
         this.monsterAttackImg=monsterAttackImg;
+        this.monsterDamagesImg=monsterDamagesImg;
         this.xp=xp;
         this.gold=gold;
         this.caracteristic=new Caracteristic();
@@ -45,7 +46,9 @@ public class Monster {
         return monsterAttackImg;
     }
 
-
+    public String getMonsterDamagesImg(){
+        return  monsterDamagesImg;
+    }
     public int getXp() {
         return xp;
     }
@@ -70,6 +73,9 @@ public class Monster {
         this.monsterAttackImg = monsterAttackImg;
     }
 
+    public void setMonsterDamagesImg(String monsterDamagesImg) {
+        this.monsterDamagesImg = monsterDamagesImg;
+    }
 
     public void setXp(int xp) {
         this.xp = xp;

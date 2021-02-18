@@ -90,17 +90,29 @@ public class SecondActivity extends AppCompatActivity {
         //Function create monster
 
         Monster monster;
-        monster=new Monster("Monster0","larve_foreground",null,49,50);
+        monster=new Monster("Monster0","larve_foreground",null,"larvedegats_foreground",49,50);
         monster.setCaracteristic(1,1000,0,40,0,0);
         dic_monsters.put("Monster0",monster);
 
-        monster=new Monster("Monster1","souris_foreground",null,62,100);
+        monster=new Monster("Monster1","souris_foreground",null,"sourisdegats_foreground",62,100);
         monster.setCaracteristic(2,1500,0,60,0,0);
         dic_monsters.put("Monster1",monster);
 
-        monster=new Monster("Monster2","alien_foreground",null,800,1400);
-        monster.setCaracteristic(5,3000,0,200,0,0);
+        monster=new Monster("Monster2","canardchemine_foreground",null,"canardcheminedegats_foreground",98,147);
+        monster.setCaracteristic(3,2000,0,80,0,0);
         dic_monsters.put("Monster2",monster);
+
+        monster=new Monster("Monster3","extraterrestre_foreground",null,"extraterrestredegats_foreground",188,267);
+        monster.setCaracteristic(4,2500,0,125,0,0);
+        dic_monsters.put("Monster3",monster);
+
+        monster=new Monster("Monster4","alien_foreground",null,"aliendegats_foreground",275,398);
+        monster.setCaracteristic(5,3000,0,200,0,0);
+        dic_monsters.put("Monster4",monster);
+
+
+
+
 
 
 
@@ -166,7 +178,7 @@ public class SecondActivity extends AppCompatActivity {
         btRunAway.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int randomMonster =new Random().nextInt(3);
+                int randomMonster =new Random().nextInt(5);
                 changeMonster("Monster"+String.valueOf(randomMonster));
             }
         });
@@ -236,6 +248,7 @@ public class SecondActivity extends AppCompatActivity {
     }
     private void moveToSpells(){
         Intent intent =new Intent(SecondActivity.this,SpellsActivity.class);
+        intent.putExtra("CurrentGolds",Integer.parseInt(tvGold.getText().toString()));
         startActivity(intent);
     }
     //endregion
@@ -275,6 +288,14 @@ public class SecondActivity extends AppCompatActivity {
         imgEpeeAttack.setVisibility(View.VISIBLE);
         tvDamages.setVisibility(View.VISIBLE);
         tvMalusDamages.setVisibility(View.VISIBLE);
+
+
+        int idMonsterDegats= getResources().getIdentifier(currentMonster.monsterDamagesImg,"mipmap",getPackageName());
+        if(idMonsterDegats<=0)
+            return;
+
+        imgMonster.setImageResource(idMonsterDegats);
+
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
@@ -284,10 +305,22 @@ public class SecondActivity extends AppCompatActivity {
                 tvMalusDamages.setVisibility(View.INVISIBLE);
             }
         }, 300);
+
+        final Handler handler2 = new Handler();
+        handler2.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                int idMonster= getResources().getIdentifier(currentMonster.monsterImg,"mipmap",getPackageName());
+                if(idMonster<=0)
+                    return;
+                imgMonster.setImageResource(idMonster);
+            }
+        }, 400);
+
     }
     private  void setGold(){
-        gold=gold+100; //TODOO We should set golds with the value in the MonsterClass
-        nbGolds=nbGolds+100;
+        gold=gold+currentMonster.gold; //TODOO We should set golds with the value in the MonsterClass
+        nbGolds=nbGolds+currentMonster.gold;
         tvGold.setText(String.valueOf(gold));
     }
     private  void resetEnnemiHp(){
@@ -315,7 +348,7 @@ public class SecondActivity extends AppCompatActivity {
             nbZoupleTue++;
             setGold();
             setXP();
-            int randomMonster =new Random().nextInt(3);
+            int randomMonster =new Random().nextInt(5);
             changeMonster("Monster"+String.valueOf(randomMonster));
             resetEnnemiHp();
             //currentMonster.caracteristic.setLvl(currentMonster.caracteristic.getLvl()+lvlUPMonster);
@@ -332,8 +365,9 @@ public class SecondActivity extends AppCompatActivity {
 
         int Malus= Integer.parseInt(tvGold.getText().toString());
         Malus=Malus/2;
-        gold=gold-Malus;
-        tvGold.setText(String.valueOf(Malus));
+
+        //gold=gold-Malus;
+        //tvGold.setText(String.valueOf(Malus));
 
 
         tvGold.setTextColor(Color.parseColor("#FF2D00"));
@@ -348,6 +382,7 @@ public class SecondActivity extends AppCompatActivity {
     private  void setEnnemiAttack(){
         currentCarHP=currentCarHP- currentMonster.caracteristic.damages;
         tvCurrentCarHP.setText(String.valueOf(currentCarHP));
+
         if(currentCarHP<=0){
             resetCarHp();
             setDeath();

@@ -230,7 +230,7 @@
         android:layout_height="47dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginBottom="152dp"
+        android:layout_marginBottom="164dp"
         android:text="ATTAQUER"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -239,9 +239,9 @@
         android:id="@+id/btRunAway"
         android:layout_width="185dp"
         android:layout_height="45dp"
-        android:layout_marginStart="200dp"
-        android:layout_marginLeft="200dp"
-        android:layout_marginBottom="152dp"
+        android:layout_marginStart="208dp"
+        android:layout_marginLeft="208dp"
+        android:layout_marginBottom="164dp"
         android:text="FUIR"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -252,7 +252,7 @@
         android:layout_height="46dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:layout_marginBottom="108dp"
+        android:layout_marginBottom="124dp"
         android:text="CONSOMMABLE"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
