@@ -61,7 +61,7 @@ public class SecondActivity extends AppCompatActivity {
     static int currentCarHP;
     static int damages;
     static int xp;
-    static int maxXP;
+    static double maxXP;
     static int lvl;
     static int gold;
     static int nbZoupleTue;
@@ -70,7 +70,9 @@ public class SecondActivity extends AppCompatActivity {
 
     HashMap<String, Loot> dic_loots = new HashMap<String, Loot>();
     HashMap<String, Monster> dic_monsters = new HashMap<String,Monster>();
+
     Monster currentMonster;
+    UserCaracter currentCaracter;
 
     //endregion
 
@@ -81,13 +83,25 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        //Function create loot
 
+
+        //create User
+        UserCaracter userCaracter;
+
+        userCaracter=new UserCaracter("Pingu","pingucaracter_foreground","spelldepart_foreground",null,0);
+        userCaracter.setCaracteristic(1,1000,0,400,0,0);
+
+
+
+
+        //create loot
 
         dic_loots.put("cuir",new Loot("cuir",null,50));
         dic_loots.put("peau",new Loot("peau",null,25));
 
-        //Function create monster
+
+        //Create monster
+
 
         Monster monster;
         monster=new Monster("Monster0","larve_foreground",null,"larvedegats_foreground",49,50);
@@ -110,7 +124,9 @@ public class SecondActivity extends AppCompatActivity {
         monster.setCaracteristic(5,3000,0,200,0,0);
         dic_monsters.put("Monster4",monster);
 
-
+        monster=new Monster("Monster5","hypo_foreground",null,"hypodegats_foreground",386,482);
+        monster.setCaracteristic(6,3500,0,242,0,0);
+        dic_monsters.put("Monster5",monster);
 
 
 
@@ -178,7 +194,10 @@ public class SecondActivity extends AppCompatActivity {
         btRunAway.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int randomMonster =new Random().nextInt(5);
+                int addNewMonster=lvl/2;
+                if(addNewMonster>=4)
+                    addNewMonster=4;
+                int randomMonster =new Random().nextInt(2+addNewMonster);
                 changeMonster("Monster"+String.valueOf(randomMonster));
             }
         });
@@ -277,7 +296,7 @@ public class SecondActivity extends AppCompatActivity {
 
 
     private void setDamages(){
-        damages=400;
+        damages= 400;
     }
 
 
@@ -339,6 +358,7 @@ public class SecondActivity extends AppCompatActivity {
 
 
     private  void setCaracterAttack(){
+
         currentEnnemiHP=currentEnnemiHP-damages;
         tvCurrentHPEnnemi.setText(String.valueOf(currentEnnemiHP));
         tvDamages.setText(String.valueOf(damages));
@@ -348,7 +368,10 @@ public class SecondActivity extends AppCompatActivity {
             nbZoupleTue++;
             setGold();
             setXP();
-            int randomMonster =new Random().nextInt(5);
+            int addNewMonster=lvl/2;
+            if(addNewMonster>=4)
+                addNewMonster=4;
+            int randomMonster =new Random().nextInt(2+addNewMonster);
             changeMonster("Monster"+String.valueOf(randomMonster));
             resetEnnemiHp();
             //currentMonster.caracteristic.setLvl(currentMonster.caracteristic.getLvl()+lvlUPMonster);
@@ -403,6 +426,7 @@ public class SecondActivity extends AppCompatActivity {
     }
 
     private void setAttack(){
+
         setCaracterAttack();
         setEnnemiAttack();
 
@@ -427,10 +451,12 @@ public class SecondActivity extends AppCompatActivity {
     }
 
     private void setLVL(){
+
         lvl++;
-        maxXP=maxXP*2;
+        maxXP=maxXP*1.5;
+        maxXP=Math.round(maxXP);
         tvLVL.setText(String.valueOf(lvl));
-        pbXP.setMax(maxXP);
+        pbXP.setMax((int)maxXP);
         imgLvlUp.setVisibility(View.VISIBLE);
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {

@@ -13,7 +13,7 @@ public class UserCaracter {
 
     //endregion
     //region constructor
-    public UserCaracter(String name,String CaracterImg,String CaracterAttackImg,String CaracterDamagesImg,int xp,int gold)
+    public UserCaracter(String name,String CaracterImg,String CaracterAttackImg,String CaracterDamagesImg,int gold)
     {
         this.name=name;
         this.CaracterImg=CaracterImg;

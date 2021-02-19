@@ -14,6 +14,7 @@ public class SpellsActivity extends AppCompatActivity {
     private TextView tvGoldSpell;
     private Button btBuySpell1;
     private TextView costSpell1;
+    boolean achatSpell1=false;
 
 
     private int Golds;
@@ -50,10 +51,13 @@ public class SpellsActivity extends AppCompatActivity {
     }
 
     public void buySpell1(){
+        if(achatSpell1==true)
+            return;
         int cost = Integer.parseInt(costSpell1.getText().toString());
         if(Golds>= cost){
             Golds=Golds-cost;
             tvGoldSpell.setText(String.valueOf(Golds));
+            achatSpell1=true;
 
         }
     }
