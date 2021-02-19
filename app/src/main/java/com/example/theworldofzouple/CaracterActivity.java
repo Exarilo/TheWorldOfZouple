@@ -7,6 +7,8 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.r0adkll.slidr.Slidr;
+
 public class CaracterActivity extends AppCompatActivity {
     private TextView CaracterTvLVL;
     private TextView CaracterTvMaxHP;
@@ -25,6 +27,7 @@ public class CaracterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_caracter);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        Slidr.attach(this);
         Intent intent = getIntent();
         if (intent != null){
             if (intent.hasExtra("CurrentLVL")){ // check if CurrentLVL exist

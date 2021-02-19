@@ -7,6 +7,8 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.widget.TextView;
 
+import com.r0adkll.slidr.Slidr;
+
 public class ShopActivity extends AppCompatActivity {
 
     private int Golds;
@@ -16,6 +18,7 @@ public class ShopActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shop);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        Slidr.attach(this);
         Intent intent = getIntent();
         Golds = intent.getIntExtra("CurrentGolds",0); // get the value
 

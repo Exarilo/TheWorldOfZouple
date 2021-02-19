@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.r0adkll.slidr.Slidr;
+
 public class SpellsActivity extends AppCompatActivity {
 
     private TextView tvGoldSpell;
@@ -24,7 +26,7 @@ public class SpellsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spells);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-
+        Slidr.attach(this);
         Intent intent = getIntent();
         Golds = intent.getIntExtra("CurrentGolds",0); // get the value
 
