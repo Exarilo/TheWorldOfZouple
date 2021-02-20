@@ -49,12 +49,17 @@ public class SecondActivity extends AppCompatActivity {
     private TextView tvLVL;
     private TextView tvGold;
     private TextView tvDamages;
+    private TextView tvDamages2;
     private TextView tvMalusDamages;
+    private TextView tvMalusDamages2;
 
     private ImageView imgMonster;
     private ImageView imgEpeeAttack;
     private ImageView imgLvlUp;
+    private ImageView imgEnnemiAttack;
 
+
+    static boolean ennemiDead=false;
     static int initialEnnemiHP;
     static int initialCarHP;
     static int currentEnnemiHP;
@@ -67,6 +72,9 @@ public class SecondActivity extends AppCompatActivity {
     static int nbZoupleTue;
     static int nbGolds;
     static int lvlUPMonster;
+
+
+    static int randomMonster=0;
 
     HashMap<String, Loot> dic_loots = new HashMap<String, Loot>();
     HashMap<String, Monster> dic_monsters = new HashMap<String,Monster>();
@@ -90,7 +98,7 @@ public class SecondActivity extends AppCompatActivity {
 
         userCaracter=new UserCaracter("Pingu","pingucaracter_foreground","spelldepart_foreground",null,0);
         userCaracter.setCaracteristic(1,1000,0,400,0,0);
-
+        currentCaracter=userCaracter;
 
 
 
@@ -104,27 +112,27 @@ public class SecondActivity extends AppCompatActivity {
 
 
         Monster monster;
-        monster=new Monster("Monster0","larve_foreground",null,"larvedegats_foreground",49,50);
+        monster=new Monster("Monster0","larve_foreground","larveattack_foreground","larvedegats_foreground",49,50);
         monster.setCaracteristic(1,1000,0,40,0,0);
         dic_monsters.put("Monster0",monster);
 
-        monster=new Monster("Monster1","souris_foreground",null,"sourisdegats_foreground",62,100);
+        monster=new Monster("Monster1","souris_foreground","sourisattack_foreground","sourisdegats_foreground",62,100);
         monster.setCaracteristic(2,1500,0,60,0,0);
         dic_monsters.put("Monster1",monster);
 
-        monster=new Monster("Monster2","canardchemine_foreground",null,"canardcheminedegats_foreground",98,147);
+        monster=new Monster("Monster2","canardchemine_foreground","canarchemineattack_foreground","canardcheminedegats_foreground",98,147);
         monster.setCaracteristic(3,2000,0,80,0,0);
         dic_monsters.put("Monster2",monster);
 
-        monster=new Monster("Monster3","extraterrestre_foreground",null,"extraterrestredegats_foreground",188,267);
+        monster=new Monster("Monster3","extraterrestre_foreground","extraterrestreattack_foreground","extraterrestredegats_foreground",188,267);
         monster.setCaracteristic(4,2500,0,125,0,0);
         dic_monsters.put("Monster3",monster);
 
-        monster=new Monster("Monster4","alien_foreground",null,"aliendegats_foreground",275,398);
+        monster=new Monster("Monster4","alien_foreground","alienattack_foreground","aliendegats_foreground",275,398);
         monster.setCaracteristic(5,3000,0,200,0,0);
         dic_monsters.put("Monster4",monster);
 
-        monster=new Monster("Monster5","hypo_foreground",null,"hypodegats_foreground",386,482);
+        monster=new Monster("Monster5","hypo_foreground","hyppoattack_foreground","hypodegats_foreground",386,482);
         monster.setCaracteristic(6,3500,0,242,0,0);
         dic_monsters.put("Monster5",monster);
 
@@ -158,6 +166,10 @@ public class SecondActivity extends AppCompatActivity {
 
         tvMalusDamages=findViewById(R.id.tvMalusDamages);
         tvDamages=findViewById(R.id.tvDamages);
+        tvMalusDamages2=findViewById(R.id.tvMalusDamages2);
+        tvDamages2=findViewById(R.id.tvDamages2);
+        imgEnnemiAttack=findViewById(R.id.imgEnnemiAttack);
+
         tvMaxHPOfCaracter=findViewById(R.id.tvMaxHP);
         tvMaxEnnemiHP=findViewById(R.id.tvMaxEnnemiHP);
 
@@ -197,8 +209,11 @@ public class SecondActivity extends AppCompatActivity {
                 int addNewMonster=lvl/2;
                 if(addNewMonster>=4)
                     addNewMonster=4;
-                int randomMonster =new Random().nextInt(2+addNewMonster);
-                changeMonster("Monster"+String.valueOf(randomMonster));
+                int newRandomMonster=new Random().nextInt(2+addNewMonster);
+                while (newRandomMonster==randomMonster)
+                    newRandomMonster=new Random().nextInt(2+addNewMonster);
+                changeMonster("Monster"+String.valueOf(newRandomMonster));
+                randomMonster=newRandomMonster;
             }
         });
 
@@ -267,7 +282,7 @@ public class SecondActivity extends AppCompatActivity {
     }
     private void moveToSpells(){
         Intent intent =new Intent(SecondActivity.this,SpellsActivity.class);
-        intent.putExtra("CurrentGolds",Integer.parseInt(tvGold.getText().toString()));
+        intent.putExtra("CurrentGolds", Integer.parseInt(tvGold.getText().toString()));
         startActivity(intent);
     }
     //endregion
@@ -287,6 +302,7 @@ public class SecondActivity extends AppCompatActivity {
 
         imgMonster.setImageResource(id);
         tvEnnemiLVL.setText(String.valueOf(currentMonster.caracteristic.lvl));
+        resetEnnemiHp();
 
 
 
@@ -296,7 +312,7 @@ public class SecondActivity extends AppCompatActivity {
 
 
     private void setDamages(){
-        damages= 400;
+        damages= currentCaracter.caracteristic.damages;
     }
 
 
@@ -325,6 +341,7 @@ public class SecondActivity extends AppCompatActivity {
             }
         }, 300);
 
+
         final Handler handler2 = new Handler();
         handler2.postDelayed(new Runnable() {
             @Override
@@ -337,7 +354,33 @@ public class SecondActivity extends AppCompatActivity {
         }, 400);
 
     }
-    private  void setGold(){
+    private void setAnimation2() {
+        int id= getResources().getIdentifier(currentMonster.monsterAttackImg,"mipmap",getPackageName());
+        if(id<=0 )
+            return;
+        //if(id. ==null)
+        imgEnnemiAttack.setImageResource(id);
+        imgEnnemiAttack.setVisibility(View.VISIBLE);
+
+        tvDamages2.setText(String.valueOf(currentMonster.caracteristic.damages));
+        tvDamages2.setVisibility(View.VISIBLE);
+        tvMalusDamages2.setVisibility(View.VISIBLE);
+
+
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+
+                tvDamages2.setVisibility(View.INVISIBLE);
+                tvMalusDamages2.setVisibility(View.INVISIBLE);
+                imgEnnemiAttack.setVisibility(View.INVISIBLE);
+            }
+        }, 500);
+    }
+
+
+        private  void setGold(){
         gold=gold+currentMonster.gold; //TODOO We should set golds with the value in the MonsterClass
         nbGolds=nbGolds+currentMonster.gold;
         tvGold.setText(String.valueOf(gold));
@@ -357,7 +400,7 @@ public class SecondActivity extends AppCompatActivity {
     }
 
 
-    private  void setCaracterAttack(){
+    private boolean setCaracterAttack(){
 
         currentEnnemiHP=currentEnnemiHP-damages;
         tvCurrentHPEnnemi.setText(String.valueOf(currentEnnemiHP));
@@ -371,16 +414,17 @@ public class SecondActivity extends AppCompatActivity {
             int addNewMonster=lvl/2;
             if(addNewMonster>=4)
                 addNewMonster=4;
-            int randomMonster =new Random().nextInt(2+addNewMonster);
+            randomMonster =new Random().nextInt(2+addNewMonster);
             changeMonster("Monster"+String.valueOf(randomMonster));
             resetEnnemiHp();
+            ennemiDead=true;
+            return ennemiDead;
             //currentMonster.caracteristic.setLvl(currentMonster.caracteristic.getLvl()+lvlUPMonster);
-
-
         }
+
         pbHPennemi.setProgress(currentEnnemiHP);
-
-
+        ennemiDead=false;
+        return ennemiDead;
 
     }
 
@@ -405,7 +449,7 @@ public class SecondActivity extends AppCompatActivity {
     private  void setEnnemiAttack(){
         currentCarHP=currentCarHP- currentMonster.caracteristic.damages;
         tvCurrentCarHP.setText(String.valueOf(currentCarHP));
-
+        setAnimation2();
         if(currentCarHP<=0){
             resetCarHp();
             setDeath();
@@ -427,8 +471,17 @@ public class SecondActivity extends AppCompatActivity {
 
     private void setAttack(){
 
-        setCaracterAttack();
-        setEnnemiAttack();
+        ennemiDead=setCaracterAttack();
+        if(ennemiDead)
+            return;
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                setEnnemiAttack();
+            }
+        }, 800);
+
 
 
     }
