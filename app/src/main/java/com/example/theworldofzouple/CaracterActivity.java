@@ -15,6 +15,8 @@ public class CaracterActivity extends AppCompatActivity {
     private TextView tvZoupleTue;
     private TextView tvGoldEarn;
     private TextView CaracterTvDamages;
+    private TextView CaracterTvDef;
+    private TextView CaracterTvCritRate;
 
     private String CurrentLVL;
     private String MaxHP;
@@ -28,19 +30,11 @@ public class CaracterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_caracter);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         Slidr.attach(this);
-        Intent intent = getIntent();
-        if (intent != null){
-            if (intent.hasExtra("CurrentLVL")){ // check if CurrentLVL exist
-                CurrentLVL = intent.getStringExtra("CurrentLVL"); // get the value
-            }
-            if (intent.hasExtra("MaxHP")){ // check if MaxHP exist
-                MaxHP = intent.getStringExtra("MaxHP"); // get the value
-            }
 
-            ZoupleTue = intent.getIntExtra("ZouplesKill",0); // get the value
-            Golds = intent.getIntExtra("TotalGolds",0); // get the value
-            Damages = intent.getIntExtra("Damages",0); // get the value
-        }
+        ZoupleTue=SecondActivity.nbZoupleTue;
+        Golds=SecondActivity.nbGolds;
+
+
 
 
         CaracterTvLVL=findViewById(R.id.CaracterTvLVL);
@@ -48,13 +42,19 @@ public class CaracterActivity extends AppCompatActivity {
         tvZoupleTue=findViewById(R.id.tvZoupleTue);
         tvGoldEarn=findViewById(R.id.tvGoldEarn);
         CaracterTvDamages=findViewById(R.id.CaracterTvDamages);
+        CaracterTvDef=findViewById(R.id.CaracterTvDef);
+        CaracterTvCritRate=findViewById(R.id.CaracterTvCritRate);
 
 
-        CaracterTvLVL.setText(CurrentLVL);
-        CaracterTvMaxHP.setText(MaxHP);
+
+
+        CaracterTvLVL.setText(String.valueOf(SecondActivity.currentCaracter.caracteristic.lvl));
+        CaracterTvMaxHP.setText(String.valueOf(SecondActivity.currentCaracter.caracteristic.hp));
         tvZoupleTue.setText(String.valueOf(ZoupleTue));
         tvGoldEarn.setText(String.valueOf(Golds));
-        CaracterTvDamages.setText(String.valueOf(Damages));
+        CaracterTvDamages.setText(String.valueOf(Math.round(SecondActivity.currentCaracter.caracteristic.damages)));
+        CaracterTvDef.setText(String.valueOf(SecondActivity.currentCaracter.caracteristic.def));
+        CaracterTvCritRate.setText(String.valueOf(SecondActivity.currentCaracter.caracteristic.critRate)+"%");
         //tvLVL.getText().toString()
     }
 }

@@ -19,8 +19,8 @@ public class ShopActivity extends AppCompatActivity {
         setContentView(R.layout.activity_shop);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         Slidr.attach(this);
-        Intent intent = getIntent();
-        Golds = intent.getIntExtra("CurrentGolds",0); // get the value
+
+        Golds = SecondActivity.currentCaracter.gold;
 
 
         tvGolds=findViewById(R.id.tvGoldsShop);

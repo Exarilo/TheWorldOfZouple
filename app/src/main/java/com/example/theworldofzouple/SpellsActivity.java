@@ -28,8 +28,7 @@ public class SpellsActivity extends AppCompatActivity {
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         Slidr.attach(this);
 
-        Intent intent = getIntent();
-        Golds = intent.getIntExtra("CurrentGolds",0); // get the value
+        Golds = SecondActivity.currentCaracter.gold; // get the value
 
 
 
@@ -58,7 +57,11 @@ public class SpellsActivity extends AppCompatActivity {
         int cost = Integer.parseInt(tvCost.getText().toString());
         if(Golds>= cost){
             Golds=Golds-cost;
-            tvGoldSpell.setText(String.valueOf(Golds));
+            SecondActivity.currentCaracter.setGold(Golds);
+            tvGoldSpell.setText(String.valueOf(SecondActivity.currentCaracter.gold));
+            SecondActivity.tvGold.setText(String.valueOf(SecondActivity.currentCaracter.gold));
+            SecondActivity.currentCaracter.caracteristic.damages*=1.2;
+            SecondActivity.currentCaracter.setCaracterAttackImg("attackcaracter_foreground");
             alreadyBuy=true;
 
         }
