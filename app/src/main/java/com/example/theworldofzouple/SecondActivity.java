@@ -69,6 +69,7 @@ public class SecondActivity extends AppCompatActivity {
     static int nbZoupleTue;
     static int nbGolds;
     static int lvlUPMonster;
+    static int ptsARepartir;
 
 
     static int randomMonster=0;
@@ -94,7 +95,7 @@ public class SecondActivity extends AppCompatActivity {
         UserCaracter userCaracter;
 
         userCaracter=new UserCaracter("Pingu","pingucaracter_foreground","spelldepart_foreground",null,0);
-        userCaracter.setCaracteristic(1,1000,10,400,10,0);
+        userCaracter.setCaracteristic(1,1000,10,400,10,10);
         currentCaracter=userCaracter;
 
 
@@ -181,6 +182,7 @@ public class SecondActivity extends AppCompatActivity {
         nbZoupleTue=0;
         nbGolds=0;
         lvlUPMonster=0;
+        ptsARepartir=0;
         initialEnnemiHP= pbHPennemi.getProgress();
         currentEnnemiHP= initialEnnemiHP;
         currentCarHP=currentCaracter.caracteristic.hp;
@@ -343,7 +345,7 @@ public class SecondActivity extends AppCompatActivity {
         }, 400);
 
     }
-    private void setAnimation2(boolean DefSupThanDamages) {
+    private void setAnimation2(boolean DefSupThanDamages,boolean isDodge) {
         int id= getResources().getIdentifier(currentMonster.monsterAttackImg,"mipmap",getPackageName());
         if(id<=0 )
             return;
@@ -352,11 +354,19 @@ public class SecondActivity extends AppCompatActivity {
         imgEnnemiAttack.setImageResource(id);
         imgEnnemiAttack.setVisibility(View.VISIBLE);
 
-        if (!DefSupThanDamages){
-            tvDamages2.setText(String.valueOf(Math.round(currentMonster.caracteristic.damages)-currentCaracter.caracteristic.def));
+        if (isDodge)
+        {
+            tvDamages2.setText("MISS");
             tvDamages2.setVisibility(View.VISIBLE);
-            tvMalusDamages2.setVisibility(View.VISIBLE);
         }
+        else {
+            if (!DefSupThanDamages){
+                tvDamages2.setText(String.valueOf(Math.round(currentMonster.caracteristic.damages)-currentCaracter.caracteristic.def));
+                tvDamages2.setVisibility(View.VISIBLE);
+                tvMalusDamages2.setVisibility(View.VISIBLE);
+            }
+        }
+
 
 
         final Handler handler = new Handler();
@@ -388,7 +398,11 @@ public class SecondActivity extends AppCompatActivity {
     }
     private  void resetCarHp(){
         currentCarHP=currentCaracter.caracteristic.hp;
+        tvMaxHPOfCaracter.setText(String.valueOf(currentCaracter.caracteristic.hp));
+        pbHPCar.setMax(currentCaracter.caracteristic.hp);
+        pbHPCar.setProgress(currentCaracter.caracteristic.hp);
         tvCurrentCarHP.setText(String.valueOf(currentCarHP));
+
     }
 
 
@@ -397,7 +411,7 @@ public class SecondActivity extends AppCompatActivity {
         int randomCrit =new Random().nextInt(99);
 
         if(randomCrit <= currentCaracter.caracteristic.critRate - 1){
-            currentEnnemiHP=(currentEnnemiHP-(int)Math.round(currentCaracter.caracteristic.damages))*2;
+            currentEnnemiHP=currentEnnemiHP-((int)Math.round(currentCaracter.caracteristic.damages*2));
             tvDamages.setText(String.valueOf(Math.round(currentCaracter.caracteristic.damages)*2));
             tvDamages.setTextColor(Color.parseColor("#FF0000"));
             tvMalusDamages.setTextColor(Color.parseColor("#FF0000"));
@@ -453,13 +467,27 @@ public class SecondActivity extends AppCompatActivity {
     }
     private  void setEnnemiAttack(){
         boolean defSupThanDamages= false;
-        if(currentCaracter.caracteristic.def<currentMonster.caracteristic.damages) {
-            currentCarHP = (currentCarHP - (int) currentMonster.caracteristic.damages) + currentCaracter.caracteristic.def;
+        boolean isDodge= false;
+
+        int randomDodge =new Random().nextInt(99);
+        if(randomDodge <= currentCaracter.caracteristic.dodgeRate - 1){
+            tvDamages2.setTextColor(Color.parseColor("#FF0000"));
+            tvCurrentCarHP.setText(String.valueOf(currentCarHP));
+            isDodge=true;
         }
-        else
-            defSupThanDamages=true;
-        tvCurrentCarHP.setText(String.valueOf(currentCarHP));
-        setAnimation2(defSupThanDamages);
+
+        else{
+            if(currentCaracter.caracteristic.def<currentMonster.caracteristic.damages)
+            {
+                currentCarHP = (currentCarHP - (int) currentMonster.caracteristic.damages) + currentCaracter.caracteristic.def;
+                tvDamages2.setTextColor(Color.parseColor("#ffff8800"));
+            }
+            else
+                defSupThanDamages=true;
+        }
+
+
+        setAnimation2(defSupThanDamages,isDodge);
         if(currentCarHP<=0){
             resetCarHp();
             setDeath();
@@ -514,7 +542,7 @@ public class SecondActivity extends AppCompatActivity {
     }
 
     private void setLVL(){
-
+        ptsARepartir+=5;
         currentCaracter.caracteristic.lvl++;
         maxXP=maxXP*1.5;
         maxXP=Math.round(maxXP);

@@ -7,6 +7,54 @@
     android:background="#C1B6B6"
     tools:context=".CaracterActivity">
 
+    <Button
+        android:id="@+id/btUpgradeDef"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="148dp"
+        android:layout_marginLeft="148dp"
+        android:layout_marginTop="220dp"
+        android:background="@mipmap/btupgradecar_foreground"
+        android:tag="upgradeDef"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btUpgradeDamages"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="156dp"
+        android:layout_marginLeft="156dp"
+        android:layout_marginTop="280dp"
+        android:background="@mipmap/btupgradecar_foreground"
+        android:tag="upgradeDamages"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btUpgradeCritRate"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="172dp"
+        android:layout_marginLeft="172dp"
+        android:layout_marginTop="340dp"
+        android:background="@mipmap/btupgradecar_foreground"
+        android:tag="upgradeCritRate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btUpgradeDodgeRate"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginLeft="140dp"
+        android:layout_marginTop="408dp"
+        android:background="@mipmap/btupgradecar_foreground"
+        android:tag="upgradeDodgeRate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/imageView7"
         android:layout_width="58dp"
@@ -172,8 +220,8 @@
 
     <TextView
         android:id="@+id/CaracterTvMaxHP"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="52dp"
+        android:layout_height="19dp"
         android:layout_marginStart="138dp"
         android:layout_marginLeft="138dp"
         android:layout_marginTop="158dp"
@@ -215,7 +263,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/CaracterTvDodgeRate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="110dp"
@@ -248,13 +296,40 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/btUpgradeHP"
         android:layout_width="22dp"
         android:layout_height="22dp"
-        android:layout_marginStart="196dp"
-        android:layout_marginLeft="196dp"
+        android:layout_marginStart="188dp"
+        android:layout_marginLeft="188dp"
         android:layout_marginTop="156dp"
         android:background="@mipmap/btupgradecar_foreground"
+        android:tag="upgradeHP"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvPtsARepartir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="304dp"
+        android:layout_marginLeft="304dp"
+        android:layout_marginTop="104dp"
+        android:text="TextView"
+        android:textColor="@android:color/holo_red_dark"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="274dp"
+        android:layout_marginLeft="274dp"
+        android:layout_marginTop="87dp"
+        android:text="Pts a répartir :"
+        android:textColor="@android:color/background_dark"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

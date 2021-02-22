@@ -461,7 +461,7 @@
         android:layout_marginStart="224dp"
         android:layout_marginLeft="224dp"
         android:layout_marginTop="184dp"
-        android:text="LVL :"
+        android:text="LvL :"
         android:textColor="@color/colorPrimary"
         android:textSize="14sp"
         android:textStyle="bold"
