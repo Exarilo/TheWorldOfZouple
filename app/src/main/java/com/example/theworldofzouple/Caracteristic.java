@@ -6,7 +6,7 @@ public class Caracteristic {
     int lvl;
     int hp;
     int def;
-    int damages;
+    double damages;
     int critRate;
     int dodgeRate;
     //endregion
@@ -41,7 +41,7 @@ public class Caracteristic {
         return def;
     }
 
-    public int getDamages() {
+    public double getDamages() {
         return damages;
     }
 

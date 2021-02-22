@@ -237,10 +237,10 @@
 
     <Button
         android:id="@+id/btRunAway"
-        android:layout_width="185dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="208dp"
-        android:layout_marginLeft="208dp"
+        android:layout_width="186dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginLeft="200dp"
         android:layout_marginBottom="164dp"
         android:text="FUIR"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -345,6 +345,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@mipmap/spelldepart_foreground" />
 
+    <ImageView
+        android:id="@+id/imgEnnemiAttack"
+        android:layout_width="187dp"
+        android:layout_height="141dp"
+        android:layout_marginStart="104dp"
+        android:layout_marginLeft="104dp"
+        android:layout_marginBottom="240dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@mipmap/spelldepart_foreground" />
+
     <TextView
         android:id="@+id/tvDamages"
         android:layout_width="wrap_content"
@@ -358,6 +370,22 @@
         android:visibility="invisible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        tools:text="-" />
+
+    <TextView
+        android:id="@+id/tvDamages2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:translationZ="90dp"
+        android:layout_marginBottom="383dp"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:text="-" />
 
     <ImageView
@@ -412,13 +440,28 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/tvMalusDamages2"
+        android:layout_width="17dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginBottom="384dp"
+        android:text="-"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
         android:id="@+id/textView21"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="224dp"
         android:layout_marginLeft="224dp"
         android:layout_marginTop="184dp"
-        android:text="LVL :"
+        android:text="LvL :"
         android:textColor="@color/colorPrimary"
         android:textSize="14sp"
         android:textStyle="bold"

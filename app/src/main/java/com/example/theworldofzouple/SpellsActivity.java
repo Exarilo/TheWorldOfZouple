@@ -16,7 +16,7 @@ public class SpellsActivity extends AppCompatActivity {
     private TextView tvGoldSpell;
     private Button btBuySpell1;
     private TextView costSpell1;
-    boolean achatSpell1=false;
+    boolean AlreadyBuySpell1=false;
 
 
     private int Golds;
@@ -27,8 +27,9 @@ public class SpellsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_spells);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         Slidr.attach(this);
-        Intent intent = getIntent();
-        Golds = intent.getIntExtra("CurrentGolds",0); // get the value
+
+        Golds = SecondActivity.currentCaracter.gold; // get the value
+
 
 
         tvGoldSpell=findViewById(R.id.tvGoldSpell);
@@ -38,29 +39,33 @@ public class SpellsActivity extends AppCompatActivity {
         costSpell1=findViewById(R.id.costSpell1);
         btBuySpell1= findViewById(R.id.btBuySpell1);
 
-
-
-
-
-
-
         btBuySpell1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                buySpell1();
+                TextView tv = costSpell1;
+
+                AlreadyBuySpell1=setAchat(AlreadyBuySpell1,tv);
             }
         });
     }
 
-    public void buySpell1(){
-        if(achatSpell1==true)
-            return;
-        int cost = Integer.parseInt(costSpell1.getText().toString());
+
+
+    public boolean setAchat(boolean alreadyBuy,TextView tvCost){
+        if(alreadyBuy==true)
+            return true;
+        int cost = Integer.parseInt(tvCost.getText().toString());
         if(Golds>= cost){
             Golds=Golds-cost;
-            tvGoldSpell.setText(String.valueOf(Golds));
-            achatSpell1=true;
+            SecondActivity.currentCaracter.setGold(Golds);
+            tvGoldSpell.setText(String.valueOf(SecondActivity.currentCaracter.gold));
+            SecondActivity.tvGold.setText(String.valueOf(SecondActivity.currentCaracter.gold));
+            SecondActivity.currentCaracter.caracteristic.damages*=1.2;
+            SecondActivity.currentCaracter.setCaracterAttackImg("attackcaracter_foreground");
+            alreadyBuy=true;
 
         }
+
+        return false;
     }
 }

@@ -9,23 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity android:name=".SpellsActivity"
             android:theme="@style/AppTheme.SlideActivityTheme"></activity>
 
-
         <activity android:name=".CraftActivity"
-            android:theme="@style/AppTheme.SlideActivityTheme"/>
+            android:theme="@style/AppTheme.SlideActivityTheme"></activity>
 
         <activity android:name=".ShopActivity"
-            android:theme="@style/AppTheme.SlideActivityTheme"/>
+            android:theme="@style/AppTheme.SlideActivityTheme"></activity>
 
         <activity android:name=".InventoryActivity"
-            android:theme="@style/AppTheme.SlideActivityTheme"/>
+            android:theme="@style/AppTheme.SlideActivityTheme"></activity>
 
         <activity android:name=".CaracterActivity"
-            android:theme="@style/AppTheme.SlideActivityTheme"/>
-
+            android:theme="@style/AppTheme.SlideActivityTheme"></activity>
         <activity android:name=".SecondActivity" />
         <activity
             android:name=".FullscreenActivity"
