@@ -29,7 +29,7 @@ public class CaracterActivity extends AppCompatActivity {
     private Button btUpgradeDamages;
     private Button btUpgradeCritRate;
     private Button btUpgradeDodgeRate;
-
+    private Button btCloseCaracter;
 
     private String CurrentLVL;
     private String MaxHP;
@@ -80,6 +80,17 @@ public class CaracterActivity extends AppCompatActivity {
         tvPtsARepartir.setText(String.valueOf(SecondActivity.ptsARepartir));
         showPts();
 
+        btCloseCaracter=findViewById(R.id.btCloseCaracter);
+
+        btCloseCaracter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                CaracterActivity.this.finish();
+            }
+        });
+
+
+
 
         btUpgradeHP.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,6 +98,7 @@ public class CaracterActivity extends AppCompatActivity {
                 Upgrade(btUpgradeHP.getTag().toString());
             }
         });
+
         btUpgradeDef.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

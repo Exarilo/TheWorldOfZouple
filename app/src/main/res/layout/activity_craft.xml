@@ -7,14 +7,15 @@
     android:background="#C1B6B6"
     tools:context=".CraftActivity">
 
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="58dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginRight="4dp"
+    <Button
+        android:id="@+id/btCloseCraft"
+        android:layout_width="52dp"
+        android:layout_height="53dp"
+        android:background="@mipmap/btclose_foreground"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.979"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@mipmap/btclose_foreground" />
+        app:layout_constraintVertical_bias="0.024" />
 </androidx.constraintlayout.widget.ConstraintLayout>

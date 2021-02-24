@@ -2,7 +2,6 @@ package com.example.theworldofzouple;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +16,7 @@ public class SpellsActivity extends AppCompatActivity {
     private Button btBuySpell1;
     private TextView costSpell1;
     boolean AlreadyBuySpell1=false;
+    private Button btClose;
 
 
     private int Golds;
@@ -29,6 +29,7 @@ public class SpellsActivity extends AppCompatActivity {
         Slidr.attach(this);
 
         Golds = SecondActivity.currentCaracter.gold; // get the value
+        btClose= findViewById(R.id.btClose);
 
 
 
@@ -38,6 +39,13 @@ public class SpellsActivity extends AppCompatActivity {
 
         costSpell1=findViewById(R.id.costSpell1);
         btBuySpell1= findViewById(R.id.btBuySpell1);
+
+        btClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SpellsActivity.this.finish();
+            }
+        });
 
         btBuySpell1.setOnClickListener(new View.OnClickListener() {
             @Override

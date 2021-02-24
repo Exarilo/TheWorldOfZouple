@@ -7,10 +7,12 @@ import android.content.pm.ActivityInfo;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import java.io.IOException;
@@ -19,6 +21,7 @@ import java.util.Dictionary;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Random;
+import java.util.Scanner;
 
 
 public class SecondActivity extends AppCompatActivity {
@@ -53,10 +56,14 @@ public class SecondActivity extends AppCompatActivity {
     private TextView tvMalusDamages;
     private TextView tvMalusDamages2;
 
+    private TextView tvHistorique;
+
     private ImageView imgMonster;
     private ImageView imgCarAttack;
     private ImageView imgLvlUp;
     private ImageView imgEnnemiAttack;
+    private ImageView imgCaracter;
+
 
 
     static boolean ennemiDead=false;
@@ -71,6 +78,7 @@ public class SecondActivity extends AppCompatActivity {
     static int lvlUPMonster;
     static int ptsARepartir;
 
+    ScrollView ScrollViewHistorique;
 
     static int randomMonster=0;
 
@@ -79,6 +87,7 @@ public class SecondActivity extends AppCompatActivity {
 
     Monster currentMonster;
     static UserCaracter currentCaracter;
+    static Spell currentSpell;
 
     //endregion
 
@@ -94,10 +103,9 @@ public class SecondActivity extends AppCompatActivity {
         //create User
         UserCaracter userCaracter;
 
-        userCaracter=new UserCaracter("Pingu","pingucaracter_foreground","spelldepart_foreground",null,0);
+        userCaracter=new UserCaracter("Pingu","pingucaracter_foreground","spelldepart_foreground","pingucaracterdegats_foreground",0);
         userCaracter.setCaracteristic(1,1000,10,400,10,10);
         currentCaracter=userCaracter;
-
 
 
         //create loot
@@ -135,8 +143,11 @@ public class SecondActivity extends AppCompatActivity {
         dic_monsters.put("Monster5",monster);
 
 
+        //Create Spell
 
-
+        Spell spell;
+        spell=new Spell("Spell1","spelldepart_foreground",1.2,3000);
+        currentSpell=spell;
 
 
 
@@ -173,6 +184,12 @@ public class SecondActivity extends AppCompatActivity {
 
         tvEnnemiLVL=findViewById(R.id.tvEnnemiLVL);
 
+        imgCaracter=findViewById(R.id.imgCaracter);
+
+        tvHistorique=findViewById(R.id.tvHistorique);
+        tvHistorique.setMovementMethod(new ScrollingMovementMethod());
+
+        ScrollViewHistorique=findViewById(R.id.ScrollViewHistorique);
 
         //endregion
 
@@ -351,6 +368,7 @@ public class SecondActivity extends AppCompatActivity {
             return;
 
 
+
         imgEnnemiAttack.setImageResource(id);
         imgEnnemiAttack.setVisibility(View.VISIBLE);
 
@@ -364,6 +382,11 @@ public class SecondActivity extends AppCompatActivity {
                 tvDamages2.setText(String.valueOf(Math.round(currentMonster.caracteristic.damages)-currentCaracter.caracteristic.def));
                 tvDamages2.setVisibility(View.VISIBLE);
                 tvMalusDamages2.setVisibility(View.VISIBLE);
+                int id2= getResources().getIdentifier(currentCaracter.CaracterDamagesImg,"mipmap",getPackageName());
+                if(id2<=0)
+                    return;
+
+                imgCaracter.setImageResource(id2);
             }
         }
 
@@ -377,6 +400,10 @@ public class SecondActivity extends AppCompatActivity {
                 tvDamages2.setVisibility(View.INVISIBLE);
                 tvMalusDamages2.setVisibility(View.INVISIBLE);
                 imgEnnemiAttack.setVisibility(View.INVISIBLE);
+                int id= getResources().getIdentifier(currentCaracter.CaracterImg,"mipmap",getPackageName());
+                if(id<=0)
+                    return;
+                imgCaracter.setImageResource(id);
             }
         }, 500);
     }
@@ -472,7 +499,7 @@ public class SecondActivity extends AppCompatActivity {
         int randomDodge =new Random().nextInt(99);
         if(randomDodge <= currentCaracter.caracteristic.dodgeRate - 1){
             tvDamages2.setTextColor(Color.parseColor("#FF0000"));
-            tvCurrentCarHP.setText(String.valueOf(currentCarHP));
+
             isDodge=true;
         }
 
@@ -485,7 +512,7 @@ public class SecondActivity extends AppCompatActivity {
             else
                 defSupThanDamages=true;
         }
-
+        tvCurrentCarHP.setText(String.valueOf(currentCarHP));
 
         setAnimation2(defSupThanDamages,isDodge);
         if(currentCarHP<=0){
@@ -510,8 +537,12 @@ public class SecondActivity extends AppCompatActivity {
     private void setAttack(){
 
         ennemiDead=setCaracterAttack();
-        if(ennemiDead)
-            return;
+        if(ennemiDead){
+
+            tvHistorique.setText(tvHistorique.getText()+"Loot gagné : Peau de Zouple x2\n");
+            ScrollViewHistorique.fullScroll(ScrollView.FOCUS_DOWN);
+
+            return;}
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
@@ -529,9 +560,6 @@ public class SecondActivity extends AppCompatActivity {
 
     private void setXP(){
         xp=xp+currentMonster.xp;
-        //xp=xp+48; //TODOO We should set the xp with the value in the MonsterClass
-
-
         if(xp>=pbXP.getMax())
         {
             xp = xp%pbXP.getMax();
@@ -558,6 +586,12 @@ public class SecondActivity extends AppCompatActivity {
         }, 2000);
 
 
+    }
+    @Override
+    public void onResume(){
+        super.onResume();
+        pbHPCar.setMax(currentCaracter.caracteristic.hp);
+        tvMaxHPOfCaracter.setText(String.valueOf(currentCaracter.caracteristic.hp));
     }
 
 }
