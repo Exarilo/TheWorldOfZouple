@@ -87,7 +87,6 @@ public class SecondActivity extends AppCompatActivity {
 
     Monster currentMonster;
     static UserCaracter currentCaracter;
-    static Spell currentSpell;
 
     //endregion
 
@@ -145,9 +144,7 @@ public class SecondActivity extends AppCompatActivity {
 
         //Create Spell
 
-        Spell spell;
-        spell=new Spell("Spell1","spelldepart_foreground",1.2,3000);
-        currentSpell=spell;
+
 
 
 
@@ -168,6 +165,7 @@ public class SecondActivity extends AppCompatActivity {
         tvCurrentHPEnnemi=findViewById(R.id.tvCurrentEnnemiHP);
         tvLVL=findViewById(R.id.tvLVL);
         tvGold=findViewById(R.id.tvGold);
+        tvGold.setText(String.valueOf(currentCaracter.gold));
 
         imgCarAttack=findViewById(R.id.imgPenguAttack);
         imgLvlUp=findViewById(R.id.imLvlUp);
