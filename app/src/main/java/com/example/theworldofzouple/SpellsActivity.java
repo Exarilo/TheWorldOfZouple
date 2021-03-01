@@ -1,8 +1,12 @@
 package com.example.theworldofzouple;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.content.pm.ActivityInfo;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -28,9 +32,21 @@ public class SpellsActivity extends AppCompatActivity {
     private Button btBuySpell11;
     private Button btBuySpell12;
 
+    boolean AlreadyBuySpell1=false;
+    boolean AlreadyBuySpell2=false;
+    boolean AlreadyBuySpell3=false;
+    boolean AlreadyBuySpell4=false;
+    boolean AlreadyBuySpell5=false;
+    boolean AlreadyBuySpell6=false;
+    boolean AlreadyBuySpell7=false;
+    boolean AlreadyBuySpell8=false;
+    boolean AlreadyBuySpell9=false;
+    boolean AlreadyBuySpell10=false;
+    boolean AlreadyBuySpell11=false;
+    boolean AlreadyBuySpell12=false;
 
     private TextView costSpell1;
-    boolean AlreadyBuySpell1=false;
+
     private Button btClose;
     HashMap<String, Spell> dic_spells = new HashMap<String, Spell>();
     //static Spell currentSpell;
@@ -91,99 +107,104 @@ public class SpellsActivity extends AppCompatActivity {
         });
 
         btBuySpell1.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(View v) {
-                if(!dic_spells.containsKey("Spell1"))
+                if(!dic_spells.containsKey("Spell1")||AlreadyBuySpell1)
                     return;
                 AlreadyBuySpell1=setAchat(dic_spells.get("Spell1"));
+                if(AlreadyBuySpell1){
+                    //int id= getResources().getIdentifier("achetefini_foreground","mipmap",getPackageName());
+                    //btBuySpell1.setBackground(getResources().getDrawable(R.drawable.acheterfini));
+                }
             }
         });
         btBuySpell2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!dic_spells.containsKey("Spell2"))
+                if(!dic_spells.containsKey("Spell2")||AlreadyBuySpell2)
                     return;
-                AlreadyBuySpell1=setAchat(dic_spells.get("Spell2"));
+                AlreadyBuySpell2=setAchat(dic_spells.get("Spell2"));
             }
         });
         btBuySpell3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!dic_spells.containsKey("Spell3"))
+                if(!dic_spells.containsKey("Spell3")||AlreadyBuySpell3)
                     return;
-                AlreadyBuySpell1=setAchat(dic_spells.get("Spell3"));
+                AlreadyBuySpell3=setAchat(dic_spells.get("Spell3"));
             }
         });
         btBuySpell4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!dic_spells.containsKey("Spell4"))
+                if(!dic_spells.containsKey("Spell4")||AlreadyBuySpell4)
                     return;
-                AlreadyBuySpell1=setAchat(dic_spells.get("Spell4"));
+                AlreadyBuySpell4=setAchat(dic_spells.get("Spell4"));
             }
         });
         btBuySpell5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!dic_spells.containsKey("Spell5"))
+                if(!dic_spells.containsKey("Spell5")||AlreadyBuySpell5)
                     return;
-                AlreadyBuySpell1=setAchat(dic_spells.get("Spell5"));
+                AlreadyBuySpell5=setAchat(dic_spells.get("Spell5"));
             }
         });
         btBuySpell6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!dic_spells.containsKey("Spell6"))
+                if(!dic_spells.containsKey("Spell6")||AlreadyBuySpell6)
                     return;
-                AlreadyBuySpell1=setAchat(dic_spells.get("Spell6"));
+                AlreadyBuySpell6=setAchat(dic_spells.get("Spell6"));
             }
         });
         btBuySpell7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!dic_spells.containsKey("Spell7"))
+                if(!dic_spells.containsKey("Spell7")||AlreadyBuySpell7)
                     return;
-                AlreadyBuySpell1=setAchat(dic_spells.get("Spell7"));
+                AlreadyBuySpell7=setAchat(dic_spells.get("Spell7"));
             }
         });
         btBuySpell8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!dic_spells.containsKey("Spell8"))
+                if(!dic_spells.containsKey("Spell8")||AlreadyBuySpell8)
                     return;
-                AlreadyBuySpell1=setAchat(dic_spells.get("Spell8"));
+                AlreadyBuySpell8=setAchat(dic_spells.get("Spell8"));
             }
         });
         btBuySpell9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!dic_spells.containsKey("Spell9"))
+                if(!dic_spells.containsKey("Spell9")||AlreadyBuySpell9)
                     return;
-                AlreadyBuySpell1=setAchat(dic_spells.get("Spell9"));
+                AlreadyBuySpell9=setAchat(dic_spells.get("Spell9"));
             }
         });
         btBuySpell10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!dic_spells.containsKey("Spell10"))
+                if(!dic_spells.containsKey("Spell10")||AlreadyBuySpell10)
                     return;
-                AlreadyBuySpell1=setAchat(dic_spells.get("Spell10"));
+                AlreadyBuySpell10=setAchat(dic_spells.get("Spell10"));
             }
         });
         btBuySpell11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!dic_spells.containsKey("Spell11"))
+                if(!dic_spells.containsKey("Spell11")||AlreadyBuySpell11)
                     return;
-                AlreadyBuySpell1=setAchat(dic_spells.get("Spell11"));
+                AlreadyBuySpell11=setAchat(dic_spells.get("Spell11"));
             }
         });
         btBuySpell12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!dic_spells.containsKey("Spell12"))
+                if(!dic_spells.containsKey("Spell12")||AlreadyBuySpell12)
                     return;
-                AlreadyBuySpell1=setAchat(dic_spells.get("Spell12"));
+                AlreadyBuySpell12=setAchat(dic_spells.get("Spell12"));
             }
         });
 
