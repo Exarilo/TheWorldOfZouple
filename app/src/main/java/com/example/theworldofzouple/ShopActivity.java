@@ -47,7 +47,7 @@ public class ShopActivity extends AppCompatActivity {
         tvGolds=findViewById(R.id.tvGoldsShop);
         tvGolds.setText(String.valueOf(Golds));
 
-        tableLayout=findViewById(R.id.tableLayoutShop);
+        tableLayout=findViewById(R.id.tableLayoutShop); // RETURN NULL
         tab_Armes=findViewById(R.id.tab_Armes);
         tab_Armures=findViewById(R.id.tab_Armures);
         tab_Consommables=findViewById(R.id.tab_Consommables);
