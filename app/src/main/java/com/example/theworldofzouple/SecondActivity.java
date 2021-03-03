@@ -141,6 +141,20 @@ public class SecondActivity extends AppCompatActivity {
         monster.setCaracteristic(6,3500,0,242,0,0);
         dic_monsters.put("Monster5",monster);
 
+        monster=new Monster("Monster6","autruche_foreground","autrucheattack_foreground","autruchedegats_foreground",706,681);
+        monster.setCaracteristic(7,4000,0,326,0,0);
+        dic_monsters.put("Monster6",monster);
+
+        monster=new Monster("Monster7","robot_foreground","robotattack_foreground","robotdegats_foreground",952,952);
+        monster.setCaracteristic(7,4500,0,452,0,0);
+        dic_monsters.put("Monster7",monster);
+
+        monster=new Monster("Monster8","vampire_foreground","vampireattack_foreground","vampiredegats_foreground",1294,1411);
+        monster.setCaracteristic(8,5000,0,598,0,0);
+        dic_monsters.put("Monster8",monster);
+
+
+
 
         //Create Spell
 
@@ -218,8 +232,8 @@ public class SecondActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 int addNewMonster=currentCaracter.caracteristic.lvl/2;
-                if(addNewMonster>=4)
-                    addNewMonster=4;
+                if(addNewMonster>=7)
+                    addNewMonster=7;
                 int newRandomMonster=new Random().nextInt(2+addNewMonster);
                 while (newRandomMonster==randomMonster)
                     newRandomMonster=new Random().nextInt(2+addNewMonster);
@@ -456,8 +470,8 @@ public class SecondActivity extends AppCompatActivity {
             setGold();
             setXP();
             int addNewMonster=currentCaracter.caracteristic.lvl/2;
-            if(addNewMonster>=4)
-                addNewMonster=4;
+            if(addNewMonster>=7)
+                ;
             randomMonster =new Random().nextInt(2+addNewMonster);
             changeMonster("Monster"+String.valueOf(randomMonster));
             resetEnnemiHp();
