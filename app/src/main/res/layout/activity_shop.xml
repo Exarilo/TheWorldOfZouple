@@ -42,17 +42,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.01" />
 
-    <View
-        android:id="@+id/divider2"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="392dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -109,4 +98,61 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:src="@+id/tableLayoutShop"
+        android:layout_width="390dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="315dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.266"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:layout_constraintVertical_bias="0.882"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="@color/design_default_color_secondary_variant"
+        app:tabIndicatorGravity="stretch"
+        app:tabMode="auto">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_Armes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ARMES" />
+
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_Armures"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Armures" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_Consommables"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Consommables" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_Materiaux"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Materiaux" />
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/ShopViewPager"
+        android:layout_width="400dp"
+        android:layout_height="317dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
