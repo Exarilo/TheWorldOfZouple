@@ -569,12 +569,24 @@
             android:layout_marginEnd="34dp"
             android:layout_marginRight="34dp"
 
-            android:scrollbars="vertical"
             android:requiresFadingEdge="vertical"
+            android:scrollbars="vertical"
             android:textColor="@android:color/background_dark"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </ScrollView>
+
+    <Button
+        android:id="@+id/btSuccess"
+        android:layout_width="58dp"
+        android:layout_height="50dp"
+        android:background="@mipmap/succes_foreground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.974"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

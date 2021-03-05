@@ -16,7 +16,13 @@ public class PagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position){
             case 0:
-                return new WeaponScrollingFragment();
+                return new WeaponFragment();
+            case 1:
+                return new ArmorFragment();
+            case 2:
+                return new ConsumableFragment();
+            case 3:
+                return new MaterialFragment();
             default:return null;
         }
 

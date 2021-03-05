@@ -1,7 +1,9 @@
 package com.example.theworldofzouple;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Color;
@@ -14,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.net.URL;
@@ -35,6 +38,9 @@ public class SecondActivity extends AppCompatActivity {
     private Button btCraft;
     private Button btSpells;
     private Button btRunAway;
+    private Button btSuccess;
+
+
 
     private ProgressBar pbHPennemi;
     private ProgressBar pbHPCar;
@@ -170,6 +176,7 @@ public class SecondActivity extends AppCompatActivity {
         btCraft= findViewById(R.id.btCraft);
         btSpells= findViewById(R.id.btSpells);
         btRunAway= findViewById(R.id.btRunAway);
+        btSuccess= findViewById(R.id.btSuccess);
 
         pbHPennemi= findViewById(R.id.pbEnnemiHP);
         pbHPCar=findViewById(R.id.pbCarHP);
@@ -222,6 +229,10 @@ public class SecondActivity extends AppCompatActivity {
 
 
         //region click
+
+
+
+
         btAttack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -242,7 +253,12 @@ public class SecondActivity extends AppCompatActivity {
             }
         });
 
-
+        btSuccess.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                moveToMenuSuccess();
+            }
+        });
         btMenuCaracter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -281,6 +297,11 @@ public class SecondActivity extends AppCompatActivity {
 
         //function call when the user click on "Personnage".
     //region move to other Activity
+
+    private void moveToMenuSuccess(){
+        Intent intent =new Intent(SecondActivity.this,SuccessActivity.class);
+        startActivity(intent);
+    }
 
     private void moveToMenuCaracter(){
         Intent intent =new Intent(SecondActivity.this,CaracterActivity.class);
