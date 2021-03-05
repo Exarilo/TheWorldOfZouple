@@ -26,16 +26,16 @@
         app:layout_constraintVertical_bias="0.414" />
 
     <androidx.appcompat.widget.Toolbar
-        android:translationZ="90dp"
         android:id="@+id/toolbar2"
-        android:layout_width="306dp"
-        android:layout_height="298dp"
+        android:layout_width="364dp"
+        android:layout_height="301dp"
         android:background="@color/design_default_color_background"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
+        android:translationZ="90dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.586" />
@@ -44,14 +44,45 @@
         android:id="@+id/textView34"
         android:layout_width="181dp"
         android:layout_height="17dp"
-        android:translationZ="90dp"
+        android:background="@android:color/transparent"
         android:text="Tuer un total de 10 zouples "
         android:textColor="@color/design_default_color_on_secondary"
         android:textStyle="bold"
+        android:translationZ="90dp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
         app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-        app:layout_constraintHorizontal_bias="0.048"
+        app:layout_constraintHorizontal_bias="0.049"
         app:layout_constraintStart_toStartOf="@+id/toolbar2"
         app:layout_constraintTop_toTopOf="@+id/toolbar2"
-        app:layout_constraintVertical_bias="0.062" />
+        app:layout_constraintVertical_bias="0.095" />
+
+    <ProgressBar
+        android:id="@+id/pbNbZoupleTue"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="94dp"
+        android:layout_height="18dp"
+        android:max="10"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.703"
+        app:layout_constraintStart_toStartOf="@+id/toolbar2"
+        app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintVertical_bias="0.095" />
+
+    <ImageView
+        android:id="@+id/btButinMission1"
+        android:layout_width="74dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="232dp"
+        android:background="@android:color/transparent"
+        android:translationZ="90dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.971"
+        app:layout_constraintStart_toStartOf="@+id/toolbar2"
+        app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@mipmap/butin_foreground" />
 </androidx.constraintlayout.widget.ConstraintLayout>

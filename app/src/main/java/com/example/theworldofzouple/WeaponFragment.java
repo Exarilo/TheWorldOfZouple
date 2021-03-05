@@ -7,6 +7,11 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -53,12 +58,23 @@ public class WeaponFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
+
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_weapon, container, false);
+        View view = inflater.inflate(R.layout.fragment_weapon, container, false);
+        ListView shopListView= view.findViewById(R.id.shopListView);
+        List<Weapon>weaponsList=new ArrayList<>();
+        weaponsList.add(new Weapon("Weapon1","epee1_foreground",100,5000,0));
+        shopListView.setAdapter(new WeaponItemAdapter(getActivity(),weaponsList));
+
+
+        return view;
     }
 }
