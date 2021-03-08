@@ -72,6 +72,16 @@ public class WeaponFragment extends Fragment {
         ListView shopListView= view.findViewById(R.id.shopListView);
         List<Weapon>weaponsList=new ArrayList<>();
         weaponsList.add(new Weapon("Weapon1","epee1_foreground",100,5000,0));
+        weaponsList.add(new Weapon("Weapon2","epee2_foreground",300,10000,0));
+        weaponsList.add(new Weapon("Weapon3","epee3_foreground",500,15000,0));
+        weaponsList.add(new Weapon("Weapon1","epee1_foreground",100,5000,0));
+        weaponsList.add(new Weapon("Weapon1","epee1_foreground",100,5000,0));
+        weaponsList.add(new Weapon("Weapon1","epee1_foreground",100,5000,0));
+        weaponsList.add(new Weapon("Weapon1","epee1_foreground",100,5000,0));
+        weaponsList.add(new Weapon("Weapon1","epee1_foreground",100,5000,0));
+        weaponsList.add(new Weapon("Weapon1","epee1_foreground",100,5000,0));
+        weaponsList.add(new Weapon("Weapon1","epee1_foreground",100,5000,0));
+        weaponsList.add(new Weapon("Weapon1","epee1_foreground",100,5000,0));
         shopListView.setAdapter(new WeaponItemAdapter(getActivity(),weaponsList));
 
 
