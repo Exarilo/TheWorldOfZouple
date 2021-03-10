@@ -27,18 +27,253 @@
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
-        android:layout_width="364dp"
-        android:layout_height="301dp"
+        android:layout_width="359dp"
+        android:layout_height="572dp"
         android:background="@color/design_default_color_background"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         android:translationZ="90dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.586" />
+        app:layout_constraintVertical_bias="0.584" />
+
+    <TextView
+        android:id="@+id/tvGoldDeath"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:text="2500"
+        android:textColor="@color/design_default_color_on_secondary"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.773"
+        app:layout_constraintStart_toStartOf="@+id/toolbar2"
+        app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintVertical_bias="0.506" />
+
+    <ImageView
+        android:id="@+id/btButinMission4"
+        android:layout_width="74dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="240dp"
+        android:layout_marginLeft="240dp"
+        android:background="@android:color/transparent"
+        android:translationZ="90dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+        app:layout_constraintStart_toStartOf="@+id/toolbar2"
+        app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintVertical_bias="0.581"
+        app:srcCompat="@mipmap/butin_foreground" />
+
+    <ProgressBar
+        android:id="@+id/pbNbDeath"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="183dp"
+        android:layout_height="22dp"
+        android:background="@android:color/transparent"
+        android:max="10"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintStart_toStartOf="@+id/toolbar2"
+        app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintVertical_bias="0.585" />
+
+    <TextView
+        android:id="@+id/tvNbDeath"
+        android:layout_width="181dp"
+        android:layout_height="17dp"
+        android:background="@android:color/transparent"
+        android:text="Mourir 5 fois"
+        android:textColor="@color/design_default_color_on_secondary"
+        android:textStyle="bold"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintStart_toStartOf="@+id/toolbar2"
+        app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintVertical_bias="0.531" />
+
+    <TextView
+        android:id="@+id/tvCurrentLvl"
+        android:layout_width="73dp"
+        android:layout_height="20dp"
+        android:background="@android:color/transparent"
+
+        android:text="TextView"
+        android:textColor="#EC6F14"
+        android:textColorHighlight="@color/colorPrimary"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:translationZ="91dp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.076"
+        app:layout_constraintStart_toStartOf="@+id/toolbar2"
+        app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintVertical_bias="0.436" />
+
+    <TextView
+        android:id="@+id/tvCurrentDeath"
+        android:layout_width="73dp"
+        android:layout_height="20dp"
+        android:background="@android:color/transparent"
+
+        android:text="TextView"
+        android:textColor="#EC6F14"
+        android:textColorHighlight="@color/colorPrimary"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:translationZ="91dp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.076"
+        app:layout_constraintStart_toStartOf="@+id/toolbar2"
+        app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintVertical_bias="0.583" />
+
+    <ProgressBar
+        android:id="@+id/pbNbLvl"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="183dp"
+        android:layout_height="22dp"
+        android:background="@android:color/transparent"
+        android:max="10"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="@+id/toolbar2"
+        app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintVertical_bias="0.438" />
+
+    <ImageView
+        android:id="@+id/imgGoldLvl"
+        android:layout_width="29dp"
+        android:layout_height="21dp"
+        android:background="@android:color/transparent"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.863"
+        app:layout_constraintStart_toStartOf="@+id/toolbar2"
+        app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintVertical_bias="0.372"
+        app:srcCompat="@mipmap/zouplopiece_foreground" />
+
+    <ImageView
+        android:id="@+id/imgGoldDeath"
+        android:layout_width="29dp"
+        android:layout_height="21dp"
+        android:background="@android:color/transparent"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.863"
+        app:layout_constraintStart_toStartOf="@+id/toolbar2"
+        app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintVertical_bias="0.508"
+        app:srcCompat="@mipmap/zouplopiece_foreground" />
+
+    <TextView
+        android:id="@+id/tvGoldLvl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:text="2500"
+        android:textColor="@color/design_default_color_on_secondary"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.779"
+        app:layout_constraintStart_toStartOf="@+id/toolbar2"
+        app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintVertical_bias="0.374" />
+
+    <ImageView
+        android:id="@+id/btButinMission3"
+        android:layout_width="74dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="240dp"
+        android:layout_marginLeft="240dp"
+        android:background="@android:color/transparent"
+        android:translationZ="90dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+        app:layout_constraintStart_toStartOf="@+id/toolbar2"
+        app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintVertical_bias="0.424"
+        app:srcCompat="@mipmap/butin_foreground" />
+
+    <TextView
+        android:id="@+id/tvNbLvl"
+        android:layout_width="181dp"
+        android:layout_height="17dp"
+        android:background="@android:color/transparent"
+        android:text="Atteindre le niveau 10"
+        android:textColor="@color/design_default_color_on_secondary"
+        android:textStyle="bold"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.044"
+        app:layout_constraintStart_toStartOf="@+id/toolbar2"
+        app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintVertical_bias="0.369" />
+
+    <ImageView
+        android:id="@+id/imgGoldZouples"
+        android:layout_width="29dp"
+        android:layout_height="21dp"
+        android:background="@android:color/transparent"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.863"
+        app:layout_constraintStart_toStartOf="@+id/toolbar2"
+        app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintVertical_bias="0.047"
+        app:srcCompat="@mipmap/zouplopiece_foreground" />
+
+    <TextView
+        android:id="@+id/tvGoldDamages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:text="500"
+        android:textColor="@color/design_default_color_on_secondary"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.779"
+        app:layout_constraintStart_toStartOf="@+id/toolbar2"
+        app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintVertical_bias="0.198" />
+
+    <TextView
+        android:id="@+id/tvCurrentDamagesSucces"
+        android:layout_width="73dp"
+        android:layout_height="20dp"
+        android:background="@android:color/transparent"
+
+        android:text="TextView"
+        android:textColor="#EC6F14"
+        android:textColorHighlight="@color/colorPrimary"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:translationZ="91dp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.076"
+        app:layout_constraintStart_toStartOf="@+id/toolbar2"
+        app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintVertical_bias="0.268" />
 
     <TextView
         android:id="@+id/tvCurrentNbZouple"
@@ -54,40 +289,40 @@
         android:translationZ="91dp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
         app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-        app:layout_constraintHorizontal_bias="0.68"
+        app:layout_constraintHorizontal_bias="0.076"
         app:layout_constraintStart_toStartOf="@+id/toolbar2"
         app:layout_constraintTop_toTopOf="@+id/toolbar2"
-        app:layout_constraintVertical_bias="0.085" />
+        app:layout_constraintVertical_bias="0.119" />
 
     <ImageView
         android:id="@+id/btButinMission2"
         android:layout_width="74dp"
         android:layout_height="65dp"
-        android:layout_marginStart="284dp"
-        android:layout_marginLeft="284dp"
+        android:layout_marginStart="240dp"
+        android:layout_marginLeft="240dp"
         android:background="@android:color/transparent"
         android:translationZ="90dp"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
         app:layout_constraintStart_toStartOf="@+id/toolbar2"
         app:layout_constraintTop_toTopOf="@+id/toolbar2"
-        app:layout_constraintVertical_bias="0.233"
+        app:layout_constraintVertical_bias="0.224"
         app:srcCompat="@mipmap/butin_foreground" />
 
     <ProgressBar
         android:id="@+id/pbNbDamages"
         style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="183dp"
+        android:layout_height="22dp"
         android:background="@android:color/transparent"
-        android:layout_width="94dp"
-        android:layout_height="18dp"
         android:max="900"
         android:translationZ="90dp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
         app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-        app:layout_constraintHorizontal_bias="0.696"
+        app:layout_constraintHorizontal_bias="0.034"
         app:layout_constraintStart_toStartOf="@+id/toolbar2"
         app:layout_constraintTop_toTopOf="@+id/toolbar2"
-        app:layout_constraintVertical_bias="0.268" />
+        app:layout_constraintVertical_bias="0.265" />
 
     <TextView
         android:id="@+id/tvNbDamages"
@@ -100,10 +335,10 @@
         android:translationZ="90dp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
         app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintHorizontal_bias="0.033"
         app:layout_constraintStart_toStartOf="@+id/toolbar2"
         app:layout_constraintTop_toTopOf="@+id/toolbar2"
-        app:layout_constraintVertical_bias="0.271" />
+        app:layout_constraintVertical_bias="0.205" />
 
     <TextView
         android:id="@+id/tvNbZouple"
@@ -116,39 +351,68 @@
         android:translationZ="90dp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
         app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintHorizontal_bias="0.033"
         app:layout_constraintStart_toStartOf="@+id/toolbar2"
         app:layout_constraintTop_toTopOf="@+id/toolbar2"
-        app:layout_constraintVertical_bias="0.095" />
+        app:layout_constraintVertical_bias="0.066" />
 
     <ProgressBar
         android:id="@+id/pbNbZoupleTue"
         style="@android:style/Widget.ProgressBar.Horizontal"
-        android:layout_width="98dp"
-        android:layout_height="17dp"
+        android:layout_width="183dp"
+        android:layout_height="22dp"
         android:background="@android:color/transparent"
         android:max="10"
         android:translationZ="90dp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
         app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-        app:layout_constraintHorizontal_bias="0.703"
+        app:layout_constraintHorizontal_bias="0.034"
         app:layout_constraintStart_toStartOf="@+id/toolbar2"
         app:layout_constraintTop_toTopOf="@+id/toolbar2"
-        app:layout_constraintVertical_bias="0.095" />
+        app:layout_constraintVertical_bias="0.118" />
 
     <ImageView
         android:id="@+id/btButinMission1"
         android:layout_width="74dp"
         android:layout_height="65dp"
-        android:layout_marginBottom="232dp"
         android:background="@android:color/transparent"
         android:translationZ="90dp"
-        android:visibility="invisible"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
         app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-        app:layout_constraintHorizontal_bias="0.971"
+        app:layout_constraintHorizontal_bias="0.845"
         app:layout_constraintStart_toStartOf="@+id/toolbar2"
         app:layout_constraintTop_toTopOf="@+id/toolbar2"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.072"
         app:srcCompat="@mipmap/butin_foreground" />
+
+    <TextView
+        android:id="@+id/tvGoldZouples"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:text="500"
+        android:textColor="@color/design_default_color_on_secondary"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.779"
+        app:layout_constraintStart_toStartOf="@+id/toolbar2"
+        app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <ImageView
+        android:id="@+id/imgGoldDamages"
+        android:layout_width="29dp"
+        android:layout_height="21dp"
+        android:background="@android:color/transparent"
+        android:translationZ="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.863"
+        app:layout_constraintStart_toStartOf="@+id/toolbar2"
+        app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintVertical_bias="0.199"
+        app:srcCompat="@mipmap/zouplopiece_foreground" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

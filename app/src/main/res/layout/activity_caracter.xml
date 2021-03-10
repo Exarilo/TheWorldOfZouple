@@ -7,6 +7,30 @@
     android:background="#C1B6B6"
     tools:context=".CaracterActivity">
 
+    <TextView
+        android:id="@+id/tvNbMort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="176dp"
+        android:layout_marginLeft="176dp"
+        android:layout_marginTop="684dp"
+        android:text="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginLeft="48dp"
+        android:layout_marginTop="684dp"
+        android:text="Nombre de morts :"
+        android:textColor="@android:color/background_dark"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/btCloseCaracter"
         android:layout_width="52dp"
@@ -202,7 +226,7 @@
         android:layout_marginStart="46dp"
         android:layout_marginLeft="46dp"
         android:layout_marginTop="632dp"
-        android:text="Total de golds accumulés :"
+        android:text="Nombre de ZouploPieces accumulés :"
         android:textColor="@android:color/background_dark"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
@@ -289,8 +313,8 @@
         android:id="@+id/tvGoldEarn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="221dp"
-        android:layout_marginLeft="221dp"
+        android:layout_marginStart="296dp"
+        android:layout_marginLeft="296dp"
         android:layout_marginTop="632dp"
         android:text="0"
         app:layout_constraintStart_toStartOf="parent"

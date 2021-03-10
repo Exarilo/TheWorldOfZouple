@@ -7,7 +7,7 @@
     android:layout_margin="10dp">
 
     <ImageView
-        android:id="@+id/armeImg"
+        android:id="@+id/itemImg"
         android:layout_width="91dp"
         android:layout_height="81dp"
         app:srcCompat="@mipmap/epee1_foreground" />
@@ -26,7 +26,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/costArme"
+            android:id="@+id/cost"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/name"
@@ -37,25 +37,27 @@
 
 
     <RelativeLayout
-        android:layout_width="107dp"
+        android:layout_width="154dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp">
-    <TextView
 
-        android:id="@+id/description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Description"
-        android:textColor="@color/design_default_color_on_secondary"
-        android:textStyle="bold" />
-    <TextView
+        <TextView
 
-        android:id="@+id/listDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="+ 100 dégats"
-        android:layout_below="@+id/description"
-        android:textColor="@color/design_default_color_on_secondary"/>
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description"
+            android:textColor="@color/design_default_color_on_secondary"
+            android:textStyle="bold" />
+
+        <TextView
+
+            android:id="@+id/itemDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/description"
+            android:text="+ 100 dégats"
+            android:textColor="@color/design_default_color_on_secondary" />
     </RelativeLayout>
 
 

@@ -7,6 +7,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,6 +63,17 @@ public class ArmorFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_armor, container, false);
+        View view = inflater.inflate(R.layout.fragment_weapon, container, false);
+        ListView shopListView= view.findViewById(R.id.shopListView);
+        List<Armor> armorsList=new ArrayList<>();
+        armorsList.add(new Armor("Armor1","armor1_foreground",10,1000));
+        armorsList.add(new Armor("Armor2","armor2_foreground",30,2000));
+        armorsList.add(new Armor("Armor3","armor3_foreground",50,5000));
+        armorsList.add(new Armor("Armor4","armor4_foreground",100,10000));
+
+
+
+        shopListView.setAdapter(new ArmorItemAdapter(getActivity(),armorsList));
+        return view;
     }
 }

@@ -83,6 +83,7 @@ public class SecondActivity extends AppCompatActivity {
     static int nbGolds;
     static int lvlUPMonster;
     static int ptsARepartir;
+    static int nbDeath=0;
 
     ScrollView ScrollViewHistorique;
 
@@ -108,7 +109,7 @@ public class SecondActivity extends AppCompatActivity {
         //create User
         UserCaracter userCaracter;
 
-        userCaracter=new UserCaracter("Pingu","pingucaracter_foreground","spelldepart_foreground","pingucaracterdegats_foreground",0);
+        userCaracter=new UserCaracter("Pingu","pingucaracter_foreground","spelldepart_foreground","pingucaracterdegats_foreground",140000);
         userCaracter.setCaracteristic(1,1000,10,400,10,10);
         currentCaracter=userCaracter;
 
@@ -124,7 +125,7 @@ public class SecondActivity extends AppCompatActivity {
 
         Monster monster;
         monster=new Monster("Monster0","larve_foreground","larveattack_foreground","larvedegats_foreground",49,50);
-        monster.setCaracteristic(1,1000,0,40,0,0);
+        monster.setCaracteristic(1,1000,0,4000,0,0);
         dic_monsters.put("Monster0",monster);
 
         monster=new Monster("Monster1","souris_foreground","sourisattack_foreground","sourisdegats_foreground",62,100);
@@ -511,6 +512,7 @@ public class SecondActivity extends AppCompatActivity {
 
         int Malus= Integer.parseInt(tvGold.getText().toString());
         Malus=Malus/2;
+        nbDeath++;
 
         //gold=gold-Malus;
         //tvGold.setText(String.valueOf(Malus));
@@ -624,6 +626,7 @@ public class SecondActivity extends AppCompatActivity {
     public void onResume(){
         super.onResume();
         pbHPCar.setMax(currentCaracter.caracteristic.hp);
+        tvGold.setText(String.valueOf(currentCaracter.gold));
         tvMaxHPOfCaracter.setText(String.valueOf(currentCaracter.caracteristic.hp));
     }
 

@@ -71,20 +71,22 @@ public class WeaponFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_weapon, container, false);
         ListView shopListView= view.findViewById(R.id.shopListView);
         List<Weapon>weaponsList=new ArrayList<>();
-        weaponsList.add(new Weapon("Weapon1","epee1_foreground",100,5000,0));
-        weaponsList.add(new Weapon("Weapon2","epee2_foreground",300,10000,0));
-        weaponsList.add(new Weapon("Weapon3","epee3_foreground",500,15000,0));
-        weaponsList.add(new Weapon("Weapon1","epee1_foreground",100,5000,0));
-        weaponsList.add(new Weapon("Weapon1","epee1_foreground",100,5000,0));
-        weaponsList.add(new Weapon("Weapon1","epee1_foreground",100,5000,0));
-        weaponsList.add(new Weapon("Weapon1","epee1_foreground",100,5000,0));
-        weaponsList.add(new Weapon("Weapon1","epee1_foreground",100,5000,0));
-        weaponsList.add(new Weapon("Weapon1","epee1_foreground",100,5000,0));
-        weaponsList.add(new Weapon("Weapon1","epee1_foreground",100,5000,0));
-        weaponsList.add(new Weapon("Weapon1","epee1_foreground",100,5000,0));
+        weaponsList.add(new Weapon("Cure dent","curedent_foreground",100,1000,0));
+        weaponsList.add(new Weapon("Baguette de pain","baguette_foreground",200,2000,0));
+        weaponsList.add(new Weapon("Canne a pêche","canne_foreground",300,4000,0));
+        weaponsList.add(new Weapon("Hand spinner","handspinner_foreground",350,5000,0));
+        weaponsList.add(new Weapon("Shuriken","shuriken_foreground",450,8000,0));
+        weaponsList.add(new Weapon("Dagues du scorpion","dagues1_foreground",750,14000,0));
+        weaponsList.add(new Weapon("Epee basique","epee1_foreground",750,18000,3));
+        weaponsList.add(new Weapon("Epee rafiné","epee2_foreground",900,35000,5));
+        weaponsList.add(new Weapon("Epee du tueur de zouples","epee3_foreground",1550,78000,5));
+        weaponsList.add(new Weapon("Katana en ambre","katana1_foreground",1550,120000,10));
+        weaponsList.add(new Weapon("Katana antique","katana2_foreground",2200,210000,10));
+        weaponsList.add(new Weapon("Katana spirituel","katana3_foreground",2420,390000,20));
+
+
+
         shopListView.setAdapter(new WeaponItemAdapter(getActivity(),weaponsList));
-
-
         return view;
     }
 }

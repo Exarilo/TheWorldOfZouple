@@ -1,15 +1,13 @@
 package com.example.theworldofzouple;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AlertDialog;
 
 import java.util.List;
 
@@ -42,6 +40,8 @@ public class WeaponItemAdapter extends BaseAdapter{
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
+
+
         view=inflater.inflate(R.layout.adapter_item,null);
         Weapon currentItem =getItem(i);
         String itemName = currentItem.getName();
@@ -49,13 +49,29 @@ public class WeaponItemAdapter extends BaseAdapter{
         int itemCost=currentItem.getCost();
         int itemCritRateBonus = currentItem.getCritRateBonus();
         int itemDamagesBonus= currentItem.getDamagesBonus();
-        ImageView armeImg = view.findViewById(R.id.armeImg);
+
+
+        TextView itemNameView = view.findViewById(R.id.name);
+        itemNameView.setText(itemName);
+
+        TextView itemCostView = view.findViewById(R.id.cost);
+        itemCostView.setText(String.valueOf(itemCost));
+
+        TextView itemDescriptionView = view.findViewById(R.id.itemDescription);
+        if(itemCritRateBonus!=0)
+            itemDescriptionView.setText("+ "+String.valueOf(itemDamagesBonus)+" degats\n+ "+String.valueOf(itemCritRateBonus)+"% Taux de critique");
+        else
+            itemDescriptionView.setText("+ "+String.valueOf(itemDamagesBonus)+" degats");
+
+        ImageView WeaponImg = view.findViewById(R.id.itemImg);
+        int res = context.getResources().getIdentifier(itemImg, "mipmap", context.getPackageName());
+        WeaponImg.setImageResource(res);
 
 
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                //Toast.makeText(context,"salut",Toast.LENGTH_LONG);
             }
         });
 

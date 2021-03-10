@@ -23,6 +23,7 @@ public class CaracterActivity extends AppCompatActivity {
     private TextView CaracterTvCritRate;
     private TextView CaracterTvDodgeRate;
     private TextView tvPtsARepartir;
+    private TextView tvNbMort;
 
     private Button btUpgradeHP;
     private Button btUpgradeDef;
@@ -60,7 +61,7 @@ public class CaracterActivity extends AppCompatActivity {
         CaracterTvCritRate=findViewById(R.id.CaracterTvCritRate);
         CaracterTvDodgeRate=findViewById(R.id.CaracterTvDodgeRate);
         tvPtsARepartir=findViewById(R.id.tvPtsARepartir);
-
+        tvNbMort=findViewById(R.id.tvNbMort);
 
         btUpgradeHP=findViewById(R.id.btUpgradeHP);
         btUpgradeDef=findViewById(R.id.btUpgradeDef);
@@ -80,6 +81,7 @@ public class CaracterActivity extends AppCompatActivity {
         tvPtsARepartir.setText(String.valueOf(SecondActivity.ptsARepartir));
         showPts();
 
+        tvNbMort.setText(String.valueOf(SecondActivity.nbDeath));
         btCloseCaracter=findViewById(R.id.btCloseCaracter);
 
         btCloseCaracter.setOnClickListener(new View.OnClickListener() {
