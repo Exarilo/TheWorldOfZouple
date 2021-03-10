@@ -66,10 +66,18 @@ public class ArmorFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_weapon, container, false);
         ListView shopListView= view.findViewById(R.id.shopListView);
         List<Armor> armorsList=new ArrayList<>();
-        armorsList.add(new Armor("Armor1","armor1_foreground",10,1000));
-        armorsList.add(new Armor("Armor2","armor2_foreground",30,2000));
-        armorsList.add(new Armor("Armor3","armor3_foreground",50,5000));
-        armorsList.add(new Armor("Armor4","armor4_foreground",100,10000));
+        armorsList.add(new Armor("Armure du paysan","armor1_foreground",10,1000));
+        armorsList.add(new Armor("Armure du débutant","armor2_foreground",30,2000));
+        armorsList.add(new Armor("Cotte de maille","armor3_foreground",50,5000));
+        armorsList.add(new Armor("cotte de maille amelioré","armor4_foreground",80,10000));
+        armorsList.add(new Armor("Cuirasse du débutant","armor5_foreground",120,30000));
+        armorsList.add(new Armor("Cuirasse du chevalier","armor6_foreground",160,50000));
+        armorsList.add(new Armor("Armure du chef de guerre","armor7_foreground",250,95000));
+        armorsList.add(new Armor("Armure du roi de guerre","armor8_foreground",300,130000));
+        armorsList.add(new Armor("Armure suprême","armor9_foreground",450,210000));
+        armorsList.add(new Armor("Armure divine","armor10_foreground",570,380000));
+        armorsList.add(new Armor("Armure de l'apprentie tueur de Zouple","armor11_foreground",780,500000));
+        armorsList.add(new Armor("Armure du divin tueur de Zouple","armor12_foreground",1200,1000000));
 
 
 

@@ -7,6 +7,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -53,12 +57,26 @@ public class ConsumableFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_consumable, container, false);
+
+
+        View view = inflater.inflate(R.layout.fragment_weapon, container, false);
+        ListView shopListView= view.findViewById(R.id.shopListView);
+        List<Consumable> consumablesList=new ArrayList<>();
+        consumablesList.add(new Consumable("Petite potion de soin","potion100_foreground",100,100,0));
+        consumablesList.add(new Consumable("Moyenne potion de soin","potion200_foreground",100,200,0));
+        consumablesList.add(new Consumable("Grande potion de soin","potion500_foreground",100,500,0));
+        consumablesList.add(new Consumable("Gigantesque potion de soin","potion1000_foreground",100,1000,0));
+        consumablesList.add(new Consumable("Parchemin de caractéristiques","parchemincaracteristique_foreground",0,1000,5));
+
+
+        shopListView.setAdapter(new ConsumableItemAdapter(getActivity(),consumablesList));
+        return view;
     }
 }

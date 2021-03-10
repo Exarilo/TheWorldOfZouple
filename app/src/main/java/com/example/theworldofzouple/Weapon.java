@@ -41,8 +41,8 @@ public class Weapon {
         this.name = name;
     }
 
-    public void setWeaponImg(String spellImg) {
-        this.weaponImg = spellImg;
+    public void setWeaponImg(String weaponImg) {
+        this.weaponImg = weaponImg;
     }
 
     public void setRatioDamagesBonus(int ratioDamagesBonus) {

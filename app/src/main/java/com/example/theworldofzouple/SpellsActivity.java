@@ -32,18 +32,18 @@ public class SpellsActivity extends AppCompatActivity {
     private Button btBuySpell11;
     private Button btBuySpell12;
 
-    boolean AlreadyBuySpell1=false;
-    boolean AlreadyBuySpell2=false;
-    boolean AlreadyBuySpell3=false;
-    boolean AlreadyBuySpell4=false;
-    boolean AlreadyBuySpell5=false;
-    boolean AlreadyBuySpell6=false;
-    boolean AlreadyBuySpell7=false;
-    boolean AlreadyBuySpell8=false;
-    boolean AlreadyBuySpell9=false;
-    boolean AlreadyBuySpell10=false;
-    boolean AlreadyBuySpell11=false;
-    boolean AlreadyBuySpell12=false;
+    static boolean AlreadyBuySpell1=false;
+    static boolean AlreadyBuySpell2=false;
+    static boolean AlreadyBuySpell3=false;
+    static boolean AlreadyBuySpell4=false;
+    static boolean AlreadyBuySpell5=false;
+    static boolean AlreadyBuySpell6=false;
+    static boolean AlreadyBuySpell7=false;
+    static boolean AlreadyBuySpell8=false;
+    static boolean AlreadyBuySpell9=false;
+    static boolean AlreadyBuySpell10=false;
+    static boolean AlreadyBuySpell11=false;
+    static boolean AlreadyBuySpell12=false;
 
     private TextView costSpell1;
 
@@ -85,6 +85,18 @@ public class SpellsActivity extends AppCompatActivity {
         btBuySpell11= findViewById(R.id.btBuySpell11);
         btBuySpell12= findViewById(R.id.btBuySpell12);
 
+        initialiseBtImg(AlreadyBuySpell1,btBuySpell1);
+        initialiseBtImg(AlreadyBuySpell2,btBuySpell2);
+        initialiseBtImg(AlreadyBuySpell3,btBuySpell3);
+        initialiseBtImg(AlreadyBuySpell4,btBuySpell4);
+        initialiseBtImg(AlreadyBuySpell5,btBuySpell5);
+        initialiseBtImg(AlreadyBuySpell6,btBuySpell6);
+        initialiseBtImg(AlreadyBuySpell7,btBuySpell7);
+        initialiseBtImg(AlreadyBuySpell8,btBuySpell8);
+        initialiseBtImg(AlreadyBuySpell9,btBuySpell9);
+        initialiseBtImg(AlreadyBuySpell10,btBuySpell10);
+        initialiseBtImg(AlreadyBuySpell11,btBuySpell11);
+        initialiseBtImg(AlreadyBuySpell12,btBuySpell12);
 
         dic_spells.put("Spell1",new Spell("Spell1","boulefeu2_foreground",1.2,1500));
         dic_spells.put("Spell2",new Spell("Spell2","attackcaracter_foreground",1.4,5000));
@@ -113,10 +125,7 @@ public class SpellsActivity extends AppCompatActivity {
                 if(!dic_spells.containsKey("Spell1")||AlreadyBuySpell1)
                     return;
                 AlreadyBuySpell1=setAchat(dic_spells.get("Spell1"));
-                if(AlreadyBuySpell1){
-                    //int id= getResources().getIdentifier("achetefini_foreground","mipmap",getPackageName());
-                    //btBuySpell1.setBackground(getResources().getDrawable(R.drawable.acheterfini));
-                }
+                initialiseBtImg(AlreadyBuySpell1,btBuySpell1);
             }
         });
         btBuySpell2.setOnClickListener(new View.OnClickListener() {
@@ -125,6 +134,7 @@ public class SpellsActivity extends AppCompatActivity {
                 if(!dic_spells.containsKey("Spell2")||AlreadyBuySpell2)
                     return;
                 AlreadyBuySpell2=setAchat(dic_spells.get("Spell2"));
+                initialiseBtImg(AlreadyBuySpell2,btBuySpell2);
             }
         });
         btBuySpell3.setOnClickListener(new View.OnClickListener() {
@@ -133,6 +143,7 @@ public class SpellsActivity extends AppCompatActivity {
                 if(!dic_spells.containsKey("Spell3")||AlreadyBuySpell3)
                     return;
                 AlreadyBuySpell3=setAchat(dic_spells.get("Spell3"));
+                initialiseBtImg(AlreadyBuySpell3,btBuySpell3);
             }
         });
         btBuySpell4.setOnClickListener(new View.OnClickListener() {
@@ -141,6 +152,7 @@ public class SpellsActivity extends AppCompatActivity {
                 if(!dic_spells.containsKey("Spell4")||AlreadyBuySpell4)
                     return;
                 AlreadyBuySpell4=setAchat(dic_spells.get("Spell4"));
+                initialiseBtImg(AlreadyBuySpell4,btBuySpell4);
             }
         });
         btBuySpell5.setOnClickListener(new View.OnClickListener() {
@@ -149,6 +161,7 @@ public class SpellsActivity extends AppCompatActivity {
                 if(!dic_spells.containsKey("Spell5")||AlreadyBuySpell5)
                     return;
                 AlreadyBuySpell5=setAchat(dic_spells.get("Spell5"));
+                initialiseBtImg(AlreadyBuySpell5,btBuySpell5);
             }
         });
         btBuySpell6.setOnClickListener(new View.OnClickListener() {
@@ -157,6 +170,7 @@ public class SpellsActivity extends AppCompatActivity {
                 if(!dic_spells.containsKey("Spell6")||AlreadyBuySpell6)
                     return;
                 AlreadyBuySpell6=setAchat(dic_spells.get("Spell6"));
+                initialiseBtImg(AlreadyBuySpell6,btBuySpell6);
             }
         });
         btBuySpell7.setOnClickListener(new View.OnClickListener() {
@@ -165,6 +179,7 @@ public class SpellsActivity extends AppCompatActivity {
                 if(!dic_spells.containsKey("Spell7")||AlreadyBuySpell7)
                     return;
                 AlreadyBuySpell7=setAchat(dic_spells.get("Spell7"));
+                initialiseBtImg(AlreadyBuySpell7,btBuySpell7);
             }
         });
         btBuySpell8.setOnClickListener(new View.OnClickListener() {
@@ -173,6 +188,7 @@ public class SpellsActivity extends AppCompatActivity {
                 if(!dic_spells.containsKey("Spell8")||AlreadyBuySpell8)
                     return;
                 AlreadyBuySpell8=setAchat(dic_spells.get("Spell8"));
+                initialiseBtImg(AlreadyBuySpell8,btBuySpell8);
             }
         });
         btBuySpell9.setOnClickListener(new View.OnClickListener() {
@@ -181,6 +197,7 @@ public class SpellsActivity extends AppCompatActivity {
                 if(!dic_spells.containsKey("Spell9")||AlreadyBuySpell9)
                     return;
                 AlreadyBuySpell9=setAchat(dic_spells.get("Spell9"));
+                initialiseBtImg(AlreadyBuySpell9,btBuySpell9);
             }
         });
         btBuySpell10.setOnClickListener(new View.OnClickListener() {
@@ -189,6 +206,7 @@ public class SpellsActivity extends AppCompatActivity {
                 if(!dic_spells.containsKey("Spell10")||AlreadyBuySpell10)
                     return;
                 AlreadyBuySpell10=setAchat(dic_spells.get("Spell10"));
+                initialiseBtImg(AlreadyBuySpell10,btBuySpell10);
             }
         });
         btBuySpell11.setOnClickListener(new View.OnClickListener() {
@@ -197,6 +215,7 @@ public class SpellsActivity extends AppCompatActivity {
                 if(!dic_spells.containsKey("Spell11")||AlreadyBuySpell11)
                     return;
                 AlreadyBuySpell11=setAchat(dic_spells.get("Spell11"));
+                initialiseBtImg(AlreadyBuySpell11,btBuySpell11);
             }
         });
         btBuySpell12.setOnClickListener(new View.OnClickListener() {
@@ -205,6 +224,7 @@ public class SpellsActivity extends AppCompatActivity {
                 if(!dic_spells.containsKey("Spell12")||AlreadyBuySpell12)
                     return;
                 AlreadyBuySpell12=setAchat(dic_spells.get("Spell12"));
+                initialiseBtImg(AlreadyBuySpell12,btBuySpell12);
             }
         });
 
@@ -254,5 +274,13 @@ public class SpellsActivity extends AppCompatActivity {
             SecondActivity.currentCaracter.caracteristic.damages/=dic_spells.get("Spell11").ratioDamagesBonus;
         else if(SecondActivity.currentCaracter.CaracterAttackImg==dic_spells.get("Spell12").spellImg)
             SecondActivity.currentCaracter.caracteristic.damages/=dic_spells.get("Spell12").ratioDamagesBonus;
+    }
+
+    public void initialiseBtImg(boolean bool,Button bt){
+
+        if(bool==true){
+            int res = getResources().getIdentifier("achetefini_foreground", "mipmap", getPackageName());
+            bt.setBackgroundResource(res);
+        }
     }
 }

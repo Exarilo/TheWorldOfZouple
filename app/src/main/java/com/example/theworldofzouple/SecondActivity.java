@@ -125,7 +125,7 @@ public class SecondActivity extends AppCompatActivity {
 
         Monster monster;
         monster=new Monster("Monster0","larve_foreground","larveattack_foreground","larvedegats_foreground",49,50);
-        monster.setCaracteristic(1,1000,0,4000,0,0);
+        monster.setCaracteristic(1,1000,0,40,0,0);
         dic_monsters.put("Monster0",monster);
 
         monster=new Monster("Monster1","souris_foreground","sourisattack_foreground","sourisdegats_foreground",62,100);
@@ -260,6 +260,7 @@ public class SecondActivity extends AppCompatActivity {
                 moveToMenuSuccess();
             }
         });
+
         btMenuCaracter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
