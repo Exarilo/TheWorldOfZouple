@@ -16,6 +16,7 @@ public class ArmorItemAdapter extends BaseAdapter{
     private List<Armor> armorList;
     private LayoutInflater inflater;
 
+
     public ArmorItemAdapter(Context context, List<Armor>armorList){
         this.context=context;
         this.armorList=armorList;

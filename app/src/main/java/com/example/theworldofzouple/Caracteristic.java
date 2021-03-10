@@ -12,6 +12,7 @@ public class Caracteristic {
     //endregion
 
 
+
     //region Constructor
     public Caracteristic(){
 

@@ -25,6 +25,7 @@ public class CaracterActivity extends AppCompatActivity {
     private TextView tvPtsARepartir;
     private TextView tvNbMort;
 
+
     private Button btUpgradeHP;
     private Button btUpgradeDef;
     private Button btUpgradeDamages;

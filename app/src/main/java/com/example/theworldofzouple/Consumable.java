@@ -13,6 +13,7 @@ public class Consumable {
         this.healthBonus = healthBonus;
         this.cost = cost;
         this.ptsCara=ptsCara;
+
     }
 
     //region getter

@@ -23,6 +23,7 @@ public class WeaponItemAdapter extends BaseAdapter{
     }
 
 
+
     @Override
     public int getCount() {
         return weaponList.size();

@@ -15,6 +15,7 @@ public class Weapon {
         this.critRateBonus=critRateBonus;
     }
 
+
     //region getter
     public String getName() {
         return name;

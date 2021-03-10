@@ -42,6 +42,7 @@ public class SecondActivity extends AppCompatActivity {
 
 
 
+
     private ProgressBar pbHPennemi;
     private ProgressBar pbHPCar;
     private ProgressBar pbXP;

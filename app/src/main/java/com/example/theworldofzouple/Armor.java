@@ -12,6 +12,7 @@ public class Armor {
         this.armorBonus=armorBonus;
         this.cost=cost;
 
+
     }
 
     //region getter

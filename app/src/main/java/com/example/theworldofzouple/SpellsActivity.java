@@ -32,6 +32,7 @@ public class SpellsActivity extends AppCompatActivity {
     private Button btBuySpell11;
     private Button btBuySpell12;
 
+
     static boolean AlreadyBuySpell1=false;
     static boolean AlreadyBuySpell2=false;
     static boolean AlreadyBuySpell3=false;

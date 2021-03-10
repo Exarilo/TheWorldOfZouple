@@ -19,8 +19,6 @@ public class SuccessActivity extends AppCompatActivity {
     private ImageView imgGoldDamages;
     private ImageView imgGoldZouples;
 
-
-
     private ProgressBar pbNbZoupleTue;
     private ProgressBar pbNbDamages;
 
