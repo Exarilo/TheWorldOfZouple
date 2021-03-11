@@ -74,7 +74,8 @@ public class Caracteristic {
     }
 
     public void setCritRate(int critRate) {
-        this.critRate = critRate;
+        if(critRate<=100)
+            this.critRate = critRate;
     }
 
     public void setDodgeRate(int dodgeRate) {

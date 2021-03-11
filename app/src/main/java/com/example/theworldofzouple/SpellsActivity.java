@@ -125,7 +125,8 @@ public class SpellsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(!dic_spells.containsKey("Spell1")||AlreadyBuySpell1)
                     return;
-                AlreadyBuySpell1=setAchat(dic_spells.get("Spell1"));
+                Spell CurrentSpell = dic_spells.get("Spell1");
+                AlreadyBuySpell1=setAchat(CurrentSpell);
                 initialiseBtImg(AlreadyBuySpell1,btBuySpell1);
             }
         });
@@ -244,6 +245,7 @@ public class SpellsActivity extends AppCompatActivity {
             SecondActivity.tvGold.setText(String.valueOf(SecondActivity.currentCaracter.gold));
             SecondActivity.currentCaracter.caracteristic.damages*=spell.ratioDamagesBonus;
             SecondActivity.currentCaracter.setCaracterAttackImg(spell.spellImg);
+            SecondActivity.currentCaracter.inventory.addSpell(spell);
             return true;
 
         }

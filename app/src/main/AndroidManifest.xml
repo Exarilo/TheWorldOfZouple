@@ -19,8 +19,7 @@
             android:name=".CraftActivity"
             android:theme="@style/AppTheme.SlideActivityTheme" />
         <activity
-            android:name=".ShopActivity"
-            android:theme="@style/AppTheme.SlideActivityTheme" />
+            android:name=".ShopActivity" />
         <activity
             android:name=".InventoryActivity"
             android:theme="@style/AppTheme.SlideActivityTheme" />

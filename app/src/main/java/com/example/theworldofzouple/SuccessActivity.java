@@ -43,7 +43,7 @@ public class SuccessActivity extends AppCompatActivity {
     ImageView imgGoldDeath;
     ImageView btButinMission4;
 
-    private static int newNbZoupleTue=SecondActivity.nbZoupleTue;
+
     private static int nbZouplePourMission=10;
     private static int nbDamagesPourMission=900;
     private static int nbLvlPourMission=10;
@@ -79,7 +79,7 @@ public class SuccessActivity extends AppCompatActivity {
         btButinMission2=findViewById(R.id.btButinMission2);
         pbNbDamages=findViewById(R.id.pbNbDamages);
         pbNbDamages.setMax(nbDamagesPourMission);
-        pbNbZoupleTue.setProgress(SecondActivity.nbZoupleTue);
+        pbNbZoupleTue.setProgress(SecondActivity.NbZoupleTueSuccess);
 
 
         tvNbLvl=findViewById(R.id.tvNbLvl);
@@ -110,13 +110,10 @@ public class SuccessActivity extends AppCompatActivity {
         pbNbDeath.setProgress(SecondActivity.nbDeath);
         pbNbDeath.setMax(nbDeathPourMission);
 
-        if(pbNbZoupleTue.getMax()>10)
-            pbNbZoupleTue.setProgress(nbZoupleTue-(nbZouplePourMission/2));
-        else
-            pbNbZoupleTue.setProgress(nbZoupleTue);
+
             //pbNbZoupleTue.setProgress(nbZoupleTue + nbZouplePourMission - (nbZouplePourMission - nbZoupleTue));
 
-        tvCurrentNbZouple.setText(String.valueOf(pbNbZoupleTue.getProgress())+" /"+String.valueOf(pbNbZoupleTue.getMax()));
+        tvCurrentNbZouple.setText(String.valueOf(pbNbZoupleTue.getProgress())+" /"+String.valueOf(nbZouplePourMission));
         tvCurrentDamagesSucces.setText(String.valueOf((int)SecondActivity.currentCaracter.caracteristic.damages)+" /"+String.valueOf(pbNbDamages.getMax()));
         tvCurrentLvl.setText(String.valueOf(SecondActivity.currentCaracter.caracteristic.lvl)+" /"+String.valueOf(pbNbLvl.getMax()));
         tvCurrentDeath.setText(String.valueOf(SecondActivity.nbDeath)+" /"+String.valueOf(pbNbDeath.getMax()));
@@ -171,8 +168,8 @@ public class SuccessActivity extends AppCompatActivity {
 
 
         //pbNbZoupleTue.setProgress(nbZoupleTue+nbZouplePourMission-(nbZouplePourMission-nbZoupleTue));
-        newNbZoupleTue=nbZoupleTue%nbZouplePourMission;
-        pbNbZoupleTue.setProgress(newNbZoupleTue);
+        SecondActivity.NbZoupleTueSuccess-=nbZouplePourMission;
+        pbNbZoupleTue.setProgress(SecondActivity.NbZoupleTueSuccess);
         nbZouplePourMission*=2;
         pbNbZoupleTue.setMax(nbZouplePourMission);
         tvNbZouple.setText("Tuer un total de "+String.valueOf(pbNbZoupleTue.getMax()+" zouples"));
@@ -212,7 +209,7 @@ public class SuccessActivity extends AppCompatActivity {
         nbDeathPourMission+=5;
         pbNbDeath.setMax(nbDeathPourMission);
         tvCurrentDeath.setText(String.valueOf(SecondActivity.nbDeath)+" /"+String.valueOf(pbNbDeath.getMax()));
-        tvNbDeath.setText("Mourir "+String.valueOf(pbNbDeath.getMax()+"fois"));
+        tvNbDeath.setText("Mourir "+String.valueOf(pbNbDeath.getMax()+" fois"));
         SecondActivity.currentCaracter.gold+=Integer.parseInt(tvGoldDeath.getText().toString());
         goldRewardDeath*=3;
         tvGoldDeath.setText(String.valueOf(goldRewardDeath));

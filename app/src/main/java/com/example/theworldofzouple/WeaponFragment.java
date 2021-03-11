@@ -1,5 +1,6 @@
 package com.example.theworldofzouple;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,8 +8,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,6 +22,7 @@ import java.util.List;
  * create an instance of this fragment.
  */
 public class WeaponFragment extends Fragment {
+    ListView shopListView;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -88,6 +92,14 @@ public class WeaponFragment extends Fragment {
 
 
         shopListView.setAdapter(new WeaponItemAdapter(getActivity(),weaponsList));
+        shopListView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            @Override public void onItemClick(AdapterView<?> arg0, View arg1,int position, long arg3)
+            {
+                Toast.makeText(getContext(), "Stop Clicking me", Toast.LENGTH_SHORT).show();
+            }
+        });
         return view;
     }
+    
 }

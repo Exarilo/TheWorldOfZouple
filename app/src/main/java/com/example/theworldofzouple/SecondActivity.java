@@ -85,6 +85,7 @@ public class SecondActivity extends AppCompatActivity {
     static int lvlUPMonster;
     static int ptsARepartir;
     static int nbDeath=0;
+    static int NbZoupleTueSuccess=0;
 
     ScrollView ScrollViewHistorique;
 
@@ -111,7 +112,7 @@ public class SecondActivity extends AppCompatActivity {
         UserCaracter userCaracter;
 
         userCaracter=new UserCaracter("Pingu","pingucaracter_foreground","spelldepart_foreground","pingucaracterdegats_foreground",140000);
-        userCaracter.setCaracteristic(1,1000,10,400,10,10);
+        userCaracter.setCaracteristic(1,1000,10,400,99,48);
         currentCaracter=userCaracter;
 
 
@@ -491,6 +492,7 @@ public class SecondActivity extends AppCompatActivity {
 
         if(currentEnnemiHP<=0){
             nbZoupleTue++;
+            NbZoupleTueSuccess++;
             setGold();
             setXP();
             int addNewMonster=currentCaracter.caracteristic.lvl/2;

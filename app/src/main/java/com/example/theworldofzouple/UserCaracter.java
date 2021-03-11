@@ -8,6 +8,7 @@ public class UserCaracter {
     String CaracterAttackImg;
     String CaracterDamagesImg;
     Caracteristic caracteristic;
+    InventoryObject inventory;
     int gold;
     //int xp;
 
@@ -21,7 +22,8 @@ public class UserCaracter {
         this.CaracterDamagesImg=CaracterDamagesImg;
         this.gold=gold;
         this.caracteristic=new Caracteristic();
-        //this.xp=xp;
+        this.inventory=new InventoryObject();
+
     }
 
     //region constructor
@@ -77,13 +79,15 @@ public class UserCaracter {
 
 
     //region Methode
-    public void setCaracteristic(int lvl,int hp,int def,int damages, int critRate,int dodgeRate ){
+    public void setCaracteristic(int lvl,int hp,int def,double damages, int critRate,int dodgeRate ){
         caracteristic.lvl=lvl;
         caracteristic.hp=hp;
         caracteristic.def=def;
         caracteristic.damages=damages;
-        caracteristic.critRate=critRate;
-        caracteristic.dodgeRate=dodgeRate;
+        if(critRate<=100)
+            caracteristic.critRate=critRate;
+        if(dodgeRate<=50)
+            caracteristic.dodgeRate=dodgeRate;
     }
     //endregion
 }

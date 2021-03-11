@@ -67,7 +67,7 @@ public class ConsumableFragment extends Fragment {
         // Inflate the layout for this fragment
 
 
-        View view = inflater.inflate(R.layout.fragment_weapon, container, false);
+        View view = inflater.inflate(R.layout.fragment_consumable, container, false);
         ListView shopListView= view.findViewById(R.id.shopListView);
         List<Consumable> consumablesList=new ArrayList<>();
         consumablesList.add(new Consumable("Petite potion de soin","potion100_foreground",100,100,0));

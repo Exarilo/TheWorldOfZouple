@@ -155,6 +155,9 @@ public class CaracterActivity extends AppCompatActivity {
             btUpgradeDodgeRate.setVisibility(View.INVISIBLE);
         }
 
+
+
+
     }
     public void Upgrade(String Tag){
         if(SecondActivity.ptsARepartir<=0)
@@ -179,16 +182,24 @@ public class CaracterActivity extends AppCompatActivity {
         }
         else if(Tag.compareToIgnoreCase( "upgradeCritRate")==0)
         {
+            SecondActivity.currentCaracter.setCaracteristic(SecondActivity.currentCaracter.caracteristic.lvl,SecondActivity.currentCaracter.caracteristic.hp,SecondActivity.currentCaracter.caracteristic.def,SecondActivity.currentCaracter.caracteristic.damages,SecondActivity.currentCaracter.caracteristic.critRate+1,SecondActivity.currentCaracter.caracteristic.dodgeRate);
+            if(SecondActivity.currentCaracter.caracteristic.critRate>100)
+                btUpgradeCritRate.setVisibility(View.INVISIBLE);
+            else
+                SecondActivity.ptsARepartir-=2;
+            //SecondActivity.currentCaracter.caracteristic.critRate+=1;
 
-            SecondActivity.currentCaracter.caracteristic.critRate+=1;
-            SecondActivity.ptsARepartir-=2;
             CaracterTvCritRate.setText(String.valueOf(SecondActivity.currentCaracter.caracteristic.critRate));
         }
         else if(Tag.compareToIgnoreCase( "upgradeDodgeRate")==0)
         {
+            SecondActivity.currentCaracter.setCaracteristic(SecondActivity.currentCaracter.caracteristic.lvl,SecondActivity.currentCaracter.caracteristic.hp,SecondActivity.currentCaracter.caracteristic.def,SecondActivity.currentCaracter.caracteristic.damages,SecondActivity.currentCaracter.caracteristic.critRate+1,SecondActivity.currentCaracter.caracteristic.dodgeRate+1);
+            if(SecondActivity.currentCaracter.caracteristic.dodgeRate>50)
+                btUpgradeDodgeRate.setVisibility(View.INVISIBLE);
+            else
+                SecondActivity.ptsARepartir-=2;
+            //SecondActivity.currentCaracter.caracteristic.dodgeRate+=1;
 
-            SecondActivity.currentCaracter.caracteristic.dodgeRate+=1;
-            SecondActivity.ptsARepartir-=2;
             CaracterTvDodgeRate.setText(String.valueOf(SecondActivity.currentCaracter.caracteristic.dodgeRate));
         }
         tvPtsARepartir.setText(String.valueOf(SecondActivity.ptsARepartir));
