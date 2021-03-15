@@ -112,7 +112,7 @@ public class SecondActivity extends AppCompatActivity {
         UserCaracter userCaracter;
 
         userCaracter=new UserCaracter("Pingu","pingucaracter_foreground","spelldepart_foreground","pingucaracterdegats_foreground",140000);
-        userCaracter.setCaracteristic(1,1000,10,400,99,48);
+        userCaracter.setCaracteristic(1,1000,10,400,0,0);
         currentCaracter=userCaracter;
 
 
