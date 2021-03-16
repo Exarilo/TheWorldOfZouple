@@ -41,8 +41,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayoutAllCar"
-        android:layout_width="600dp"
-        android:layout_height="383dp"
+        android:layout_width="411dp"
+        android:layout_height="271dp"
         android:layout_margin="10dp"
         android:layout_marginEnd="2dp"
         android:layout_marginRight="2dp"
@@ -56,23 +56,31 @@
 
         <LinearLayout
             android:id="@+id/linearLayoutCarPengu"
-            android:layout_width="221dp"
+            android:layout_width="164dp"
             android:layout_height="match_parent"
             android:background="@color/colorAccent"
             android:orientation="vertical">
 
             <LinearLayout
                 android:id="@+id/linearLayoutCarLvl"
-                android:layout_width="203dp"
+                android:layout_width="match_parent"
                 android:layout_height="20dp"
                 android:layout_margin="16dp"
                 android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imLvlUp"
+                    android:layout_width="22dp"
+                    android:layout_height="20dp"
+                    android:visibility="invisible"
+                    app:srcCompat="@mipmap/lvlup_foreground" />
+
 
                 <TextView
                     android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="LvL :"
+                    android:text="LvL : "
                     android:textColor="@color/colorPrimary"
                     android:textStyle="bold"
                     android:translationZ="90dp" />
@@ -85,13 +93,6 @@
                     android:textColor="@color/colorPrimary"
                     android:textStyle="bold"
                     android:translationZ="90dp" />
-
-                <ImageView
-                    android:id="@+id/imLvlUp"
-                    android:layout_width="22dp"
-                    android:layout_height="20dp"
-                    android:visibility="invisible"
-                    app:srcCompat="@mipmap/lvlup_foreground" />
             </LinearLayout>
 
             <LinearLayout
@@ -201,32 +202,38 @@
 
             </LinearLayout>
 
-            <ImageView
-                android:id="@+id/imgCaracter"
+            <LinearLayout
+                android:id="@+id/imgCaraLayout"
                 android:layout_width="match_parent"
-                android:layout_height="177dp"
-                app:srcCompat="@mipmap/pingucaracter_foreground" />
+                android:layout_height="wrap_content">
 
+                <ImageView
+                    android:id="@+id/imgCaracter"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:srcCompat="@mipmap/pingucaracter_foreground" />
+            </LinearLayout>
 
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/linearLayoutAttack"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <RelativeLayout
                 android:id="@+id/AttackLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/colorPrimary"
-                android:orientation="horizontal">
+                android:background="@color/colorPrimary">
 
                 <ImageView
                     android:id="@+id/imgPenguAttack"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+
                     android:visibility="invisible"
                     app:srcCompat="@mipmap/spelldepart_foreground" />
 
@@ -234,6 +241,7 @@
                     android:id="@+id/imgEnnemiAttack"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
                     android:visibility="invisible"
                     app:srcCompat="@mipmap/spelldepart_foreground" />
             </RelativeLayout>
@@ -246,47 +254,47 @@
             android:background="@color/design_default_color_error"
             android:orientation="vertical">
 
+
             <LinearLayout
                 android:id="@+id/linearLayoutEnnemiLVL"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="20dp"
+                android:layout_margin="16dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/textView21"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="40dp"
+                    android:layout_width="47dp"
+                    android:layout_height="20dp"
                     android:text="LvL :"
                     android:textColor="@color/colorPrimary"
                     android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:translationZ="90dp" />
 
                 <TextView
                     android:id="@+id/tvEnnemiLVL"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="40dp"
                     android:text="1"
                     android:textColor="@color/colorPrimary"
                     android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:translationZ="90dp" />
             </LinearLayout>
 
 
             <LinearLayout
                 android:id="@+id/linearLayoutEnnemiHP"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="25dp"
+                android:layout_margin="16dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/textView12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="224dp"
-                    android:layout_marginLeft="224dp"
-                    android:layout_marginTop="204dp"
                     android:text="HP :"
                     android:textColor="@android:color/background_dark"
                     android:textStyle="bold" />
@@ -295,9 +303,6 @@
                     android:id="@+id/tvCurrentEnnemiHP"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="256dp"
-                    android:layout_marginLeft="256dp"
-                    android:layout_marginTop="204dp"
                     android:text="1000"
                     android:textColor="@android:color/background_dark"
                     android:textStyle="bold" />
@@ -328,7 +333,7 @@
             <LinearLayout
                 android:id="@+id/linearLayoutProgressBarEnnemiMalus"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <RelativeLayout
@@ -339,22 +344,15 @@
                     <ProgressBar
                         android:id="@+id/pbEnnemiHP"
                         style="@android:style/Widget.ProgressBar.Horizontal"
-
-                        android:layout_width="157dp"
-                        android:layout_height="24dp"
-                        android:layout_marginStart="224dp"
-                        android:layout_marginLeft="224dp"
-                        android:layout_marginTop="224dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:max="1000"
                         android:progress="1000" />
 
                     <TextView
                         android:id="@+id/tvMalusDamages"
-                        android:layout_width="17dp"
-                        android:layout_height="23dp"
-                        android:layout_marginStart="240dp"
-                        android:layout_marginLeft="240dp"
-                        android:layout_marginTop="224dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:text="-"
                         android:textColor="@android:color/holo_orange_dark"
                         android:textSize="18sp"
@@ -365,9 +363,6 @@
                         android:id="@+id/tvDamages"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="256dp"
-                        android:layout_marginLeft="256dp"
-                        android:layout_marginTop="224dp"
                         android:textColor="@android:color/holo_orange_dark"
                         android:textSize="18sp"
                         android:textStyle="bold"
@@ -377,15 +372,18 @@
                 </RelativeLayout>
             </LinearLayout>
 
-            <ImageView
-                android:id="@+id/imgMonster"
-                android:layout_width="230dp"
-                android:layout_height="243dp"
-                android:layout_marginStart="192dp"
-                android:layout_marginLeft="192dp"
-                android:layout_marginTop="117dp"
-                android:layout_marginBottom="228dp"
-                android:foregroundGravity="right" />
+            <LinearLayout
+                android:id="@+id/imgMonsterLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imgMonster"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible" />
+            </LinearLayout>
 
 
         </LinearLayout>
@@ -548,7 +546,7 @@
     <Button
         android:id="@+id/button7"
         android:layout_width="match_parent"
-        android:layout_height="46dp"
+        android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:layout_margin="16dp"
