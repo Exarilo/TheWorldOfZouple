@@ -1,361 +1,334 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#C1B6B6"
-    tools:context=".CaracterActivity">
+    tools:context=".CaracterActivity"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/tvNbMort"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="176dp"
-        android:layout_marginLeft="176dp"
-        android:layout_marginTop="684dp"
-        android:text="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/textView34"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:text="CARACTERISTIQUES"
+            android:textColor="@android:color/background_dark"
+            android:textSize="24sp"
+            android:layout_weight="0.8"
+            android:gravity="right"
+            android:layout_marginTop="30dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btCloseCaracter"
+            android:layout_width="48dp"
+            android:layout_height="53dp"
+            android:layout_weight="0.2"
+            android:background="@mipmap/btclose_foreground" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="684dp"
-        android:text="Nombre de morts :"
-        android:textColor="@android:color/background_dark"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tvMaxHP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lvl : "
+            android:textColor="@android:color/background_dark"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/CaracterTvLVL"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginLeft="100dp">
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="Pts a répartir : "
+                android:textColor="@android:color/background_dark"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tvPtsARepartir"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textColor="@android:color/holo_red_dark"
+                android:textStyle="bold" />
+        </LinearLayout>
 
-    <Button
-        android:id="@+id/btCloseCaracter"
-        android:layout_width="52dp"
-        android:layout_height="53dp"
-        android:background="@mipmap/btclose_foreground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.979"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.024" />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/btUpgradeDef"
-        android:layout_width="22dp"
-        android:layout_height="22dp"
-        android:layout_marginStart="148dp"
-        android:layout_marginLeft="148dp"
-        android:layout_marginTop="220dp"
-        android:background="@mipmap/btupgradecar_foreground"
-        android:tag="upgradeDef"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btUpgradeDamages"
-        android:layout_width="22dp"
-        android:layout_height="22dp"
-        android:layout_marginStart="156dp"
-        android:layout_marginLeft="156dp"
-        android:layout_marginTop="280dp"
-        android:background="@mipmap/btupgradecar_foreground"
-        android:tag="upgradeDamages"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btUpgradeCritRate"
-        android:layout_width="22dp"
-        android:layout_height="22dp"
-        android:layout_marginStart="172dp"
-        android:layout_marginLeft="172dp"
-        android:layout_marginTop="340dp"
-        android:background="@mipmap/btupgradecar_foreground"
-        android:tag="upgradeCritRate"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btUpgradeDodgeRate"
-        android:layout_width="22dp"
-        android:layout_height="22dp"
-        android:layout_marginStart="140dp"
-        android:layout_marginLeft="140dp"
-        android:layout_marginTop="408dp"
-        android:background="@mipmap/btupgradecar_foreground"
-        android:tag="upgradeDodgeRate"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tvMaxHP"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="106dp"
-        android:text="Lvl :"
-        android:textColor="@android:color/background_dark"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="horizontal"
+        android:layout_marginTop="30dp">
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Attaque : "
+            android:textColor="@android:color/background_dark"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/CaracterTvDamages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0" />
+        <Button
+            android:id="@+id/btUpgradeDamages"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginLeft="10dp"
+            android:background="@mipmap/btupgradecar_foreground"
+            android:tag="upgradeDamages" />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginLeft="45dp"
-        android:layout_marginTop="282dp"
-        android:text="Attaque :"
-        android:textColor="@android:color/background_dark"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tvCurrentCarHP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Point de vie : "
+            android:textColor="@android:color/background_dark"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/CaracterTvMaxHP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView" />
+        <Button
+            android:id="@+id/btUpgradeHP"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginLeft="10dp"
+            android:background="@mipmap/btupgradecar_foreground"
+            android:tag="upgradeHP" />
 
-    <TextView
-        android:id="@+id/tvCurrentCarHP"
-        android:layout_width="wrap_content"
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginLeft="45dp"
-        android:layout_marginTop="158dp"
-        android:text="Point de vie :"
-        android:textColor="@android:color/background_dark"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView20"
-        android:layout_width="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/textView20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Esquive : "
+            android:textColor="@android:color/background_dark"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/CaracterTvDodgeRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0" />
+        <Button
+            android:id="@+id/btUpgradeDodgeRate"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginLeft="10dp"
+            android:background="@mipmap/btupgradecar_foreground"
+            android:tag="upgradeDodgeRate" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="407dp"
-        android:text="Esquive :"
-        android:textColor="@android:color/background_dark"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Taux critique : "
+            android:textColor="@android:color/background_dark"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/CaracterTvCritRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0" />
+        <Button
+            android:id="@+id/btUpgradeCritRate"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginLeft="10dp"
+            android:background="@mipmap/btupgradecar_foreground"
+            android:tag="upgradeCritRate" />
 
-    <TextView
-        android:id="@+id/textView18"
-        android:layout_width="wrap_content"
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginLeft="45dp"
-        android:layout_marginTop="340dp"
-        android:text="Taux critique :"
-        android:textColor="@android:color/background_dark"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Défense : "
+            android:textColor="@android:color/background_dark"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/CaracterTvDef"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0" />
+        <Button
+            android:id="@+id/btUpgradeDef"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_marginLeft="10dp"
+            android:background="@mipmap/btupgradecar_foreground"
+            android:tag="upgradeDef" />
+    </LinearLayout>
+    <View
+        android:id="@+id/dividerSt"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="30dp"
+        android:background="?android:attr/listDivider" />
 
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginLeft="45dp"
-        android:layout_marginTop="222dp"
-        android:text="Défense :"
-        android:textColor="@android:color/background_dark"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="STATISTIQUES"
+            android:textColor="@android:color/background_dark"
+            android:textSize="24sp"
+            android:gravity="center"
+            android:textStyle="bold" />
+    </LinearLayout>
 
-    <ProgressBar
-        android:id="@+id/dividerbot"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="420dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="456dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView22"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="36dp"
-        android:text="CARACTERISTIQUES"
-        android:textColor="@android:color/background_dark"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView23"
-        android:layout_width="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre de ZouploPieces accumulés : "
+            android:textColor="@android:color/background_dark"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tvGoldEarn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginLeft="48dp"
-        android:layout_marginTop="508dp"
-        android:text="STATISTIQUES"
-        android:textColor="@android:color/background_dark"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre de zouples tués : "
+            android:textColor="@android:color/background_dark"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tvZoupleTue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0" />
 
-    <TextView
-        android:id="@+id/textView24"
-        android:layout_width="wrap_content"
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginLeft="45dp"
-        android:layout_marginTop="577dp"
-        android:text="Nombre de zouples tués :"
-        android:textColor="@android:color/background_dark"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/textView34"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre de morts : "
+            android:textColor="@android:color/background_dark"
+            android:textStyle="bold" />
+        <TextView
+            android:id="@+id/tvNbMort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0" />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView25"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="46dp"
-        android:layout_marginLeft="46dp"
-        android:layout_marginTop="632dp"
-        android:text="Nombre de ZouploPieces accumulés :"
-        android:textColor="@android:color/background_dark"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/CaracterTvLVL"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="77dp"
-        android:layout_marginLeft="77dp"
-        android:layout_marginTop="106dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/CaracterTvMaxHP"
-        android:layout_width="52dp"
-        android:layout_height="19dp"
-        android:layout_marginStart="138dp"
-        android:layout_marginLeft="138dp"
-        android:layout_marginTop="158dp"
-        android:text="TextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/CaracterTvDef"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="114dp"
-        android:layout_marginLeft="114dp"
-        android:layout_marginTop="223dp"
-        android:text="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/CaracterTvDamages"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="111dp"
-        android:layout_marginLeft="111dp"
-        android:layout_marginTop="283dp"
-        android:text="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/CaracterTvCritRate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="141dp"
-        android:layout_marginLeft="141dp"
-        android:layout_marginTop="341dp"
-        android:text="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/CaracterTvDodgeRate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="110dp"
-        android:layout_marginLeft="110dp"
-        android:layout_marginTop="408dp"
-        android:text="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvZoupleTue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="213dp"
-        android:layout_marginLeft="213dp"
-        android:layout_marginTop="577dp"
-        android:text="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvGoldEarn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="296dp"
-        android:layout_marginLeft="296dp"
-        android:layout_marginTop="632dp"
-        android:text="0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btUpgradeHP"
-        android:layout_width="22dp"
-        android:layout_height="22dp"
-        android:layout_marginStart="188dp"
-        android:layout_marginLeft="188dp"
-        android:layout_marginTop="156dp"
-        android:background="@mipmap/btupgradecar_foreground"
-        android:tag="upgradeHP"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvPtsARepartir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="304dp"
-        android:layout_marginLeft="304dp"
-        android:layout_marginTop="104dp"
-        android:text="TextView"
-        android:textColor="@android:color/holo_red_dark"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="274dp"
-        android:layout_marginLeft="274dp"
-        android:layout_marginTop="87dp"
-        android:text="Pts a répartir :"
-        android:textColor="@android:color/background_dark"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</LinearLayout>
