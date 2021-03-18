@@ -189,7 +189,7 @@ public class CaracterActivity extends AppCompatActivity {
                 SecondActivity.ptsARepartir-=2;
             //SecondActivity.currentCaracter.caracteristic.critRate+=1;
 
-            CaracterTvCritRate.setText(String.valueOf(SecondActivity.currentCaracter.caracteristic.critRate));
+            CaracterTvCritRate.setText(String.valueOf(SecondActivity.currentCaracter.caracteristic.critRate)+"%");
         }
         else if(Tag.compareToIgnoreCase( "upgradeDodgeRate")==0)
         {
@@ -200,7 +200,7 @@ public class CaracterActivity extends AppCompatActivity {
                 SecondActivity.ptsARepartir-=2;
             //SecondActivity.currentCaracter.caracteristic.dodgeRate+=1;
 
-            CaracterTvDodgeRate.setText(String.valueOf(SecondActivity.currentCaracter.caracteristic.dodgeRate));
+            CaracterTvDodgeRate.setText(String.valueOf(SecondActivity.currentCaracter.caracteristic.dodgeRate)+"%");
         }
         tvPtsARepartir.setText(String.valueOf(SecondActivity.ptsARepartir));
         showPts();

@@ -51,21 +51,26 @@
         app:layout_constraintBottom_toTopOf="@+id/linearLayoutAttackFuirConso"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
 
         <LinearLayout
             android:id="@+id/linearLayoutCarPengu"
             android:layout_width="164dp"
             android:layout_height="match_parent"
             android:background="@color/colorAccent"
+
             android:orientation="vertical">
+
+
 
             <LinearLayout
                 android:id="@+id/linearLayoutCarLvl"
                 android:layout_width="match_parent"
-                android:layout_height="20dp"
+                android:layout_height="wrap_content"
+
                 android:layout_margin="16dp"
+
+
                 android:orientation="horizontal">
 
                 <ImageView
@@ -73,6 +78,7 @@
                     android:layout_width="22dp"
                     android:layout_height="20dp"
                     android:visibility="invisible"
+
                     app:srcCompat="@mipmap/lvlup_foreground" />
 
 
@@ -246,7 +252,7 @@
                     app:srcCompat="@mipmap/spelldepart_foreground" />
 
                 <LinearLayout
-                    android:layout_width="match_parent"
+                    android:layout_width="109dp"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"></LinearLayout>
             </RelativeLayout>

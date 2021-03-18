@@ -104,11 +104,9 @@
     <com.google.android.material.tabs.TabLayout
 
         android:id="@+id/tableLayoutShop"
-        android:layout_width="390dp"
+        android:layout_width="match_parent"
         android:layout_height="22dp"
         android:layout_marginTop="4dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginRight="30dp"
         android:layout_marginBottom="315dp"
         android:theme="@style/Widget.Design.TabLayout"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -151,7 +149,7 @@
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/ShopViewPager"
-        android:layout_width="393dp"
+        android:layout_width="match_parent"
         android:layout_height="434dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
