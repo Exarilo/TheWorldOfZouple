@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,10 +8,19 @@
     tools:context=".CaracterActivity"
     android:orientation="vertical">
 
+
     <LinearLayout
+        android:id="@+id/TopOfScreen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_marginBottom="555dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -24,48 +33,58 @@
                 android:id="@+id/btCloseCaracter"
                 android:layout_width="48dp"
                 android:layout_height="53dp"
-                android:gravity="right"
-                android:background="@mipmap/btclose_foreground" />
+                android:background="@mipmap/btclose_foreground"
+                android:gravity="right" />
+
+
+
+
         </LinearLayout>
+
         <TextView
             android:id="@+id/textView22"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="CARACTERISTIQUES"
-
-            android:textColor="@android:color/background_dark"
-            android:textSize="24sp"
             android:layout_weight="0.8"
             android:gravity="center"
+            android:text="CARACTERISTIQUES"
+            android:textColor="@android:color/background_dark"
+            android:textSize="24sp"
 
             android:textStyle="bold" />
-
 
 
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/LayoutLVL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="10dp"
-        android:orientation="horizontal">
-        <TextView
-            android:id="@+id/tvMaxHP"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Lvl : "
-            android:textColor="@android:color/background_dark"
-            android:textStyle="bold" />
-        <TextView
-            android:id="@+id/CaracterTvLVL"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView"/>
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TopOfScreen"
+        app:layout_constraintVertical_bias=".05">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp">
+            <TextView
+                android:id="@+id/tvMaxHP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lvl : "
+                android:textColor="@android:color/background_dark"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/CaracterTvLVL"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView" />
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -76,10 +95,10 @@
                     android:id="@+id/textView8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:gravity="right"
-                    android:layout_weight="1"
-                    android:text="Pts a répartir : "
                     android:layout_alignLeft="@+id/tvPtsARepartir"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="Pts a répartir : "
                     android:textColor="@android:color/background_dark"
                     android:textStyle="bold" />
 
@@ -96,14 +115,24 @@
 
         </LinearLayout>
 
+
+
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/LayoutDamages"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="30dp">
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LayoutLVL"
+        app:layout_constraintVertical_bias=".05">
+
+
+
         <TextView
             android:id="@+id/textView14"
             android:layout_width="wrap_content"
@@ -123,14 +152,21 @@
             android:layout_marginLeft="10dp"
             android:background="@mipmap/btupgradecar_foreground"
             android:tag="upgradeDamages" />
+
+
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/LayoutHP"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
         android:layout_marginLeft="10dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LayoutDamages"
+        app:layout_constraintVertical_bias="0.05">
         <TextView
             android:id="@+id/tvCurrentCarHP"
             android:layout_width="wrap_content"
@@ -138,11 +174,14 @@
             android:text="Point de vie : "
             android:textColor="@android:color/background_dark"
             android:textStyle="bold" />
+
+
         <TextView
             android:id="@+id/CaracterTvMaxHP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="TextView" />
+
         <Button
             android:id="@+id/btUpgradeHP"
             android:layout_width="22dp"
@@ -153,211 +192,215 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="10dp"
-        android:orientation="horizontal">
-        <TextView
-            android:id="@+id/textView20"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Esquive : "
-            android:textColor="@android:color/background_dark"
-            android:textStyle="bold" />
-        <TextView
-            android:id="@+id/CaracterTvDodgeRate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0" />
-        <Button
-            android:id="@+id/btUpgradeDodgeRate"
-            android:layout_width="22dp"
-            android:layout_height="22dp"
-            android:layout_marginLeft="10dp"
-            android:background="@mipmap/btupgradecar_foreground"
-            android:tag="upgradeDodgeRate" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="10dp"
-        android:orientation="horizontal">
-        <TextView
-            android:id="@+id/textView18"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Taux critique : "
-            android:textColor="@android:color/background_dark"
-            android:textStyle="bold" />
-        <TextView
-            android:id="@+id/CaracterTvCritRate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0" />
-        <Button
-            android:id="@+id/btUpgradeCritRate"
-            android:layout_width="22dp"
-            android:layout_height="22dp"
-            android:layout_marginLeft="10dp"
-            android:background="@mipmap/btupgradecar_foreground"
-            android:tag="upgradeCritRate" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="10dp"
-        android:orientation="horizontal">
-        <TextView
-            android:id="@+id/textView15"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Défense : "
-            android:textColor="@android:color/background_dark"
-            android:textStyle="bold" />
-        <TextView
-            android:id="@+id/CaracterTvDef"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0" />
-        <Button
-            android:id="@+id/btUpgradeDef"
-            android:layout_width="22dp"
-            android:layout_height="22dp"
-            android:layout_marginLeft="10dp"
-            android:background="@mipmap/btupgradecar_foreground"
-            android:tag="upgradeDef" />
-    </LinearLayout>
-    <View
-        android:id="@+id/dividerSt"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="30dp"
-        android:background="?android:attr/listDivider" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:orientation="horizontal">
-        <TextView
-            android:id="@+id/textView23"
+        <LinearLayout
+            android:id="@+id/LayoutDodge"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="STATISTIQUES"
-            android:textColor="@android:color/background_dark"
-            android:textSize="24sp"
-            android:gravity="center"
-            android:textStyle="bold" />
-    </LinearLayout>
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/LayoutHP"
+            app:layout_constraintVertical_bias="0.05"
+            >
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Esquive : "
+                android:textColor="@android:color/background_dark"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/CaracterTvDodgeRate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0" />
+            <Button
+                android:id="@+id/btUpgradeDodgeRate"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginLeft="10dp"
+                android:background="@mipmap/btupgradecar_foreground"
+                android:tag="upgradeDodgeRate" />
+        </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="30dp"
-        android:orientation="horizontal">
-        <TextView
-            android:id="@+id/textView25"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/LayoutCrit"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nombre de ZouploPieces accumulés : "
-            android:textColor="@android:color/background_dark"
-            android:textStyle="bold" />
-        <TextView
-            android:id="@+id/tvGoldEarn"
-            android:layout_width="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/LayoutDodge"
+            app:layout_constraintVertical_bias="0.05">
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Taux critique : "
+                android:textColor="@android:color/background_dark"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/CaracterTvCritRate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0" />
+            <Button
+                android:id="@+id/btUpgradeCritRate"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginLeft="10dp"
+                android:background="@mipmap/btupgradecar_foreground"
+                android:tag="upgradeCritRate" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LayoutDef"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="0" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="30dp"
-        android:orientation="horizontal">
-        <TextView
-            android:id="@+id/textView24"
-            android:layout_width="wrap_content"
+
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/LayoutCrit"
+            app:layout_constraintVertical_bias="0.05">
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Défense : "
+                android:textColor="@android:color/background_dark"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/CaracterTvDef"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0" />
+            <Button
+                android:id="@+id/btUpgradeDef"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginLeft="10dp"
+                android:background="@mipmap/btupgradecar_foreground"
+                android:tag="upgradeDef" />
+        </LinearLayout>
+        <View
+            android:id="@+id/dividerSt"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/LayoutDef"
+            app:layout_constraintVertical_bias="0.05"/>
+
+        <LinearLayout
+            android:id="@+id/LayoutStatistique"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nombre de zouples tués : "
-            android:textColor="@android:color/background_dark"
-            android:textStyle="bold" />
-        <TextView
-            android:id="@+id/tvZoupleTue"
-            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dividerSt"
+            app:layout_constraintVertical_bias="0.05">
+            <TextView
+                android:id="@+id/textView23"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="STATISTIQUES"
+                android:textColor="@android:color/background_dark"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LayoutGold"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="0" />
+            android:layout_marginLeft="10dp"
 
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="30dp"
-        android:orientation="horizontal">
-        <TextView
-            android:id="@+id/textView34"
-            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/LayoutStatistique"
+            app:layout_constraintVertical_bias="0.05">
+            <TextView
+                android:id="@+id/textView25"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre de ZouploPieces accumulés : "
+                android:textColor="@android:color/background_dark"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tvGoldEarn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/LayoutZoupleKill"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Nombre de morts : "
-            android:textColor="@android:color/background_dark"
-            android:textStyle="bold" />
-        <TextView
-            android:id="@+id/tvNbMort"
-            android:layout_width="wrap_content"
+            android:layout_marginLeft="10dp"
+
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/LayoutGold"
+            app:layout_constraintVertical_bias="0.05">
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre de zouples tués : "
+                android:textColor="@android:color/background_dark"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tvZoupleTue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/LayoutDeath"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="0" />
-    </LinearLayout>
+            android:layout_marginLeft="10dp"
+
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/LayoutZoupleKill"
+            app:layout_constraintVertical_bias="0.05">
+            <TextView
+                android:id="@+id/textView34"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre de morts : "
+                android:textColor="@android:color/background_dark"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tvNbMort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0" />
+        </LinearLayout>
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
