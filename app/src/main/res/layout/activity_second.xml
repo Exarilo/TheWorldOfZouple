@@ -22,12 +22,13 @@
             android:id="@+id/imageView2"
             android:layout_width="28dp"
             android:layout_height="26dp"
+            android:layout_marginTop="8dp"
             app:srcCompat="@mipmap/zouplopiece_foreground" />
         <TextView
             android:id="@+id/textViewGold"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ZouploPieces :"
+            android:text="ZouploPieces : "
             android:textColor="@android:color/holo_orange_light"
             android:textSize="24sp" />
         <TextView
@@ -57,7 +58,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayoutAllCar"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="292dp"
         android:layout_marginEnd="2dp"
         android:layout_marginRight="2dp"
@@ -65,11 +66,12 @@
         app:layout_constraintBottom_toTopOf="@+id/linearLayoutAttackFuirConso"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+        app:layout_constraintTop_toBottomOf="@id/LayoutToolbar"
+        app:layout_constraintVertical_bias="0.75">
 
         <LinearLayout
             android:id="@+id/linearLayoutCarPengu"
-            android:layout_width="164dp"
+            android:layout_width="149dp"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
@@ -186,6 +188,7 @@
                         style="@android:style/Widget.ProgressBar.Horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
 
                         android:max="1000"
                         android:progress="1000" />
@@ -195,6 +198,7 @@
                         android:id="@+id/tvDamages2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
                         android:textColor="@android:color/holo_orange_dark"
                         android:textSize="18sp"
                         android:textStyle="bold"
@@ -259,10 +263,7 @@
                     android:visibility="invisible"
                     app:srcCompat="@mipmap/spelldepart_foreground" />
 
-                <LinearLayout
-                    android:layout_width="109dp"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal"></LinearLayout>
+
             </RelativeLayout>
         </LinearLayout>
 
@@ -270,7 +271,6 @@
             android:id="@+id/linearLayoutEnnemiCar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-
             android:orientation="vertical">
 
 
@@ -365,6 +365,7 @@
                         style="@android:style/Widget.ProgressBar.Horizontal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
                         android:max="1000"
                         android:progress="1000" />
 
@@ -399,7 +400,7 @@
 
                 <ImageView
                     android:id="@+id/imgMonster"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:visibility="visible" />
             </LinearLayout>
@@ -413,7 +414,7 @@
         android:id="@+id/linearLayoutBtChangeActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -432,7 +433,10 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight=".20"
-            android:background="@mipmap/grimmoire_foreground" />
+
+
+            android:background="@mipmap/grimmoire_foreground"
+            android:layout_marginBottom="10dp"/>
 
         <Button
             android:id="@+id/btInventory"
@@ -574,50 +578,53 @@
     </LinearLayout>
 
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+    <LinearLayout
+        android:id="@+id/LayoutToolbar"
         android:layout_width="match_parent"
-        android:layout_height="99dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:background="@android:drawable/dialog_holo_light_frame"
-        android:minHeight="?attr/actionBarSize"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutFirstLine" />
+        app:layout_constraintTop_toBottomOf="@+id/layoutFirstLine" >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:drawable/dialog_holo_light_frame"
+            android:minHeight="?attr/actionBarSize" />
 
 
+        <ScrollView
 
-    <ScrollView
-
-        android:id="@+id/ScrollViewHistorique"
-        android:layout_width="match_parent"
-        android:layout_height="78dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginLeft="5dp"
-        android:gravity="left"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutFirstLine">
-
-        <TextView
-            android:id="@+id/tvHistorique"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="11dp"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="34dp"
-            android:layout_marginRight="34dp"
-
-            android:requiresFadingEdge="vertical"
-            android:scrollbars="vertical"
-            android:textColor="@android:color/background_dark"
+            android:id="@+id/ScrollViewHistorique"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:gravity="left"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </ScrollView>
+            app:layout_constraintTop_toBottomOf="@+id/layoutFirstLine">
 
+            <TextView
+                android:id="@+id/tvHistorique"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="11dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="34dp"
+                android:layout_marginRight="34dp"
 
+                android:requiresFadingEdge="vertical"
+                android:scrollbars="vertical"
+                android:textColor="@android:color/background_dark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </ScrollView>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

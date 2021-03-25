@@ -22,15 +22,11 @@
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="214dp"
-        android:layout_height="476dp"
-        android:layout_marginStart="23dp"
-        android:layout_marginLeft="23dp"
-        android:layout_marginBottom="472dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.375"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@mipmap/panneauboutique_foreground" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/panneauboutique" />
 
     <Button
         android:id="@+id/btCloseShop"
@@ -50,20 +46,19 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="260dp"
         android:layout_marginLeft="260dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="160dp"
         android:layout_marginRight="160dp"
-        android:layout_marginBottom="472dp"
         android:text="BOUTIQUE"
         android:textColor="@android:color/background_dark"
         android:textSize="24sp"
-        android:textStyle="bold"
 
-        app:layout_constraintTop_toTopOf="parent"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/imageView4"
-        app:layout_constraintHorizontal_bias="0.663"
+        app:layout_constraintHorizontal_bias="0.657"
         app:layout_constraintStart_toStartOf="@+id/imageView4"
 
-        app:layout_constraintVertical_bias="0.337" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -104,20 +99,20 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+
     <com.google.android.material.tabs.TabLayout
 
         android:id="@+id/tableLayoutShop"
         android:layout_width="match_parent"
         android:layout_height="22dp"
-        android:layout_marginTop="4dp"
         android:layout_marginBottom="315dp"
         android:theme="@style/Widget.Design.TabLayout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
-        app:layout_constraintVertical_bias="0.053"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintVertical_bias="0.258"
         app:tabGravity="fill"
         app:tabIndicatorColor="@android:color/holo_orange_light"
         app:tabIndicatorGravity="stretch"
@@ -149,16 +144,15 @@
             android:text="Materiaux" />
     </com.google.android.material.tabs.TabLayout>
 
-
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/ShopViewPager"
         android:layout_width="match_parent"
-        android:layout_height="434dp"
+        android:layout_height="422dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/tableLayoutShop"
+        app:layout_constraintVertical_bias="0.485" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

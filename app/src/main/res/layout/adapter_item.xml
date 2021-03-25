@@ -9,7 +9,7 @@
     <ImageView
         android:id="@+id/itemImg"
         android:layout_width="91dp"
-        android:layout_height="81dp"
+        android:layout_height="match_parent"
         app:srcCompat="@mipmap/epee1_foreground" />
 
     <RelativeLayout
@@ -37,7 +37,7 @@
 
 
     <RelativeLayout
-        android:layout_width="154dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp">
 
@@ -49,16 +49,29 @@
             android:text="Description"
             android:textColor="@color/design_default_color_on_secondary"
             android:textStyle="bold" />
-
-        <TextView
-
-            android:id="@+id/itemDescription"
-            android:layout_width="match_parent"
+        <RelativeLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/description"
-            android:text="+ 100 dégats"
-            android:textColor="@color/design_default_color_on_secondary" />
+            android:layout_below="@+id/description">
+            <TextView
+
+                android:id="@+id/itemDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:text="+ 100 dégats"
+                android:textColor="@color/design_default_color_on_secondary" />
+
+            <Button
+                android:id="@+id/btAchat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@mipmap/buy_foreground">
+            </Button>
+        </RelativeLayout>
+
     </RelativeLayout>
+
 
 
 </LinearLayout>

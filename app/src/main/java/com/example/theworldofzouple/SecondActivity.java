@@ -182,7 +182,9 @@ public class SecondActivity extends AppCompatActivity {
         btSuccess= findViewById(R.id.btSuccess);
 
         pbHPennemi= findViewById(R.id.pbEnnemiHP);
+        pbHPennemi.getProgressDrawable().setColorFilter( Color.RED, android.graphics.PorterDuff.Mode.SRC_IN);
         pbHPCar=findViewById(R.id.pbCarHP);
+        pbHPCar.getProgressDrawable().setColorFilter( Color.GREEN, android.graphics.PorterDuff.Mode.SRC_IN);
         pbXP=findViewById(R.id.pbXP);
 
         tvCurrentCarHP=findViewById(R.id.tvCurrentCarHP);
