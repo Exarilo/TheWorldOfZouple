@@ -182,9 +182,9 @@ public class SecondActivity extends AppCompatActivity {
         btSuccess= findViewById(R.id.btSuccess);
 
         pbHPennemi= findViewById(R.id.pbEnnemiHP);
-        pbHPennemi.getProgressDrawable().setColorFilter( Color.RED, android.graphics.PorterDuff.Mode.SRC_IN);
+        //pbHPennemi.getProgressDrawable().setColorFilter( Color.RED, android.graphics.PorterDuff.Mode.SRC_IN);
         pbHPCar=findViewById(R.id.pbCarHP);
-        pbHPCar.getProgressDrawable().setColorFilter( Color.GREEN, android.graphics.PorterDuff.Mode.SRC_IN);
+        //pbHPCar.getProgressDrawable().setColorFilter( Color.GREEN, android.graphics.PorterDuff.Mode.SRC_IN);
         pbXP=findViewById(R.id.pbXP);
 
         tvCurrentCarHP=findViewById(R.id.tvCurrentCarHP);
@@ -211,10 +211,13 @@ public class SecondActivity extends AppCompatActivity {
         imgCaracter=findViewById(R.id.imgCaracter);
 
         tvHistorique=findViewById(R.id.tvHistorique);
+        tvHistorique.setText("\n\n\n\n");
         tvHistorique.setMovementMethod(new ScrollingMovementMethod());
 
-        ScrollViewHistorique=findViewById(R.id.ScrollViewHistorique);
 
+
+        ScrollViewHistorique=findViewById(R.id.ScrollViewHistorique);
+        //ScrollViewHistorique.fullScroll(ScrollView.FOCUS_DOWN);
         //endregion
 
         //region Set initial values of static var
@@ -581,6 +584,7 @@ public class SecondActivity extends AppCompatActivity {
         if(ennemiDead){
 
             tvHistorique.setText(tvHistorique.getText()+"Loot gagné : Peau de Zouple x2\n");
+
             ScrollViewHistorique.fullScroll(ScrollView.FOCUS_DOWN);
 
             return;}

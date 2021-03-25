@@ -63,11 +63,11 @@
         android:layout_marginEnd="2dp"
         android:layout_marginRight="2dp"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayoutAttackFuirConso"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/LayoutToolbar"
-        app:layout_constraintVertical_bias="0.75">
+        app:layout_constraintVertical_bias="0.07999998">
 
         <LinearLayout
             android:id="@+id/linearLayoutCarPengu"
@@ -417,9 +417,10 @@
 
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dividerbot"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.0">
 
         <Button
             android:id="@+id/btCaracter"
@@ -432,11 +433,11 @@
             android:id="@+id/btSpells"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginBottom="10dp"
+
+
             android:layout_weight=".20"
-
-
-            android:background="@mipmap/grimmoire_foreground"
-            android:layout_marginBottom="10dp"/>
+            android:background="@mipmap/grimmoire_foreground" />
 
         <Button
             android:id="@+id/btInventory"
@@ -467,9 +468,10 @@
         android:layout_margin="16dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayoutBtChangeActivity"
-        app:layout_constraintVertical_bias="0.89">
+        app:layout_constraintVertical_bias="0.0">
 
         <TextView
             android:id="@+id/textView9"
@@ -525,16 +527,14 @@
 
     <View
         android:id="@+id/dividerbot"
-        android:layout_width="648dp"
+        android:layout_width="match_parent"
         android:layout_height="5dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginBottom="104dp"
         android:background="?android:attr/listDivider"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutAttackFuirConso"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutAttackFuirConso"
+        app:layout_constraintVertical_bias="0.060000002" />
 
 
     <LinearLayout
@@ -543,10 +543,11 @@
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@id/dividerbot"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/linearLayoutAllCar"
-        app:layout_constraintVertical_bias="0.92">
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -569,7 +570,6 @@
         </LinearLayout>
 
 
-
         <Button
             android:id="@+id/button7"
             android:layout_width="match_parent"
@@ -583,48 +583,31 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutFirstLine" >
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@android:drawable/dialog_holo_light_frame"
-            android:minHeight="?attr/actionBarSize" />
-
+        app:layout_constraintTop_toBottomOf="@+id/layoutFirstLine"
+        app:layout_constraintVertical_bias="0.0">
 
         <ScrollView
 
             android:id="@+id/ScrollViewHistorique"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginStart="5dp"
-            android:layout_marginLeft="5dp"
-            android:gravity="left"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/layoutFirstLine">
+            android:gravity="left">
 
             <TextView
                 android:id="@+id/tvHistorique"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="11dp"
-                android:layout_marginLeft="24dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginEnd="34dp"
-                android:layout_marginRight="34dp"
-
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@color/design_default_color_on_primary"
                 android:requiresFadingEdge="vertical"
+
                 android:scrollbars="vertical"
-                android:textColor="@android:color/background_dark"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textColor="@android:color/background_dark" />
         </ScrollView>
+
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
