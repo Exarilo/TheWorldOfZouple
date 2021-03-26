@@ -9,603 +9,581 @@
 
 
     <LinearLayout
-        android:id="@+id/layoutFirstLine"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="28dp"
-            android:layout_height="26dp"
-            android:layout_marginTop="8dp"
-            app:srcCompat="@mipmap/zouplopiece_foreground" />
-        <TextView
-            android:id="@+id/textViewGold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="ZouploPieces : "
-            android:textColor="@android:color/holo_orange_light"
-            android:textSize="24sp" />
-        <TextView
-            android:id="@+id/tvGold"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.1"
-            android:text="0"
-            android:textColor="@android:color/background_dark"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-        <Button
-            android:id="@+id/btSuccess"
-            android:layout_width="58dp"
-            android:layout_height="50dp"
-            android:background="@mipmap/succes_foreground" />
-
-
-
-
-
-
-
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:id="@+id/linearLayoutAllCar"
-        android:layout_width="match_parent"
-        android:layout_height="292dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginRight="2dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/LayoutToolbar"
-        app:layout_constraintVertical_bias="0.07999998">
 
         <LinearLayout
-            android:id="@+id/linearLayoutCarPengu"
-            android:layout_width="149dp"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:id="@+id/layoutFirstLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="28dp"
+                android:layout_height="26dp"
+                android:layout_marginTop="8dp"
+                app:srcCompat="@mipmap/zouplopiece_foreground" />
+
+            <TextView
+                android:id="@+id/textViewGold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ZouploPieces : "
+                android:textColor="@android:color/holo_orange_light"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/tvGold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.1"
+                android:text="0"
+                android:textColor="@android:color/background_dark"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btSuccess"
+                android:layout_width="58dp"
+                android:layout_height="50dp"
+                android:background="@mipmap/succes_foreground" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/LayoutToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteY="50dp">
+
+            <ScrollView
+
+                android:id="@+id/ScrollViewHistorique"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="left">
+
+                <TextView
+                    android:id="@+id/tvHistorique"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:background="@color/design_default_color_on_primary"
+                    android:requiresFadingEdge="vertical"
+
+                    android:scrollbars="vertical"
+                    android:textColor="@android:color/background_dark" />
+            </ScrollView>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutAllCar"
+            android:layout_width="match_parent"
+            android:layout_height="292dp"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteY="69dp">
 
             <LinearLayout
-                android:id="@+id/linearLayoutCarLvl"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/imLvlUp"
-                    android:layout_width="22dp"
-                    android:layout_height="20dp"
-                    android:visibility="invisible"
-
-                    app:srcCompat="@mipmap/lvlup_foreground" />
+                android:id="@+id/linearLayoutCarPengu"
+                android:layout_width="149dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
 
 
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="LvL : "
-                    android:textColor="@color/colorPrimary"
-                    android:textStyle="bold"
-                    android:translationZ="90dp" />
-
-                <TextView
-                    android:id="@+id/tvLVL"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1"
-                    android:textColor="@color/colorPrimary"
-                    android:textStyle="bold"
-                    android:translationZ="90dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:orientation="horizontal">
-
-                <ProgressBar
-                    android:id="@+id/pbXP"
-                    style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"
-                    android:layout_width="107dp"
-                    android:layout_height="20dp"
-                    android:max="100"
-                    android:progress="0" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linearLayoutCarHP"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/textView18"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="HP :"
-                    android:textColor="@android:color/background_dark"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tvCurrentCarHP"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1000"
-                    android:textColor="@android:color/background_dark"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textView20"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="/"
-                    android:textColor="@android:color/background_dark"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tvMaxHP"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1000"
-                    android:textColor="@android:color/background_dark"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:id="@+id/linearLayoutProgressBarCar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-
-                <RelativeLayout
-                    android:id="@+id/relativeLayoutProgressMalusDamagesCar"
+                <LinearLayout
+                    android:id="@+id/linearLayoutCarLvl"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imLvlUp"
+                        android:layout_width="22dp"
+                        android:layout_height="20dp"
+                        android:visibility="invisible"
+                        app:srcCompat="@mipmap/lvlup_foreground"
+                        android:contentDescription="TODO" />
 
 
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="LvL : "
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="bold"
+                        android:translationZ="90dp" />
+
+                    <TextView
+                        android:id="@+id/tvLVL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1"
+                        android:textColor="@color/colorPrimary"
+                        android:textStyle="bold"
+                        android:translationZ="90dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
                     android:orientation="horizontal">
 
                     <ProgressBar
-                        android:id="@+id/pbCarHP"
-                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        android:id="@+id/pbXP"
+                        style="@android:style/Widget.Holo.Light.ProgressBar.Horizontal"
+                        android:layout_width="107dp"
+                        android:layout_height="20dp"
+                        android:max="100"
+                        android:progress="0" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutCarHP"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="HP :"
+                        android:textColor="@android:color/background_dark"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvCurrentCarHP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1000"
+                        android:textColor="@android:color/background_dark"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="/"
+                        android:textColor="@android:color/background_dark"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvMaxHP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1000"
+                        android:textColor="@android:color/background_dark"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutProgressBarCar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayoutProgressMalusDamagesCar"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-
-                        android:max="1000"
-                        android:progress="1000" />
 
 
-                    <TextView
-                        android:id="@+id/tvDamages2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:textColor="@android:color/holo_orange_dark"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:translationZ="90dp"
-                        tools:text="-" />
+                        android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/tvMalusDamages2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:layout_toRightOf="@+id/tvDamages2"
-                        android:gravity="center"
-                        android:text=""
-                        android:textColor="@android:color/holo_orange_dark"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:translationZ="91dp" />
-                </RelativeLayout>
+                        <ProgressBar
+                            android:id="@+id/pbCarHP"
+                            style="@android:style/Widget.ProgressBar.Horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/imgCaraLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/imgCaracter"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    app:srcCompat="@mipmap/pingucaracter_foreground" />
-            </LinearLayout>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearLayoutAttack"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <RelativeLayout
-                android:id="@+id/AttackLayout"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <ImageView
-                    android:id="@+id/imgPenguAttack"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-
-                    android:visibility="invisible"
-                    app:srcCompat="@mipmap/spelldepart_foreground" />
-
-                <ImageView
-                    android:id="@+id/imgEnnemiAttack"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:visibility="invisible"
-                    app:srcCompat="@mipmap/spelldepart_foreground" />
+                            android:max="1000"
+                            android:progress="1000" />
 
 
-            </RelativeLayout>
-        </LinearLayout>
+                        <TextView
+                            android:id="@+id/tvDamages2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:textColor="@android:color/holo_orange_dark"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:translationZ="90dp"
+                            tools:text="-" />
 
-        <LinearLayout
-            android:id="@+id/linearLayoutEnnemiCar"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/tvMalusDamages2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:layout_toRightOf="@+id/tvDamages2"
+                            android:gravity="center"
+                            android:text=""
+                            android:textColor="@android:color/holo_orange_dark"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:translationZ="91dp" />
+                    </RelativeLayout>
 
+                </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/linearLayoutEnnemiLVL"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:layout_margin="16dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/textView21"
-                    android:layout_width="47dp"
-                    android:layout_height="20dp"
-                    android:text="LvL :"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:translationZ="90dp" />
-
-                <TextView
-                    android:id="@+id/tvEnnemiLVL"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:translationZ="90dp" />
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:id="@+id/linearLayoutEnnemiHP"
-                android:layout_width="match_parent"
-                android:layout_height="25dp"
-                android:layout_margin="16dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/textView12"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="HP :"
-                    android:textColor="@android:color/background_dark"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tvCurrentEnnemiHP"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1000"
-                    android:textColor="@android:color/background_dark"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textView16"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="300dp"
-                    android:layout_marginLeft="300dp"
-                    android:layout_marginTop="204dp"
-                    android:text="/"
-                    android:textColor="@android:color/background_dark"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tvMaxEnnemiHP"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="308dp"
-                    android:layout_marginLeft="308dp"
-                    android:layout_marginTop="204dp"
-                    android:text="1000"
-                    android:textColor="@android:color/background_dark"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/linearLayoutProgressBarEnnemiMalus"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <RelativeLayout
-                    android:id="@+id/relativeLayoutProgressBarEnnemiMalus"
+                <LinearLayout
+                    android:id="@+id/imgCaraLayout"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <ProgressBar
-                        android:id="@+id/pbEnnemiHP"
-                        style="@android:style/Widget.ProgressBar.Horizontal"
+                    <ImageView
+                        android:id="@+id/imgCaracter"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="10dp"
-                        android:max="1000"
-                        android:progress="1000" />
+                        android:layout_height="match_parent"
+                        app:srcCompat="@mipmap/pingucaracter_foreground" />
+                </LinearLayout>
 
-                    <TextView
-                        android:id="@+id/tvMalusDamages"
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayoutAttack"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:id="@+id/AttackLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/imgPenguAttack"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="-"
-                        android:textColor="@android:color/holo_orange_dark"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
-                        android:visibility="invisible" />
+                        android:layout_alignParentBottom="true"
 
-                    <TextView
-                        android:id="@+id/tvDamages"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@android:color/holo_orange_dark"
-                        android:textSize="18sp"
-                        android:textStyle="bold"
                         android:visibility="invisible"
-                        tools:text="-" />
+                        app:srcCompat="@mipmap/spelldepart_foreground" />
+
+                    <ImageView
+                        android:id="@+id/imgEnnemiAttack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:visibility="invisible"
+                        app:srcCompat="@mipmap/spelldepart_foreground" />
+
 
                 </RelativeLayout>
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/imgMonsterLayout"
+                android:id="@+id/linearLayoutEnnemiCar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutEnnemiLVL"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_margin="16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView21"
+                        android:layout_width="47dp"
+                        android:layout_height="20dp"
+                        android:text="LvL :"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:translationZ="90dp" />
+
+                    <TextView
+                        android:id="@+id/tvEnnemiLVL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:translationZ="90dp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutEnnemiHP"
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:layout_margin="16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="HP :"
+                        android:textColor="@android:color/background_dark"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvCurrentEnnemiHP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1000"
+                        android:textColor="@android:color/background_dark"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="300dp"
+                        android:layout_marginLeft="300dp"
+                        android:layout_marginTop="204dp"
+                        android:text="/"
+                        android:textColor="@android:color/background_dark"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvMaxEnnemiHP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="308dp"
+                        android:layout_marginLeft="308dp"
+                        android:layout_marginTop="204dp"
+                        android:text="1000"
+                        android:textColor="@android:color/background_dark"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linearLayoutProgressBarEnnemiMalus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/relativeLayoutProgressBarEnnemiMalus"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <ProgressBar
+                            android:id="@+id/pbEnnemiHP"
+                            style="@android:style/Widget.ProgressBar.Horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:indeterminate="false"
+                            android:max="1000"
+                            android:progress="1000" />
+
+                        <TextView
+                            android:id="@+id/tvMalusDamages"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="-"
+                            android:textColor="@android:color/holo_orange_dark"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:visibility="invisible" />
+
+                        <TextView
+                            android:id="@+id/tvDamages"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@android:color/holo_orange_dark"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:visibility="invisible"
+                            tools:text="-" />
+
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/imgMonsterLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imgMonster"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:visibility="visible" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutAttackFuirConso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="377dp">
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <ImageView
-                    android:id="@+id/imgMonster"
+                <Button
+                    android:id="@+id/btAttack"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:visibility="visible" />
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".50"
+                    android:text="ATTAQUER" />
+
+                <Button
+                    android:id="@+id/btRunAway"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".50"
+                    android:text="FUIR" />
             </LinearLayout>
 
 
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="CONSOMMABLE" />
         </LinearLayout>
 
-    </LinearLayout>
+        <View
+            android:id="@+id/dividerbot"
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
 
-    <LinearLayout
-        android:id="@+id/linearLayoutBtChangeActivity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dividerbot"
-        app:layout_constraintVertical_bias="0.0">
-
-        <Button
-            android:id="@+id/btCaracter"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".20"
-            android:background="@mipmap/caracter_foreground" />
-
-        <Button
-            android:id="@+id/btSpells"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="10dp"
-
-
-            android:layout_weight=".20"
-            android:background="@mipmap/grimmoire_foreground" />
-
-        <Button
-            android:id="@+id/btInventory"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".20"
-            android:background="@mipmap/inventory_foreground" />
-
-        <Button
-            android:id="@+id/btShop"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".20"
-            android:background="@mipmap/shop_foreground" />
-
-        <Button
-            android:id="@+id/btCraft"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight=".20"
-            android:background="@mipmap/craft_foreground" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linearLayoutTvBot"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutBtChangeActivity"
-        app:layout_constraintVertical_bias="0.0">
-
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight=".20"
-
-            android:text="Personnage"
-            android:textColor="@android:color/background_dark"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:layout_weight=".20"
-            android:text="Sorts"
-            android:textColor="@android:color/background_dark"
-            android:textStyle="bold" />
-
-
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:layout_weight=".20"
-            android:text="Inventaire"
-            android:textColor="@android:color/background_dark"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:layout_weight=".20"
-            android:text="Boutique"
-            android:textColor="@android:color/background_dark"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textView14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:layout_weight=".20"
-            android:text="Craft"
-            android:textColor="@android:color/background_dark"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <View
-        android:id="@+id/dividerbot"
-        android:layout_width="match_parent"
-        android:layout_height="5dp"
-        android:background="?android:attr/listDivider"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayoutAttackFuirConso"
-        app:layout_constraintVertical_bias="0.060000002" />
-
-
-    <LinearLayout
-        android:id="@+id/linearLayoutAttackFuirConso"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linearLayoutAllCar"
-        app:layout_constraintVertical_bias="0.0">
+            android:background="?android:attr/listDivider"
+            tools:layout_editor_absoluteY="473dp" />
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/btAttack"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight=".50"
-                android:text="ATTAQUER" />
-
-            <Button
-                android:id="@+id/btRunAway"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight=".50"
-                android:text="FUIR" />
-        </LinearLayout>
-
-
-        <Button
-            android:id="@+id/button7"
+            android:id="@+id/linearLayoutBtChangeActivity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="CONSOMMABLE" />
-    </LinearLayout>
+
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteY="478dp">
+
+            <Button
+                android:id="@+id/btCaracter"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".20"
+                android:background="@mipmap/caracter_foreground" />
+
+            <Button
+                android:id="@+id/btSpells"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
 
 
-    <LinearLayout
-        android:id="@+id/LayoutToolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layoutFirstLine"
-        app:layout_constraintVertical_bias="0.0">
+                android:layout_weight=".20"
+                android:background="@mipmap/grimmoire_foreground" />
 
-        <ScrollView
+            <Button
+                android:id="@+id/btInventory"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".20"
+                android:background="@mipmap/inventory_foreground" />
 
-            android:id="@+id/ScrollViewHistorique"
+            <Button
+                android:id="@+id/btShop"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".20"
+                android:background="@mipmap/shop_foreground" />
+
+            <Button
+                android:id="@+id/btCraft"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight=".20"
+                android:background="@mipmap/craft_foreground" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutTvBot"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="left">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="612dp">
 
             <TextView
-                android:id="@+id/tvHistorique"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:background="@color/design_default_color_on_primary"
-                android:requiresFadingEdge="vertical"
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight=".20"
 
-                android:scrollbars="vertical"
-                android:textColor="@android:color/background_dark" />
-        </ScrollView>
+                android:text="Personnage"
+                android:textColor="@android:color/background_dark"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_weight=".20"
+                android:text="Sorts"
+                android:textColor="@android:color/background_dark"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_weight=".20"
+                android:text="Inventaire"
+                android:textColor="@android:color/background_dark"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_weight=".20"
+                android:text="Boutique"
+                android:textColor="@android:color/background_dark"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_weight=".20"
+                android:text="Craft"
+                android:textColor="@android:color/background_dark"
+                android:textStyle="bold" />
+        </LinearLayout>
 
 
     </LinearLayout>
