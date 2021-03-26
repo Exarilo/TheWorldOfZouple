@@ -164,10 +164,10 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/imageView19"
-        app:layout_constraintEnd_toStartOf="@+id/divider9"
+        app:layout_constraintEnd_toStartOf="@+id/divCol1"
         app:layout_constraintHorizontal_bias="0.914"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider14"
+        app:layout_constraintTop_toBottomOf="@+id/divRow4"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -305,14 +305,14 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/imageView16"
-        app:layout_constraintEnd_toStartOf="@+id/divider9"
+        app:layout_constraintEnd_toStartOf="@+id/divCol1"
         app:layout_constraintHorizontal_bias="0.914"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider13"
+        app:layout_constraintTop_toBottomOf="@+id/divRow3"
         app:layout_constraintVertical_bias="0.0" />
 
     <View
-        android:id="@+id/divider14"
+        android:id="@+id/divRow4"
         android:layout_width="match_parent"
         android:layout_height="5dp"
         android:background="?android:attr/listDivider"
@@ -466,14 +466,14 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/imageView12"
-        app:layout_constraintEnd_toStartOf="@+id/divider9"
+        app:layout_constraintEnd_toStartOf="@+id/divCol1"
         app:layout_constraintHorizontal_bias="0.914"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider12"
+        app:layout_constraintTop_toBottomOf="@+id/divRow2"
         app:layout_constraintVertical_bias="0.0" />
 
     <View
-        android:id="@+id/divider13"
+        android:id="@+id/divRow3"
         android:layout_width="match_parent"
         android:layout_height="5dp"
         android:background="?android:attr/listDivider"
@@ -508,7 +508,7 @@
         app:srcCompat="@mipmap/boulefeu4_foreground" />
 
     <View
-        android:id="@+id/divider9"
+        android:id="@+id/divCol1"
         android:layout_width="5dp"
         android:layout_height="match_parent"
         android:layout_marginTop="85dp"
@@ -521,7 +521,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <View
-        android:id="@+id/divider10"
+        android:id="@+id/divCol2"
         android:layout_width="5dp"
         android:layout_height="match_parent"
         android:layout_marginTop="85dp"
@@ -584,7 +584,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         app:layout_constraintBottom_toTopOf="@+id/costSpell1"
-        app:layout_constraintEnd_toStartOf="@+id/divider9"
+        app:layout_constraintEnd_toStartOf="@+id/divCol1"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
@@ -601,10 +601,10 @@
         android:textColor="@android:color/holo_red_dark"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/divider9"
+        app:layout_constraintEnd_toStartOf="@+id/divCol1"
         app:layout_constraintHorizontal_bias="0.939"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider3" />
+        app:layout_constraintTop_toBottomOf="@+id/divRow1" />
 
     <TextView
         android:id="@+id/costSpell3"
@@ -659,8 +659,8 @@
         android:layout_marginEnd="17dp"
         android:layout_marginRight="17dp"
         android:background="@mipmap/buy_foreground"
-        app:layout_constraintBottom_toTopOf="@+id/divider12"
-        app:layout_constraintEnd_toStartOf="@+id/divider9"
+        app:layout_constraintBottom_toTopOf="@+id/divRow2"
+        app:layout_constraintEnd_toStartOf="@+id/divCol1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/costSpell1"
         app:layout_constraintVertical_bias="0.58" />
@@ -700,10 +700,10 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/imageView"
-        app:layout_constraintEnd_toStartOf="@+id/divider9"
+        app:layout_constraintEnd_toStartOf="@+id/divCol1"
         app:layout_constraintHorizontal_bias="0.914"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider3"
+        app:layout_constraintTop_toBottomOf="@+id/divRow1"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
@@ -776,7 +776,7 @@
         app:srcCompat="@mipmap/zouplopiece_foreground" />
 
     <View
-        android:id="@+id/divider3"
+        android:id="@+id/divRow1"
         android:layout_width="match_parent"
         android:layout_height="5dp"
         android:background="?android:attr/listDivider"
@@ -787,7 +787,7 @@
         app:layout_constraintVertical_bias="0.114" />
 
     <View
-        android:id="@+id/divider12"
+        android:id="@+id/divRow2"
         android:layout_width="match_parent"
         android:layout_height="5dp"
         android:background="?android:attr/listDivider"
