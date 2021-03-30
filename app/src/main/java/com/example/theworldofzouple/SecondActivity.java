@@ -31,6 +31,8 @@ public class SecondActivity extends AppCompatActivity {
 
     //region déclaration des objets
 
+    Database db = new Database(SecondActivity.this);
+
     private Button btMenuCaracter;
     private Button btAttack;
     private Button btInventory;
@@ -106,14 +108,21 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-
+        xp=db.getXP();
+        maxXP=db.getMaxXP();
 
         //create User
         UserCaracter userCaracter;
 
         userCaracter=new UserCaracter("Pingu","pingucaracter_foreground","spelldepart_foreground","pingucaracterdegats_foreground",1400000);
-        userCaracter.setCaracteristic(1,1000,10,400,0,0);
+        userCaracter.setCaracteristic(db.getLvl(),1000,10,400,0,0);
         currentCaracter=userCaracter;
+
+        db.addData(String.valueOf(currentCaracter.caracteristic.lvl));
+        db.addData(String.valueOf(xp));
+        db.addData(String.valueOf(maxXP));
+
+
 
 
         //create loot
@@ -186,10 +195,12 @@ public class SecondActivity extends AppCompatActivity {
         pbHPCar=findViewById(R.id.pbCarHP);
         //pbHPCar.getProgressDrawable().setColorFilter(Color.GREEN, android.graphics.PorterDuff.Mode.SRC_IN);
         pbXP=findViewById(R.id.pbXP);
-
+        pbXP.setProgress(xp);
+        pbXP.setMax((int)maxXP);
         tvCurrentCarHP=findViewById(R.id.tvCurrentCarHP);
         tvCurrentHPEnnemi=findViewById(R.id.tvCurrentEnnemiHP);
         tvLVL=findViewById(R.id.tvLVL);
+        tvLVL.setText(String.valueOf(currentCaracter.caracteristic.lvl));
         tvGold=findViewById(R.id.tvGold);
         tvGold.setText(String.valueOf(currentCaracter.gold));
 
@@ -601,8 +612,6 @@ public class SecondActivity extends AppCompatActivity {
     }
 
 
-
-
     private void setXP(){
         xp=xp+currentMonster.xp;
         if(xp>=pbXP.getMax())
@@ -612,6 +621,7 @@ public class SecondActivity extends AppCompatActivity {
         }
 
         pbXP.setProgress(xp);
+        db.updateXP(xp);
     }
 
     private void setLVL(){
@@ -630,7 +640,8 @@ public class SecondActivity extends AppCompatActivity {
             }
         }, 2000);
 
-
+        db.updateMaxXP((int)maxXP);
+        db.updateLvl(currentCaracter.caracteristic.lvl);
     }
     @Override
     public void onResume(){
@@ -639,5 +650,7 @@ public class SecondActivity extends AppCompatActivity {
         tvGold.setText(String.valueOf(currentCaracter.gold));
         tvMaxHPOfCaracter.setText(String.valueOf(currentCaracter.caracteristic.hp));
     }
+
+
 
 }

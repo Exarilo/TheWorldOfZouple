@@ -145,12 +145,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="0" />
+
         <Button
             android:id="@+id/btUpgradeDamages"
             android:layout_width="22dp"
             android:layout_height="22dp"
             android:layout_marginLeft="10dp"
             android:background="@mipmap/btupgradecar_foreground"
+            android:longClickable="true"
             android:tag="upgradeDamages" />
 
 

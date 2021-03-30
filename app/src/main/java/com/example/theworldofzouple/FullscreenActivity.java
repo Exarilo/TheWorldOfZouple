@@ -19,6 +19,7 @@ import android.widget.Button;
  */
 public class FullscreenActivity extends AppCompatActivity {
     private Button btChangeActivity;
+    Database db = new Database(FullscreenActivity.this);
     /**
      * Whether or not the system UI should be auto-hidden after
      * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
@@ -110,6 +111,7 @@ public class FullscreenActivity extends AppCompatActivity {
             }
         });
         btChangeActivity= findViewById(R.id.btPlay);
+
 
         btChangeActivity.setOnClickListener(new View.OnClickListener() {
             @Override
