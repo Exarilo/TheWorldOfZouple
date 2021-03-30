@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -50,20 +52,20 @@ public class SecondActivity extends AppCompatActivity {
     private ProgressBar pbXP;
 
 
-    private TextView tvMaxHPOfCaracter;
+
 
     private TextView tvEnnemiLVL;
-    private TextView tvMaxEnnemiHP;
-    private TextView tvCurrentHPEnnemi;
-    private TextView tvCurrentCarHP;
+
+    private TextView tvEnnemiHP;
+    private TextView tvCarHP;
 
 
     private TextView tvLVL;
     static TextView tvGold;
     private TextView tvDamages;
     private TextView tvDamages2;
-    private TextView tvMalusDamages;
-    private TextView tvMalusDamages2;
+
+
 
     private TextView tvHistorique;
 
@@ -88,6 +90,7 @@ public class SecondActivity extends AppCompatActivity {
     static int ptsARepartir;
     static int nbDeath=0;
     static int NbZoupleTueSuccess=0;
+
 
     ScrollView ScrollViewHistorique;
 
@@ -197,10 +200,11 @@ public class SecondActivity extends AppCompatActivity {
         pbXP=findViewById(R.id.pbXP);
         pbXP.setProgress(xp);
         pbXP.setMax((int)maxXP);
-        tvCurrentCarHP=findViewById(R.id.tvCurrentCarHP);
-        tvCurrentHPEnnemi=findViewById(R.id.tvCurrentEnnemiHP);
+        tvCarHP=findViewById(R.id.carHP);
+        tvCarHP.setText("HP : "+String.valueOf(currentCaracter.caracteristic.hp)+" / "+ String.valueOf(currentCaracter.caracteristic.hp));
+        tvEnnemiHP=findViewById(R.id.EnnemiHP);
         tvLVL=findViewById(R.id.tvLVL);
-        tvLVL.setText(String.valueOf(currentCaracter.caracteristic.lvl));
+        tvLVL.setText("Lvl : "+String.valueOf(currentCaracter.caracteristic.lvl));
         tvGold=findViewById(R.id.tvGold);
         tvGold.setText(String.valueOf(currentCaracter.gold));
 
@@ -208,16 +212,17 @@ public class SecondActivity extends AppCompatActivity {
         imgLvlUp=findViewById(R.id.imLvlUp);
         imgMonster=findViewById(R.id.imgMonster);
 
-        tvMalusDamages=findViewById(R.id.tvMalusDamages);
+
         tvDamages=findViewById(R.id.tvDamages);
-        tvMalusDamages2=findViewById(R.id.tvMalusDamages2);
+
         tvDamages2=findViewById(R.id.tvDamages2);
         imgEnnemiAttack=findViewById(R.id.imgEnnemiAttack);
 
-        tvMaxHPOfCaracter=findViewById(R.id.tvMaxHP);
-        tvMaxEnnemiHP=findViewById(R.id.tvMaxEnnemiHP);
+
+
 
         tvEnnemiLVL=findViewById(R.id.tvEnnemiLVL);
+
 
         imgCaracter=findViewById(R.id.imgCaracter);
 
@@ -360,7 +365,7 @@ public class SecondActivity extends AppCompatActivity {
             return false;
 
         imgMonster.setImageResource(id);
-        tvEnnemiLVL.setText(String.valueOf(currentMonster.caracteristic.lvl));
+        tvEnnemiLVL.setText("Lvl : "+String.valueOf(currentMonster.caracteristic.lvl));
         resetEnnemiHp();
 
 
@@ -383,7 +388,6 @@ public class SecondActivity extends AppCompatActivity {
         imgCarAttack.setImageResource(id);
         imgCarAttack.setVisibility(View.VISIBLE);
         tvDamages.setVisibility(View.VISIBLE);
-        tvMalusDamages.setVisibility(View.VISIBLE);
 
 
         int idMonsterDegats= getResources().getIdentifier(currentMonster.monsterDamagesImg,"mipmap",getPackageName());
@@ -398,7 +402,7 @@ public class SecondActivity extends AppCompatActivity {
             public void run() {
                 imgCarAttack.setVisibility(View.INVISIBLE);
                 tvDamages.setVisibility(View.INVISIBLE);
-                tvMalusDamages.setVisibility(View.INVISIBLE);
+
             }
         }, 300);
 
@@ -432,9 +436,9 @@ public class SecondActivity extends AppCompatActivity {
         }
         else {
             if (!DefSupThanDamages){
-                tvDamages2.setText(String.valueOf(Math.round(currentMonster.caracteristic.damages)-currentCaracter.caracteristic.def));
+                tvDamages2.setText("- "+String.valueOf(Math.round(currentMonster.caracteristic.damages)-currentCaracter.caracteristic.def));
                 tvDamages2.setVisibility(View.VISIBLE);
-                tvMalusDamages2.setVisibility(View.VISIBLE);
+
                 int id2= getResources().getIdentifier(currentCaracter.CaracterDamagesImg,"mipmap",getPackageName());
                 if(id2<=0)
                     return;
@@ -451,7 +455,7 @@ public class SecondActivity extends AppCompatActivity {
             public void run() {
 
                 tvDamages2.setVisibility(View.INVISIBLE);
-                tvMalusDamages2.setVisibility(View.INVISIBLE);
+
                 imgEnnemiAttack.setVisibility(View.INVISIBLE);
                 int id= getResources().getIdentifier(currentCaracter.CaracterImg,"mipmap",getPackageName());
                 if(id<=0)
@@ -471,17 +475,16 @@ public class SecondActivity extends AppCompatActivity {
         pbHPennemi.setMax(currentMonster.caracteristic.hp);
         initialEnnemiHP=currentMonster.caracteristic.hp;
         pbHPennemi.setProgress(initialEnnemiHP);
-        tvMaxEnnemiHP.setText(String.valueOf(currentMonster.caracteristic.hp));
-        tvCurrentHPEnnemi.setText(String.valueOf(currentMonster.caracteristic.hp));
+
+        tvEnnemiHP.setText("HP : "+String.valueOf(currentMonster.caracteristic.hp)+" / "+String.valueOf(currentMonster.caracteristic.hp));
         currentEnnemiHP=initialEnnemiHP;
-        tvCurrentHPEnnemi.setText(String.valueOf(currentEnnemiHP));
+
     }
     private  void resetCarHp(){
         currentCarHP=currentCaracter.caracteristic.hp;
-        tvMaxHPOfCaracter.setText(String.valueOf(currentCaracter.caracteristic.hp));
         pbHPCar.setMax(currentCaracter.caracteristic.hp);
         pbHPCar.setProgress(currentCaracter.caracteristic.hp);
-        tvCurrentCarHP.setText(String.valueOf(currentCarHP));
+        tvCarHP.setText("HP : "+String.valueOf(currentCarHP)+" / "+String.valueOf(currentCarHP));
 
     }
 
@@ -492,17 +495,16 @@ public class SecondActivity extends AppCompatActivity {
 
         if(randomCrit <= currentCaracter.caracteristic.critRate - 1){
             currentEnnemiHP=currentEnnemiHP-((int)Math.round(currentCaracter.caracteristic.damages*2));
-            tvDamages.setText(String.valueOf(Math.round(currentCaracter.caracteristic.damages)*2));
+            tvDamages.setText(String.valueOf("- "+Math.round(currentCaracter.caracteristic.damages)*2));
             tvDamages.setTextColor(Color.parseColor("#FF0000"));
-            tvMalusDamages.setTextColor(Color.parseColor("#FF0000"));
+
         }
         else {
             currentEnnemiHP = currentEnnemiHP - (int) Math.round(currentCaracter.caracteristic.damages);
-            tvDamages.setText(String.valueOf(Math.round(currentCaracter.caracteristic.damages)));
+            tvDamages.setText("- "+String.valueOf(Math.round(currentCaracter.caracteristic.damages)));
             tvDamages.setTextColor(Color.parseColor("#ffff8800"));
-            tvMalusDamages.setTextColor(Color.parseColor("#ffff8800"));
         }
-        tvCurrentHPEnnemi.setText(String.valueOf(Math.round(currentEnnemiHP)));
+        tvEnnemiHP.setText("HP : "+String.valueOf(Math.round(currentEnnemiHP))+" / "+String.valueOf(currentMonster.caracteristic.hp));
 
         setAnimation();
 
@@ -567,7 +569,7 @@ public class SecondActivity extends AppCompatActivity {
             else
                 defSupThanDamages=true;
         }
-        tvCurrentCarHP.setText(String.valueOf(currentCarHP));
+        tvCarHP.setText("HP : "+String.valueOf(currentCarHP)+" / "+String.valueOf(currentCaracter.caracteristic.hp));
 
         setAnimation2(defSupThanDamages,isDodge);
         if(currentCarHP<=0){
@@ -629,7 +631,7 @@ public class SecondActivity extends AppCompatActivity {
         currentCaracter.caracteristic.lvl++;
         maxXP=maxXP*1.5;
         maxXP=Math.round(maxXP);
-        tvLVL.setText(String.valueOf(currentCaracter.caracteristic.lvl));
+        tvLVL.setText("Lvl : "+String.valueOf(currentCaracter.caracteristic.lvl));
         pbXP.setMax((int)maxXP);
         imgLvlUp.setVisibility(View.VISIBLE);
         final Handler handler = new Handler();
@@ -648,7 +650,7 @@ public class SecondActivity extends AppCompatActivity {
         super.onResume();
         pbHPCar.setMax(currentCaracter.caracteristic.hp);
         tvGold.setText(String.valueOf(currentCaracter.gold));
-        tvMaxHPOfCaracter.setText(String.valueOf(currentCaracter.caracteristic.hp));
+        tvCarHP.setText("HP : "+String.valueOf(currentCarHP) + " / "+String.valueOf(currentCaracter.caracteristic.hp));
     }
 
 

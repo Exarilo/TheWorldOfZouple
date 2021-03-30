@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.93" />
+        app:layout_constraintGuide_percent="0.96" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Vgl2"
@@ -40,14 +40,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.7" />
+        app:layout_constraintGuide_percent="0.66" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Hgl4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.83" />
+        app:layout_constraintGuide_percent="0.81" />
 
     <LinearLayout
         android:id="@+id/layoutFirstLine"
@@ -71,8 +71,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ZouploPieces : "
-            android:textColor="@android:color/holo_orange_light"
-            android:textSize="24sp" />
+            android:textColor="@android:color/holo_orange_light" />
 
         <TextView
             android:id="@+id/tvGold"
@@ -81,7 +80,11 @@
             android:layout_weight="1"
             android:text="0"
             android:textColor="@android:color/background_dark"
-            android:textSize="24sp"
+            android:autoSizeMaxTextSize="100sp"
+            android:autoSizeMinTextSize="2sp"
+            android:autoSizeStepGranularity="2sp"
+            android:autoSizeTextType="uniform"
+            android:maxLines="1"
             android:textStyle="bold" />
 
         <Button
@@ -155,22 +158,19 @@
                 android:orientation="horizontal">
 
 
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="LvL : "
-                    android:textColor="@color/colorPrimary"
-                    android:textStyle="bold"
-                    android:translationZ="90dp" />
 
                 <TextView
                     android:id="@+id/tvLVL"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1"
+                    android:text="LvL : 1"
                     android:textColor="@color/colorPrimary"
                     android:textStyle="bold"
+                    android:autoSizeMaxTextSize="100sp"
+                    android:autoSizeMinTextSize="2sp"
+                    android:autoSizeStepGranularity="2sp"
+                    android:autoSizeTextType="uniform"
+                    android:maxLines="1"
                     android:translationZ="90dp" />
 
                 <ImageView
@@ -212,7 +212,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView18"
+                    android:id="@+id/carHP"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:autoSizeMaxTextSize="100sp"
@@ -220,48 +220,10 @@
                     android:autoSizeStepGranularity="2sp"
                     android:autoSizeTextType="uniform"
                     android:maxLines="1"
-                    android:text="HP : "
+                    android:text="HP : 1000 / 1000"
                     android:textColor="@android:color/background_dark"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/tvCurrentCarHP"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1000"
-                    android:maxLines="1"
-                    android:autoSizeTextType="uniform"
-                    android:autoSizeMinTextSize="2sp"
-                    android:autoSizeStepGranularity="2sp"
-                    android:autoSizeMaxTextSize="100sp"
-                    android:textColor="@android:color/background_dark"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textView20"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:maxLines="1"
-                    android:autoSizeTextType="uniform"
-                    android:autoSizeMinTextSize="2sp"
-                    android:autoSizeStepGranularity="2sp"
-                    android:autoSizeMaxTextSize="100sp"
-                    android:text="/"
-                    android:textColor="@android:color/background_dark"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tvMaxHP"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:maxLines="1"
-                    android:autoSizeTextType="uniform"
-                    android:autoSizeMinTextSize="2sp"
-                    android:autoSizeStepGranularity="2sp"
-                    android:autoSizeMaxTextSize="100sp"
-                    android:text="1000"
-                    android:textColor="@android:color/background_dark"
-                    android:textStyle="bold" />
             </LinearLayout>
         </RelativeLayout>
 
@@ -298,23 +260,17 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:textColor="@android:color/holo_orange_dark"
-                    android:textSize="18sp"
+                    android:autoSizeMaxTextSize="100sp"
+                    android:autoSizeMinTextSize="2sp"
+                    android:autoSizeStepGranularity="2sp"
+                    android:autoSizeTextType="uniform"
+                    android:maxLines="1"
+                    android:visibility="invisible"
                     android:textStyle="bold"
                     android:translationZ="90dp"
-                    tools:text="-" />
+                    tools:text="- 0" />
 
-                <TextView
-                    android:id="@+id/tvMalusDamages2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:layout_toRightOf="@+id/tvDamages2"
-                    android:gravity="center"
-                    android:text=""
-                    android:textColor="@android:color/holo_orange_dark"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:translationZ="91dp" />
+
             </RelativeLayout>
 
         </LinearLayout>
@@ -394,21 +350,13 @@
                 android:orientation="horizontal">
 
 
-                <TextView
-                    android:id="@+id/textView21"
-                    android:layout_width="47dp"
-                    android:layout_height="match_parent"
-                    android:text="LvL :"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="14sp"
-                    android:textStyle="bold"
-                    android:translationZ="90dp" />
+
 
                 <TextView
                     android:id="@+id/tvEnnemiLVL"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1"
+                    android:text="LvL : 1"
                     android:textColor="@color/colorPrimary"
                     android:textSize="14sp"
                     android:textStyle="bold"
@@ -425,37 +373,19 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView12"
+                    android:id="@+id/EnnemiHP"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="HP :"
+                    android:text="HP : 1000 / 1000"
+                    android:autoSizeMaxTextSize="100sp"
+                    android:autoSizeMinTextSize="2sp"
+                    android:autoSizeStepGranularity="2sp"
+                    android:autoSizeTextType="uniform"
+                    android:maxLines="1"
                     android:textColor="@android:color/background_dark"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/tvCurrentEnnemiHP"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1000"
-                    android:textColor="@android:color/background_dark"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textView16"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="/"
-                    android:textColor="@android:color/background_dark"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"/>
 
 
-                <TextView
-                    android:id="@+id/tvMaxEnnemiHP"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1000"
-                    android:textColor="@android:color/background_dark"
-                    android:textStyle="bold" />
             </LinearLayout>
         </RelativeLayout>
 
@@ -480,25 +410,23 @@
                     android:max="1000"
                     android:progress="1000" />
 
-                <TextView
-                    android:id="@+id/tvMalusDamages"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="-"
-                    android:textColor="@android:color/holo_orange_dark"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:visibility="invisible" />
+
+
+
 
                 <TextView
                     android:id="@+id/tvDamages"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@android:color/holo_orange_dark"
-                    android:textSize="18sp"
+                    android:autoSizeMaxTextSize="100sp"
+                    android:autoSizeMinTextSize="2sp"
+                    android:autoSizeStepGranularity="2sp"
+                    android:autoSizeTextType="uniform"
+                    android:maxLines="1"
                     android:textStyle="bold"
                     android:visibility="invisible"
-                    tools:text="-" />
+                    tools:text="- 0" />
 
             </RelativeLayout>
 
@@ -512,7 +440,7 @@
 
             <ImageView
                 android:id="@+id/imgMonster"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:visibility="visible" />
         </LinearLayout>
@@ -539,6 +467,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="0.80"
             android:orientation="horizontal">
 
             <Button
@@ -553,6 +482,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight=".50"
+
                 android:text="FUIR" />
         </LinearLayout>
 
@@ -561,6 +491,7 @@
             android:id="@+id/button7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight=".20"
             android:text="CONSOMMABLE" />
     </LinearLayout>
 
@@ -591,8 +522,6 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginBottom="10dp"
-
-
             android:layout_weight=".20"
             android:background="@mipmap/grimmoire_foreground" />
 
@@ -633,8 +562,8 @@
             android:id="@+id/textView9"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight=".20"
 
+            android:layout_weight=".20"
             android:text="Personnage"
             android:textColor="@android:color/background_dark"
             android:textStyle="bold" />
