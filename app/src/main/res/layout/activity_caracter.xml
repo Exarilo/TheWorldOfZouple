@@ -31,7 +31,7 @@
                 android:layout_weight="1" />
             <Button
                 android:id="@+id/btCloseCaracter"
-                android:layout_width="48dp"
+                android:layout_width="52dp"
                 android:layout_height="53dp"
                 android:background="@mipmap/btclose_foreground"
                 android:gravity="right" />

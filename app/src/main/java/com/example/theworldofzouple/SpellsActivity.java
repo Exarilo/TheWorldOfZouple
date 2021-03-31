@@ -68,7 +68,7 @@ public class SpellsActivity extends AppCompatActivity {
 
 
         tvGoldSpell=findViewById(R.id.tvGoldSpell);
-        tvGoldSpell.setText(String.valueOf(Golds));
+        tvGoldSpell.setText("ZouploPieces : " +String.valueOf(Golds));
 
         costSpell1=findViewById(R.id.costSpell1);
 
@@ -241,7 +241,7 @@ public class SpellsActivity extends AppCompatActivity {
             setDamagesWithAnOtherBuy();
             Golds=Golds-spell.cost;
             SecondActivity.currentCaracter.setGold(Golds);
-            tvGoldSpell.setText(String.valueOf(SecondActivity.currentCaracter.gold));
+            tvGoldSpell.setText("ZouploPieces : " +String.valueOf(SecondActivity.currentCaracter.gold));
             SecondActivity.tvGold.setText(String.valueOf(SecondActivity.currentCaracter.gold));
             SecondActivity.currentCaracter.caracteristic.damages*=spell.ratioDamagesBonus;
             SecondActivity.currentCaracter.setCaracterAttackImg(spell.spellImg);

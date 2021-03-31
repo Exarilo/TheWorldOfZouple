@@ -340,6 +340,8 @@
         app:layout_constraintStart_toStartOf="@+id/Vgl2"
         app:layout_constraintTop_toBottomOf="@+id/Hgl2">
 
+
+
         <RelativeLayout
             android:id="@+id/LvlEtProgBarreEnnemi"
             android:layout_width="match_parent"

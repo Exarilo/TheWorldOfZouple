@@ -30,66 +30,100 @@
         tools:visibility="visible">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
-
-            <TextView
-                android:id="@+id/premier"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
 
-                android:layout_marginTop="128dp"
-                android:layout_marginBottom="177dp"
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/Vgl2FirstActivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.85" />
 
-                android:background="#D4CCCB"
-                android:foregroundGravity="top"
-                android:text="@string/txtHistoire"
-                android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/btPlay"
-                android:layout_width="331dp"
-                android:layout_height="103dp"
-                android:text="@string/btLancerJeu"
-                android:textColor="@android:color/holo_red_dark"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/premier"
-                app:layout_constraintVertical_bias="0.108" />
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/Vgl1FirstActivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.15" />
 
             <ImageView
                 android:id="@+id/ImgZoupleInto"
                 android:layout_width="201dp"
                 android:layout_height="187dp"
                 android:translationZ="90dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/HglImgFirstActivity"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.076"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintTop_toBottomOf="parent"
+                app:layout_constraintVertical_bias="1.0"
                 app:srcCompat="@mipmap/zoupleintro_foreground" />
 
             <ImageView
                 android:id="@+id/imageView8"
                 android:layout_width="168dp"
                 android:layout_height="191dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:translationZ="90dp"
+                app:layout_constraintBottom_toTopOf="@id/HglImgFirstActivity"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
+                app:layout_constraintTop_toBottomOf="parent"
+                app:layout_constraintVertical_bias="1.0"
                 app:srcCompat="@mipmap/zoupleintro2_foreground" />
+            <TextView
+                android:id="@+id/premier"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:autoSizeMaxTextSize="100sp"
+                android:autoSizeMinTextSize="2sp"
+                android:autoSizeStepGranularity="2sp"
+                android:autoSizeTextType="uniform"
+                android:background="#D4CCCB"
+                android:foregroundGravity="top"
+                android:text="@string/txtHistoire"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/Hgl2FirstActivity"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/Hgl1FirstActivity" />
 
 
+            <Button
+                android:id="@+id/btPlay"
+                android:layout_width="0dp"
+                android:layout_height="103dp"
+                android:text="@string/btLancerJeu"
+
+                android:textColor="@android:color/holo_red_dark"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/Vgl2FirstActivity"
+                app:layout_constraintStart_toEndOf="@id/Vgl1FirstActivity"
+                app:layout_constraintTop_toBottomOf="@+id/Hgl2FirstActivity"
+                app:layout_constraintVertical_bias="0.2" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/Hgl1FirstActivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.3" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/HglImgFirstActivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.35" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/Hgl2FirstActivity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.75" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout
