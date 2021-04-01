@@ -5,777 +5,197 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#C1B6B6"
-    tools:context=".SpellsActivity">
+    tools:context=".ShopActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@id/Hgl1SpellActivity"
+        app:layout_constraintEnd_toEndOf="@id/VglShopActivity3"
+        app:layout_constraintStart_toStartOf="@id/VglShopActivity1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/HglShopActivity1"
+        app:srcCompat="@drawable/panneauboutique" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoSizeMaxTextSize="100sp"
+        android:autoSizeMinTextSize="2sp"
+        android:autoSizeStepGranularity="2sp"
+        android:autoSizeTextType="uniform"
+        android:maxLines="1"
+
+        android:text="BOUTIQUE"
+        android:textColor="@android:color/background_dark"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imageView4"
+        app:layout_constraintEnd_toEndOf="@id/VglShopActivity3"
+        app:layout_constraintStart_toStartOf="@id/VglShopActivity1"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:layout_constraintVertical_bias="0.52" />
+
+
+    <Button
+        android:id="@+id/btCloseShop"
+        android:layout_width="52dp"
+        android:layout_height="53dp"
+        android:background="@mipmap/btclose_foreground"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.986"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.007" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/HglShopActivity1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/HglShopActivity2"
+        app:layout_constraintEnd_toStartOf="@id/VglShopActivity2"
+        app:srcCompat="@mipmap/marchand_foreground" />
+
+    <LinearLayout
+        android:id="@+id/LayoutZouplo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/HglShopActivity2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/VglShopActivity2"
+        app:layout_constraintTop_toBottomOf="@+id/HglShopActivity1"
+        app:layout_constraintVertical_bias="0.100000024">
 
         <ImageView
-            android:id="@+id/imageView6"
-            android:layout_width="43dp"
-            android:layout_height="37dp"
+            android:id="@+id/imageView7"
+            android:layout_width="41dp"
+            android:layout_height="33dp"
             app:srcCompat="@mipmap/zouplopiece_foreground" />
-
         <TextView
-            android:id="@+id/textView6"
+            android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="ZouploPieces : "
-            android:textColor="@android:color/background_dark"
+            android:textColor="@android:color/black"
             android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
 
-        <TextView
-            android:id="@+id/tvGoldSpell"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="0"
-            android:textColor="@android:color/background_dark"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-
-        <Button
-            android:id="@+id/btClose"
-            android:layout_width="52dp"
-            android:layout_height="53dp"
-            android:background="@mipmap/btclose_foreground" />
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textView7"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Degats x 1,2"
-        android:textColor="@android:color/background_dark"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/Hgl2SpellActivity"
-        app:layout_constraintEnd_toStartOf="@id/Vgl1SpellActivity2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Hgl1SpellActivity"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="0dp"
-        android:layout_height="90dp"
-        app:layout_constraintBottom_toTopOf="@id/Hgl2SpellActivity"
-        app:layout_constraintEnd_toStartOf="@id/Vgl1SpellActivity2"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Hgl1SpellActivity"
-        app:layout_constraintVertical_bias="0.18"
-        app:srcCompat="@mipmap/boulefeu2_foreground" />
-
-    <TextView
-        android:id="@+id/costSpell1"
+        android:id="@+id/tvGoldsShop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1500"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/Hgl2SpellActivity"
-        app:layout_constraintEnd_toStartOf="@id/Vgl1SpellActivity2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Hgl1SpellActivity"
-
-        app:layout_constraintVertical_bias="0.58000004" />
-
-    <Button
-        android:id="@+id/btBuySpell1"
-        android:layout_width="82dp"
-        android:layout_height="69dp"
-
-        android:background="@mipmap/buy_foreground"
-        app:layout_constraintBottom_toTopOf="@id/Hgl2SpellActivity"
-        app:layout_constraintEnd_toStartOf="@id/Vgl1SpellActivity2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Hgl1SpellActivity"
-        app:layout_constraintVertical_bias="1.0" />
-
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Degats x 1,4"
+        android:autoSizeMaxTextSize="100sp"
+        android:autoSizeMinTextSize="2sp"
+        android:autoSizeStepGranularity="2sp"
+        android:autoSizeTextType="uniform"
+        android:maxLines="1"
+        android:text="0"
         android:textColor="@android:color/background_dark"
-        android:textSize="18sp"
+        android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/Hgl2SpellActivity"
-        app:layout_constraintEnd_toStartOf="@id/Vgl2SpellActivity3"
-        app:layout_constraintStart_toEndOf="@id/Vgl1SpellActivity2"
-        app:layout_constraintTop_toBottomOf="@id/Hgl1SpellActivity"
+        app:layout_constraintBottom_toTopOf="@id/HglShopActivity2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.22"
+        app:layout_constraintStart_toStartOf="@id/VglShopActivity2"
+        app:layout_constraintTop_toBottomOf="@+id/LayoutZouplo"
         app:layout_constraintVertical_bias="0.0" />
 
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="0dp"
-        android:layout_height="90dp"
-        app:layout_constraintBottom_toTopOf="@id/Hgl2SpellActivity"
-        app:layout_constraintEnd_toStartOf="@id/Vgl2SpellActivity3"
-        app:layout_constraintStart_toEndOf="@id/Vgl1SpellActivity2"
-        app:layout_constraintTop_toBottomOf="@id/Hgl1SpellActivity"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintVertical_bias="0.18"
-        app:srcCompat="@mipmap/attackcaracter_foreground" />
 
-    <TextView
-        android:id="@+id/costSpell2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="5000"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintVertical_bias="0.58000004"
-        app:layout_constraintBottom_toTopOf="@id/Hgl2SpellActivity"
-        app:layout_constraintEnd_toStartOf="@id/Vgl2SpellActivity3"
-        app:layout_constraintStart_toEndOf="@id/Vgl1SpellActivity2"
-        app:layout_constraintTop_toBottomOf="@id/Hgl1SpellActivity"
+    <com.google.android.material.tabs.TabLayout
 
-        />
-
-    <Button
-        android:id="@+id/btBuySpell2"
-        android:layout_width="82dp"
-        android:layout_height="69dp"
-        app:layout_constraintBottom_toTopOf="@id/Hgl2SpellActivity"
-        app:layout_constraintEnd_toStartOf="@id/Vgl2SpellActivity3"
-        app:layout_constraintStart_toEndOf="@id/Vgl1SpellActivity2"
-        app:layout_constraintTop_toBottomOf="@id/Hgl1SpellActivity"
-        android:background="@mipmap/buy_foreground"
-        app:layout_constraintVertical_bias="1.0" />
-
-
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Degats x 1,6"
-        android:textColor="@android:color/background_dark"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/Hgl2SpellActivity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/Vgl2SpellActivity3"
-        app:layout_constraintTop_toBottomOf="@id/Hgl1SpellActivity"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="0dp"
-        android:layout_height="80dp"
-        app:layout_constraintBottom_toTopOf="@id/Hgl2SpellActivity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/Vgl2SpellActivity3"
-        app:layout_constraintTop_toBottomOf="@id/Hgl1SpellActivity"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintVertical_bias="0.18"
-        app:srcCompat="@mipmap/boulefeuforte_foreground" />
-
-    <TextView
-        android:id="@+id/costSpell"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="10 000"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/Hgl2SpellActivity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/Vgl2SpellActivity3"
-        app:layout_constraintTop_toBottomOf="@id/Hgl1SpellActivity"
-
-        app:layout_constraintVertical_bias="0.6" />
-
-    <Button
-        android:id="@+id/btBuySpell3"
-        android:layout_width="82dp"
-        android:layout_height="69dp"
-        android:background="@mipmap/buy_foreground"
-        app:layout_constraintBottom_toTopOf="@id/Hgl2SpellActivity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/Vgl2SpellActivity3"
-        app:layout_constraintTop_toBottomOf="@id/Hgl1SpellActivity"
-        app:layout_constraintVertical_bias="1.0" />
-
-
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Degats x 1,8"
-        android:textColor="@android:color/background_dark"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/Hgl3SpellActivity"
-        app:layout_constraintEnd_toStartOf="@id/Vgl1SpellActivity2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Hgl2SpellActivity"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="0dp"
-        android:layout_height="90dp"
-        app:layout_constraintBottom_toTopOf="@id/Hgl3SpellActivity"
-        app:layout_constraintEnd_toStartOf="@id/Vgl1SpellActivity2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Hgl2SpellActivity"
-        app:layout_constraintHorizontal_bias="0.0"
-
-        app:layout_constraintVertical_bias="0.18"
-        app:srcCompat="@mipmap/boulefeu3_foreground" />
-
-    <TextView
-        android:id="@+id/costSpell3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="18 000"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/Hgl3SpellActivity"
-        app:layout_constraintEnd_toStartOf="@id/Vgl1SpellActivity2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Hgl2SpellActivity"
-
-        app:layout_constraintVertical_bias="0.63"/>
-
-    <Button
-        android:id="@+id/btBuySpell4"
-        android:layout_width="82dp"
-        android:layout_height="69dp"
-
-        android:background="@mipmap/buy_foreground"
-        app:layout_constraintBottom_toTopOf="@id/Hgl3SpellActivity"
-        app:layout_constraintEnd_toStartOf="@id/Vgl1SpellActivity2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Hgl2SpellActivity"
-        app:layout_constraintVertical_bias="1.0" />
-
-
-    <TextView
-        android:id="@+id/textView19"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Degats x 2"
-        android:textColor="@android:color/background_dark"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/Hgl3SpellActivity"
-        app:layout_constraintEnd_toStartOf="@id/Vgl2SpellActivity3"
-        app:layout_constraintStart_toStartOf="@+id/Vgl1SpellActivity2"
-        app:layout_constraintTop_toBottomOf="@id/Hgl2SpellActivity"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/imageView14"
-        android:layout_width="0dp"
-        android:layout_height="90dp"
-        app:layout_constraintBottom_toTopOf="@id/Hgl3SpellActivity"
-        app:layout_constraintEnd_toStartOf="@id/Vgl2SpellActivity3"
-        app:layout_constraintStart_toStartOf="@+id/Vgl1SpellActivity2"
-        app:layout_constraintTop_toBottomOf="@id/Hgl2SpellActivity"
-        app:layout_constraintHorizontal_bias="0.0"
-
-        app:layout_constraintVertical_bias="0.18"
-        app:srcCompat="@mipmap/boulefeu4_foreground" />
-
-    <TextView
-        android:id="@+id/costSpell4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="45 000"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/Hgl3SpellActivity"
-        app:layout_constraintEnd_toStartOf="@id/Vgl2SpellActivity3"
-        app:layout_constraintStart_toStartOf="@+id/Vgl1SpellActivity2"
-        app:layout_constraintTop_toBottomOf="@id/Hgl2SpellActivity"
-
-        app:layout_constraintVertical_bias="0.63"/>
-
-    <Button
-        android:id="@+id/btBuySpell5"
-        android:layout_width="82dp"
-        android:layout_height="69dp"
-
-        android:background="@mipmap/buy_foreground"
-        app:layout_constraintBottom_toTopOf="@id/Hgl3SpellActivity"
-        app:layout_constraintEnd_toStartOf="@id/Vgl2SpellActivity3"
-        app:layout_constraintStart_toStartOf="@+id/Vgl1SpellActivity2"
-        app:layout_constraintTop_toBottomOf="@id/Hgl2SpellActivity"
-        app:layout_constraintVertical_bias="1.0" />
-
-
-
-    <TextView
-        android:id="@+id/textView26"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Degats x 2,2"
-        android:textColor="@android:color/background_dark"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/Hgl3SpellActivity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/Vgl2SpellActivity3"
-        app:layout_constraintTop_toBottomOf="@id/Hgl2SpellActivity"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/imageView15"
-        android:layout_width="0dp"
-        android:layout_height="90dp"
-        app:layout_constraintBottom_toTopOf="@id/Hgl3SpellActivity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/Vgl2SpellActivity3"
-        app:layout_constraintTop_toBottomOf="@id/Hgl2SpellActivity"
-        app:layout_constraintHorizontal_bias="0.0"
-
-        app:layout_constraintVertical_bias="0.18"
-        app:srcCompat="@mipmap/boulefeu5_foreground" />
-
-    <TextView
-        android:id="@+id/costSpell5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="70 000"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/Hgl3SpellActivity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/Vgl2SpellActivity3"
-        app:layout_constraintTop_toBottomOf="@id/Hgl2SpellActivity"
-
-        app:layout_constraintVertical_bias="0.63"/>
-
-    <Button
-        android:id="@+id/btBuySpell6"
-        android:layout_width="82dp"
-        android:layout_height="69dp"
-
-        android:background="@mipmap/buy_foreground"
-        app:layout_constraintBottom_toTopOf="@id/Hgl3SpellActivity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/Vgl2SpellActivity3"
-        app:layout_constraintTop_toBottomOf="@id/Hgl2SpellActivity"
-        app:layout_constraintVertical_bias="1.0" />
-
-
-
-
-
-    <TextView
-        android:id="@+id/textView27"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Degats x 2,4"
-        android:textColor="@android:color/background_dark"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/Hgl4SpellActivity"
-        app:layout_constraintEnd_toStartOf="@id/Vgl1SpellActivity2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Hgl3SpellActivity"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/imageView16"
-        android:layout_width="0dp"
-        android:layout_height="90dp"
-        app:layout_constraintBottom_toTopOf="@id/Hgl4SpellActivity"
-        app:layout_constraintEnd_toStartOf="@id/Vgl1SpellActivity2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Hgl3SpellActivity"
-
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintVertical_bias="0.18"
-        app:srcCompat="@mipmap/boulefeu6_foreground" />
-
-    <TextView
-        android:id="@+id/costSpell6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="120 000"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/Hgl4SpellActivity"
-        app:layout_constraintEnd_toStartOf="@id/Vgl1SpellActivity2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Hgl3SpellActivity"
-
-        app:layout_constraintVertical_bias="0.63"/>
-
-    <Button
-        android:id="@+id/btBuySpell7"
-        android:layout_width="82dp"
-        android:layout_height="69dp"
-
-        android:background="@mipmap/buy_foreground"
-        app:layout_constraintBottom_toTopOf="@id/Hgl4SpellActivity"
-        app:layout_constraintEnd_toStartOf="@id/Vgl1SpellActivity2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Hgl3SpellActivity"
-        app:layout_constraintVertical_bias="1.0" />
-
-
-
-    <TextView
-        android:id="@+id/textView28"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Degats x 2,6"
-        android:textColor="@android:color/background_dark"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/Hgl4SpellActivity"
-        app:layout_constraintEnd_toStartOf="@id/Vgl2SpellActivity3"
-        app:layout_constraintStart_toStartOf="@+id/Vgl1SpellActivity2"
-        app:layout_constraintTop_toBottomOf="@id/Hgl3SpellActivity"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/imageView17"
-        android:layout_width="0dp"
-        android:layout_height="90dp"
-        app:layout_constraintBottom_toTopOf="@id/Hgl4SpellActivity"
-        app:layout_constraintEnd_toStartOf="@id/Vgl2SpellActivity3"
-        app:layout_constraintStart_toStartOf="@+id/Vgl1SpellActivity2"
-        app:layout_constraintTop_toBottomOf="@id/Hgl3SpellActivity"
-        app:layout_constraintHorizontal_bias="0.0"
-
-        app:layout_constraintVertical_bias="0.18"
-        app:srcCompat="@mipmap/boulefeu7_foreground" />
-
-    <TextView
-        android:id="@+id/costSpell7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="210 000"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/Hgl4SpellActivity"
-        app:layout_constraintEnd_toStartOf="@id/Vgl2SpellActivity3"
-        app:layout_constraintStart_toStartOf="@+id/Vgl1SpellActivity2"
-        app:layout_constraintTop_toBottomOf="@id/Hgl3SpellActivity"
-
-        app:layout_constraintVertical_bias="0.63"/>
-
-    <Button
-        android:id="@+id/btBuySpell8"
-        android:layout_width="82dp"
-        android:layout_height="69dp"
-
-        android:background="@mipmap/buy_foreground"
-        app:layout_constraintBottom_toTopOf="@id/Hgl4SpellActivity"
-        app:layout_constraintEnd_toStartOf="@id/Vgl2SpellActivity3"
-        app:layout_constraintStart_toStartOf="@+id/Vgl1SpellActivity2"
-        app:layout_constraintTop_toBottomOf="@id/Hgl3SpellActivity"
-        app:layout_constraintVertical_bias="1.0" />
-
-
-
-
-    <TextView
-        android:id="@+id/textView29"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Degats x 2,8"
-        android:textColor="@android:color/background_dark"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/Hgl4SpellActivity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/Vgl2SpellActivity3"
-        app:layout_constraintTop_toBottomOf="@id/Hgl3SpellActivity"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/imageView18"
-        android:layout_width="0dp"
-        android:layout_height="90dp"
-        app:layout_constraintBottom_toTopOf="@id/Hgl4SpellActivity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/Vgl2SpellActivity3"
-        app:layout_constraintTop_toBottomOf="@id/Hgl3SpellActivity"
-        app:layout_constraintHorizontal_bias="0.0"
-
-        app:layout_constraintVertical_bias="0.18"
-        app:srcCompat="@mipmap/boulefeu8_foreground" />
-
-    <TextView
-        android:id="@+id/costSpell8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="350 000"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/Hgl4SpellActivity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/Vgl2SpellActivity3"
-        app:layout_constraintTop_toBottomOf="@id/Hgl3SpellActivity"
-
-        app:layout_constraintVertical_bias="0.63"/>
-
-    <Button
-        android:id="@+id/btBuySpell9"
-        android:layout_width="82dp"
-        android:layout_height="69dp"
-
-        android:background="@mipmap/buy_foreground"
-        app:layout_constraintBottom_toTopOf="@id/Hgl4SpellActivity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/Vgl2SpellActivity3"
-        app:layout_constraintTop_toBottomOf="@id/Hgl3SpellActivity"
-        app:layout_constraintVertical_bias="1.0" />
-
-
-
-    <TextView
-        android:id="@+id/textView30"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Degats x 3"
-        android:textColor="@android:color/background_dark"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/Vgl1SpellActivity2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Hgl4SpellActivity"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/imageView19"
-        android:layout_width="0dp"
-        android:layout_height="90dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/Vgl1SpellActivity2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Hgl4SpellActivity"
-
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintVertical_bias="0.18"
-        app:srcCompat="@mipmap/boulefeu9_foreground" />
-
-    <TextView
-        android:id="@+id/costSpell9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="570 000"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/Vgl1SpellActivity2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Hgl4SpellActivity"
-
-        app:layout_constraintVertical_bias="0.63"/>
-
-    <Button
-        android:id="@+id/btBuySpell10"
-        android:layout_width="82dp"
-        android:layout_height="69dp"
-
-        android:background="@mipmap/buy_foreground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/Vgl1SpellActivity2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/Hgl4SpellActivity"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/textView31"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Degats x 3,5"
-        android:textColor="@android:color/background_dark"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/Vgl2SpellActivity3"
-        app:layout_constraintStart_toStartOf="@id/Vgl1SpellActivity2"
-        app:layout_constraintTop_toBottomOf="@id/Hgl4SpellActivity"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <ImageView
-        android:id="@+id/imageView21"
-        android:layout_width="0dp"
-        android:layout_height="90dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/Vgl2SpellActivity3"
-        app:layout_constraintStart_toStartOf="@id/Vgl1SpellActivity2"
-        app:layout_constraintTop_toBottomOf="@id/Hgl4SpellActivity"
-        app:layout_constraintHorizontal_bias="0.0"
-
-        app:layout_constraintVertical_bias="0.18"
-        app:srcCompat="@mipmap/boulefeu10_foreground" />
-
-    <TextView
-        android:id="@+id/costSpell10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="770 000"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/Vgl2SpellActivity3"
-        app:layout_constraintStart_toStartOf="@id/Vgl1SpellActivity2"
-        app:layout_constraintTop_toBottomOf="@id/Hgl4SpellActivity"
-
-        app:layout_constraintVertical_bias="0.63"/>
-
-    <Button
-        android:id="@+id/btBuySpell11"
-        android:layout_width="82dp"
-        android:layout_height="69dp"
-
-        android:background="@mipmap/buy_foreground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/Vgl2SpellActivity3"
-        app:layout_constraintStart_toStartOf="@id/Vgl1SpellActivity2"
-        app:layout_constraintTop_toBottomOf="@id/Hgl4SpellActivity"
-        app:layout_constraintVertical_bias="1.0" />
-
-
-
-    <TextView
-        android:id="@+id/textView32"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Degats x 4"
-        android:textColor="@android:color/background_dark"
-        android:textSize="18sp"
-        android:textStyle="bold"
+        android:id="@+id/tableLayoutShop"
+        android:layout_width="match_parent"
+        android:layout_height="22dp"
+        android:theme="@style/Widget.Design.TabLayout"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/Vgl2SpellActivity3"
-        app:layout_constraintTop_toBottomOf="@id/Hgl4SpellActivity"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HglShopActivity2"
+        app:layout_constraintVertical_bias="0.0"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="@android:color/holo_orange_light"
+        app:tabIndicatorGravity="stretch"
+        app:tabMode="auto">
 
-    <ImageView
-        android:id="@+id/imageView22"
-        android:layout_width="0dp"
-        android:layout_height="90dp"
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_Armes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ARMES" />
+
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_Armures"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Armures" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_Consommables"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Consommables" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tab_Materiaux"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Materiaux" />
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/ShopViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="422dp"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/Vgl2SpellActivity3"
-        app:layout_constraintTop_toBottomOf="@id/Hgl4SpellActivity"
-        app:layout_constraintHorizontal_bias="0.0"
-
-        app:layout_constraintVertical_bias="0.18"
-        app:srcCompat="@mipmap/boulefeu11_foreground" />
-
-    <TextView
-        android:id="@+id/costSpell11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="1 000 000"
-        android:textColor="@android:color/holo_red_dark"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/Vgl2SpellActivity3"
-        app:layout_constraintTop_toBottomOf="@id/Hgl4SpellActivity"
-
-        app:layout_constraintVertical_bias="0.63"/>
-
-    <Button
-        android:id="@+id/btBuySpell12"
-        android:layout_width="82dp"
-        android:layout_height="69dp"
-
-        android:background="@mipmap/buy_foreground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/Vgl2SpellActivity3"
-        app:layout_constraintTop_toBottomOf="@id/Hgl4SpellActivity"
-        app:layout_constraintVertical_bias="1.0" />
-
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayoutShop"/>
 
 
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/Vgl2SpellActivity3"
+        android:id="@+id/VglShopActivity1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.66" />
+        app:layout_constraintGuide_percent="0.25" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/Vgl1SpellActivity2"
+        android:id="@+id/VglShopActivity2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.33" />
+        app:layout_constraintGuide_percent="0.50" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/Hgl1SpellActivity"
+        android:id="@+id/VglShopActivity3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/HglShopActivity1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.1" />
+        app:layout_constraintGuide_percent="0.10" />
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/Hgl2SpellActivity"
+        android:id="@+id/HglShopActivity2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.325" />
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/Hgl3SpellActivity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.55" />
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/Hgl4SpellActivity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.775" />
-
-
-
-
-
-
-
+        app:layout_constraintGuide_percent="0.40" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

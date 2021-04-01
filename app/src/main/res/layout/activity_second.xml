@@ -33,7 +33,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.2" />
+        app:layout_constraintGuide_percent="0.1997264" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/HglEnnemiLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2897264" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Hgl3"
@@ -338,7 +344,7 @@
         app:layout_constraintBottom_toTopOf="@+id/Hgl3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/Vgl2"
-        app:layout_constraintTop_toBottomOf="@+id/Hgl2">
+        app:layout_constraintTop_toBottomOf="@+id/HglEnnemiLayout">
 
 
 
