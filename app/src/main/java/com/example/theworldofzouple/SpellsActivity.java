@@ -123,6 +123,7 @@ public class SpellsActivity extends AppCompatActivity {
             @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(View v) {
+
                 if(!dic_spells.containsKey("Spell1")||AlreadyBuySpell1)
                     return;
                 Spell CurrentSpell = dic_spells.get("Spell1");

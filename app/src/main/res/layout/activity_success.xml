@@ -25,6 +25,8 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.414" />
 
+
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar2"
         android:layout_width="0dp"
@@ -47,25 +49,26 @@
         android:text="2500"
         android:textColor="@color/design_default_color_on_secondary"
         android:translationZ="90dp"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-        app:layout_constraintHorizontal_bias="0.773"
-        app:layout_constraintStart_toStartOf="@+id/toolbar2"
         app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+        app:layout_constraintStart_toEndOf="@+id/VglSuccesActivityCenter"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.34"
         app:layout_constraintVertical_bias="0.506" />
 
     <ImageView
         android:id="@+id/btButinMission4"
         android:layout_width="74dp"
         android:layout_height="65dp"
-        android:layout_marginStart="240dp"
-        android:layout_marginLeft="240dp"
+
         android:background="@android:color/transparent"
         android:translationZ="90dp"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
-        app:layout_constraintStart_toStartOf="@+id/toolbar2"
         app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+        app:layout_constraintStart_toEndOf="@+id/VglSuccesActivityCenter"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintVertical_bias="0.581"
         app:srcCompat="@mipmap/butin_foreground" />
 
@@ -161,8 +164,8 @@
         android:translationZ="90dp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
         app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-        app:layout_constraintHorizontal_bias="0.863"
-        app:layout_constraintStart_toStartOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.67"
+        app:layout_constraintStart_toEndOf="@+id/VglSuccesActivityCenter"
         app:layout_constraintTop_toTopOf="@+id/toolbar2"
         app:layout_constraintVertical_bias="0.372"
         app:srcCompat="@mipmap/zouplopiece_foreground" />
@@ -175,8 +178,8 @@
         android:translationZ="90dp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
         app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-        app:layout_constraintHorizontal_bias="0.863"
-        app:layout_constraintStart_toStartOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.67"
+        app:layout_constraintStart_toEndOf="@+id/VglSuccesActivityCenter"
         app:layout_constraintTop_toTopOf="@+id/toolbar2"
         app:layout_constraintVertical_bias="0.508"
         app:srcCompat="@mipmap/zouplopiece_foreground" />
@@ -189,25 +192,26 @@
         android:text="2500"
         android:textColor="@color/design_default_color_on_secondary"
         android:translationZ="90dp"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-        app:layout_constraintHorizontal_bias="0.779"
-        app:layout_constraintStart_toStartOf="@+id/toolbar2"
         app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+        app:layout_constraintStart_toEndOf="@+id/VglSuccesActivityCenter"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.34"
         app:layout_constraintVertical_bias="0.374" />
 
     <ImageView
         android:id="@+id/btButinMission3"
         android:layout_width="74dp"
         android:layout_height="65dp"
-        android:layout_marginStart="240dp"
-        android:layout_marginLeft="240dp"
+
         android:background="@android:color/transparent"
         android:translationZ="90dp"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
-        app:layout_constraintStart_toStartOf="@+id/toolbar2"
         app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+        app:layout_constraintStart_toEndOf="@+id/VglSuccesActivityCenter"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintVertical_bias="0.424"
         app:srcCompat="@mipmap/butin_foreground" />
 
@@ -233,11 +237,13 @@
         android:layout_height="21dp"
         android:background="@android:color/transparent"
         android:translationZ="90dp"
+
         app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
         app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-        app:layout_constraintHorizontal_bias="0.863"
-        app:layout_constraintStart_toStartOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.67"
+        app:layout_constraintStart_toEndOf="@+id/VglSuccesActivityCenter"
         app:layout_constraintTop_toTopOf="@+id/toolbar2"
+
         app:layout_constraintVertical_bias="0.047"
         app:srcCompat="@mipmap/zouplopiece_foreground" />
 
@@ -249,11 +255,11 @@
         android:text="500"
         android:textColor="@color/design_default_color_on_secondary"
         android:translationZ="90dp"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-        app:layout_constraintHorizontal_bias="0.779"
-        app:layout_constraintStart_toStartOf="@+id/toolbar2"
         app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+        app:layout_constraintStart_toEndOf="@+id/VglSuccesActivityCenter"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.34"
         app:layout_constraintVertical_bias="0.198" />
 
     <TextView
@@ -298,14 +304,15 @@
         android:id="@+id/btButinMission2"
         android:layout_width="74dp"
         android:layout_height="65dp"
-        android:layout_marginStart="240dp"
-        android:layout_marginLeft="240dp"
+
         android:background="@android:color/transparent"
         android:translationZ="90dp"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
-        app:layout_constraintStart_toStartOf="@+id/toolbar2"
         app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+        app:layout_constraintStart_toEndOf="@+id/VglSuccesActivityCenter"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.54"
         app:layout_constraintVertical_bias="0.224"
         app:srcCompat="@mipmap/butin_foreground" />
 
@@ -378,12 +385,15 @@
         android:background="@android:color/transparent"
         android:translationZ="90dp"
         android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-        app:layout_constraintHorizontal_bias="0.845"
-        app:layout_constraintStart_toStartOf="@+id/toolbar2"
-        app:layout_constraintTop_toTopOf="@+id/toolbar2"
         app:layout_constraintVertical_bias="0.072"
+
+        app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+        app:layout_constraintStart_toEndOf="@+id/VglSuccesActivityCenter"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.54"
+
+
         app:srcCompat="@mipmap/butin_foreground" />
 
     <TextView
@@ -394,11 +404,11 @@
         android:text="500"
         android:textColor="@color/design_default_color_on_secondary"
         android:translationZ="90dp"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-        app:layout_constraintHorizontal_bias="0.779"
-        app:layout_constraintStart_toStartOf="@+id/toolbar2"
         app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
+        app:layout_constraintStart_toEndOf="@+id/VglSuccesActivityCenter"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.34"
         app:layout_constraintVertical_bias="0.05" />
 
     <ImageView
@@ -409,8 +419,8 @@
         android:translationZ="90dp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar2"
         app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-        app:layout_constraintHorizontal_bias="0.863"
-        app:layout_constraintStart_toStartOf="@+id/toolbar2"
+        app:layout_constraintHorizontal_bias="0.67"
+        app:layout_constraintStart_toEndOf="@+id/VglSuccesActivityCenter"
         app:layout_constraintTop_toTopOf="@+id/toolbar2"
         app:layout_constraintVertical_bias="0.199"
         app:srcCompat="@mipmap/zouplopiece_foreground" />
@@ -439,4 +449,10 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.90" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/VglSuccesActivityCenter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.6" />
 </androidx.constraintlayout.widget.ConstraintLayout>

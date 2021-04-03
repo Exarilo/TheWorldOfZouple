@@ -3,6 +3,10 @@ package com.example.theworldofzouple;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -75,21 +79,21 @@ public class SecondActivity extends AppCompatActivity {
     private ImageView imgEnnemiAttack;
     private ImageView imgCaracter;
 
-
-
-    static boolean ennemiDead=false;
+    static boolean ennemiDead;
     static int initialEnnemiHP;
     static int currentEnnemiHP;
     static int currentCarHP;
 
+
     static int xp;
-    static double maxXP;
-    static int nbZoupleTue;
-    static int nbGolds;
-    static int lvlUPMonster;
-    static int ptsARepartir;
+    static double maxXP=100;
+    static int nbZoupleTue=0;
+    static int nbGolds=0;
+    static int lvlUPMonster=0;
+    static int ptsARepartir=0;
     static int nbDeath=0;
     static int NbZoupleTueSuccess=0;
+
 
 
     ScrollView ScrollViewHistorique;
@@ -111,8 +115,10 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        xp=db.getXP();
-        maxXP=db.getMaxXP();
+        if(db.getXP()!=0)
+            xp=db.getXP();
+        if(db.getXP()!=0)
+            maxXP=db.getMaxXP();
 
         //create User
         UserCaracter userCaracter;
@@ -238,13 +244,9 @@ public class SecondActivity extends AppCompatActivity {
 
         //region Set initial values of static var
 
-        maxXP=100;
-        nbZoupleTue=0;
-        nbGolds=0;
-        lvlUPMonster=0;
-        ptsARepartir=0;
-        initialEnnemiHP= pbHPennemi.getProgress();
-        currentEnnemiHP= initialEnnemiHP;
+        ennemiDead=false;
+        initialEnnemiHP=pbHPennemi.getProgress();
+        currentEnnemiHP=initialEnnemiHP;
         currentCarHP=currentCaracter.caracteristic.hp;
 
         //endregion
@@ -260,12 +262,14 @@ public class SecondActivity extends AppCompatActivity {
         btAttack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 setAttack();
             }
         });
         btRunAway.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 int addNewMonster=currentCaracter.caracteristic.lvl/2;
                 if(addNewMonster>=7)
                     addNewMonster=7;
@@ -278,8 +282,10 @@ public class SecondActivity extends AppCompatActivity {
         });
 
         btSuccess.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
+                flipBt(v,btSuccess);
                 moveToMenuSuccess();
             }
         });
@@ -653,6 +659,24 @@ public class SecondActivity extends AppCompatActivity {
         tvCarHP.setText("HP : "+String.valueOf(currentCarHP) + " / "+String.valueOf(currentCaracter.caracteristic.hp));
     }
 
+    public static void flipBt (View view,Button bt){
+        long animationDuration=500;
+        //ObjectAnimator animator = ObjectAnimator.ofFloat(btSuccess, "translationX", -50f);
+
+        ObjectAnimator animator =ObjectAnimator.ofFloat(bt,"rotation",0f,360f);
+        animator.setDuration(animationDuration);
+        animator.start();
+
+        animator.addListener(new AnimatorListenerAdapter() {
+            public void onAnimationEnd(Animator animation,Button bt) {
+                long animationDuration = 500;
+                ObjectAnimator animator2 =ObjectAnimator.ofFloat(bt,"rotation",360f,0f);
+                //ObjectAnimator animator2 = ObjectAnimator.ofFloat(btSuccess, "translationX", 25f);
+                animator2.setDuration(animationDuration);
+                animator2.start();
+            }
+        });
+    }
 
 
 }

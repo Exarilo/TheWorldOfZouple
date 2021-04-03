@@ -27,7 +27,7 @@ public class Database extends SQLiteOpenHelper {
 
 
     public Database(@Nullable Context context) {
-        super(context, TABLE_NAME, null, 11);
+        super(context, TABLE_NAME, null, 19);
     }
 
     @Override
