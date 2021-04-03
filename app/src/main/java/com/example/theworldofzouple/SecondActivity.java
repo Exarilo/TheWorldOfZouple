@@ -93,7 +93,7 @@ public class SecondActivity extends AppCompatActivity {
     static int ptsARepartir=0;
     static int nbDeath=0;
     static int NbZoupleTueSuccess=0;
-
+    static int gold=1400000;
 
 
     ScrollView ScrollViewHistorique;
@@ -115,15 +115,19 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        if(db.getXP()!=0)
+        if(db.getXP()!=0){
             xp=db.getXP();
-        if(db.getXP()!=0)
             maxXP=db.getMaxXP();
+        }
+
+
+
+
 
         //create User
         UserCaracter userCaracter;
 
-        userCaracter=new UserCaracter("Pingu","pingucaracter_foreground","spelldepart_foreground","pingucaracterdegats_foreground",1400000);
+        userCaracter=new UserCaracter("Pingu","pingucaracter_foreground","spelldepart_foreground","pingucaracterdegats_foreground",db.getGold());
         userCaracter.setCaracteristic(db.getLvl(),1000,10,400,0,0);
         currentCaracter=userCaracter;
 
@@ -202,6 +206,7 @@ public class SecondActivity extends AppCompatActivity {
         pbHPennemi= findViewById(R.id.pbEnnemiHP);
         //pbHPennemi.getProgressDrawable().setColorFilter(Color.RED, android.graphics.PorterDuff.Mode.SRC_IN);
         pbHPCar=findViewById(R.id.pbCarHP);
+
         //pbHPCar.getProgressDrawable().setColorFilter(Color.GREEN, android.graphics.PorterDuff.Mode.SRC_IN);
         pbXP=findViewById(R.id.pbXP);
         pbXP.setProgress(xp);
@@ -218,15 +223,10 @@ public class SecondActivity extends AppCompatActivity {
         imgLvlUp=findViewById(R.id.imLvlUp);
         imgMonster=findViewById(R.id.imgMonster);
 
-
         tvDamages=findViewById(R.id.tvDamages);
 
         tvDamages2=findViewById(R.id.tvDamages2);
         imgEnnemiAttack=findViewById(R.id.imgEnnemiAttack);
-
-
-
-
         tvEnnemiLVL=findViewById(R.id.tvEnnemiLVL);
 
 
@@ -239,6 +239,16 @@ public class SecondActivity extends AppCompatActivity {
 
 
         ScrollViewHistorique=findViewById(R.id.ScrollViewHistorique);
+
+
+        if(db.getCurrentHP()!=0)
+        {
+            pbHPCar.setProgress(db.getCurrentHP());
+            currentCarHP=db.getCurrentHP();
+            tvCarHP.setText("HP : "+String.valueOf(currentCarHP)+" / "+ String.valueOf(currentCaracter.caracteristic.hp));
+
+        }
+
         //ScrollViewHistorique.fullScroll(ScrollView.FOCUS_DOWN);
         //endregion
 
@@ -247,7 +257,7 @@ public class SecondActivity extends AppCompatActivity {
         ennemiDead=false;
         initialEnnemiHP=pbHPennemi.getProgress();
         currentEnnemiHP=initialEnnemiHP;
-        currentCarHP=currentCaracter.caracteristic.hp;
+        //currentCarHP=currentCaracter.caracteristic.hp;
 
         //endregion
 
@@ -583,17 +593,6 @@ public class SecondActivity extends AppCompatActivity {
             setDeath();
         }
 
-        //tvDamages.setText(String.valueOf(damages));
-        //setAnimation();
-
-        //if(currentEnnemiHP<=0){
-          //  nbZoupleTue++;
-            //setGold();
-            //resetHp();
-            //setXP();
-
-        //}
-
         pbHPCar.setProgress(currentCarHP);
     }
 
@@ -629,7 +628,7 @@ public class SecondActivity extends AppCompatActivity {
         }
 
         pbXP.setProgress(xp);
-        db.updateXP(xp);
+
     }
 
     private void setLVL(){
@@ -648,8 +647,7 @@ public class SecondActivity extends AppCompatActivity {
             }
         }, 2000);
 
-        db.updateMaxXP((int)maxXP);
-        db.updateLvl(currentCaracter.caracteristic.lvl);
+
     }
     @Override
     public void onResume(){
@@ -677,6 +675,13 @@ public class SecondActivity extends AppCompatActivity {
             }
         });
     }
-
-
+    @Override
+    public void onStop() {
+        super.onStop();
+        db.updateXP(xp);
+        db.updateMaxXP((int)maxXP);
+        db.updateLvl(currentCaracter.caracteristic.lvl);
+        db.updateGold(currentCaracter.gold);
+        db.updateCurrentHP(currentCarHP);
+    }
 }
