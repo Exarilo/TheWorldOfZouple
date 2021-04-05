@@ -182,7 +182,7 @@ public class CaracterActivity extends AppCompatActivity {
         }
         else if(Tag.compareToIgnoreCase( "upgradeCritRate")==0)
         {
-            SecondActivity.currentCaracter.setCaracteristic(SecondActivity.currentCaracter.caracteristic.lvl,SecondActivity.currentCaracter.caracteristic.hp,SecondActivity.currentCaracter.caracteristic.def,SecondActivity.currentCaracter.caracteristic.damages,SecondActivity.currentCaracter.caracteristic.critRate+1,SecondActivity.currentCaracter.caracteristic.dodgeRate);
+            SecondActivity.currentCaracter.setCaracteristic(SecondActivity.currentCaracter.caracteristic.lvl,SecondActivity.currentCaracter.caracteristic.currentHP,SecondActivity.currentCaracter.caracteristic.hp,SecondActivity.currentCaracter.caracteristic.def,SecondActivity.currentCaracter.caracteristic.damages,SecondActivity.currentCaracter.caracteristic.critRate+1,SecondActivity.currentCaracter.caracteristic.dodgeRate);
             if(SecondActivity.currentCaracter.caracteristic.critRate>100)
                 btUpgradeCritRate.setVisibility(View.INVISIBLE);
             else
@@ -193,7 +193,7 @@ public class CaracterActivity extends AppCompatActivity {
         }
         else if(Tag.compareToIgnoreCase( "upgradeDodgeRate")==0)
         {
-            SecondActivity.currentCaracter.setCaracteristic(SecondActivity.currentCaracter.caracteristic.lvl,SecondActivity.currentCaracter.caracteristic.hp,SecondActivity.currentCaracter.caracteristic.def,SecondActivity.currentCaracter.caracteristic.damages,SecondActivity.currentCaracter.caracteristic.critRate+1,SecondActivity.currentCaracter.caracteristic.dodgeRate+1);
+            SecondActivity.currentCaracter.setCaracteristic(SecondActivity.currentCaracter.caracteristic.lvl,SecondActivity.currentCaracter.caracteristic.currentHP,SecondActivity.currentCaracter.caracteristic.hp,SecondActivity.currentCaracter.caracteristic.def,SecondActivity.currentCaracter.caracteristic.damages,SecondActivity.currentCaracter.caracteristic.critRate+1,SecondActivity.currentCaracter.caracteristic.dodgeRate+1);
             if(SecondActivity.currentCaracter.caracteristic.dodgeRate>50)
                 btUpgradeDodgeRate.setVisibility(View.INVISIBLE);
             else

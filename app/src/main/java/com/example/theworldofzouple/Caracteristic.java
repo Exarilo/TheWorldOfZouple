@@ -4,11 +4,13 @@ public class Caracteristic {
 
     //region member
     int lvl;
+    int currentHP;
     int hp;
     int def;
     double damages;
     int critRate;
     int dodgeRate;
+
     //endregion
 
 
@@ -18,9 +20,10 @@ public class Caracteristic {
 
     }
 
-    public Caracteristic(int lvl,int hp,int def,int damages, int critRate,int dodgeRate){
+    public Caracteristic(int lvl,int currentHP,int hp,int def,int damages, int critRate,int dodgeRate){
         super();
         this.lvl=lvl;
+        this.currentHP=currentHP;
         this.hp=hp;
         this.def=def;
         this.damages=damages;

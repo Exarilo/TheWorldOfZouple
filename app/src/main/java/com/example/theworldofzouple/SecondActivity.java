@@ -82,11 +82,9 @@ public class SecondActivity extends AppCompatActivity {
     static boolean ennemiDead;
     static int initialEnnemiHP;
     static int currentEnnemiHP;
-    static int currentCarHP;
 
 
-    static int xp;
-    static double maxXP=100;
+
     static int nbZoupleTue=0;
     static int nbGolds=0;
     static int lvlUPMonster=0;
@@ -115,10 +113,7 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        if(db.getXP()!=0){
-            xp=db.getXP();
-            maxXP=db.getMaxXP();
-        }
+
 
 
 
@@ -127,13 +122,37 @@ public class SecondActivity extends AppCompatActivity {
         //create User
         UserCaracter userCaracter;
 
-        userCaracter=new UserCaracter("Pingu","pingucaracter_foreground","spelldepart_foreground","pingucaracterdegats_foreground",db.getGold());
-        userCaracter.setCaracteristic(db.getLvl(),1000,10,400,0,0);
+        userCaracter=new UserCaracter("Pingu","pingucaracter_foreground","spelldepart_foreground","pingucaracterdegats_foreground",0,0,100);
+        userCaracter.setCaracteristic(1,1000,1000,10,400,1,1);
         currentCaracter=userCaracter;
+
+        db.LoadCar(currentCaracter);
+
+/*
+        if(db.getXP()!=0){
+            xp=db.getXP();
+            maxXP=db.getMaxXP();
+        }
+
+                if(db.getCurrentHP()!=0 && db.getMaxHP()!=0)
+        {
+            pbHPCar.setProgress(db.getCurrentHP());
+
+            currentCarHP=db.getCurrentHP();
+            pbHPCar.setMax(db.getMaxHP());
+            tvCarHP.setText("HP : "+String.valueOf(currentCarHP)+" / "+ String.valueOf(db.getMaxHP()));
+
+        }
+ userCaracter=new UserCaracter("Pingu","pingucaracter_foreground","spelldepart_foreground","pingucaracterdegats_foreground",db.getGold());
+        userCaracter.setCaracteristic(db.getLvl(),1000,10,400,0,0);
+
 
         db.addData(String.valueOf(currentCaracter.caracteristic.lvl));
         db.addData(String.valueOf(xp));
         db.addData(String.valueOf(maxXP));
+        db.addData(String.valueOf(currentCarHP));
+
+        db.addData(String.valueOf(currentCaracter.caracteristic.hp));*/
 
 
 
@@ -207,12 +226,13 @@ public class SecondActivity extends AppCompatActivity {
         //pbHPennemi.getProgressDrawable().setColorFilter(Color.RED, android.graphics.PorterDuff.Mode.SRC_IN);
         pbHPCar=findViewById(R.id.pbCarHP);
 
+
         //pbHPCar.getProgressDrawable().setColorFilter(Color.GREEN, android.graphics.PorterDuff.Mode.SRC_IN);
         pbXP=findViewById(R.id.pbXP);
-        pbXP.setProgress(xp);
-        pbXP.setMax((int)maxXP);
+        pbXP.setProgress(currentCaracter.xp);
+        pbXP.setMax((int)currentCaracter.maxXP);
         tvCarHP=findViewById(R.id.carHP);
-        tvCarHP.setText("HP : "+String.valueOf(currentCaracter.caracteristic.hp)+" / "+ String.valueOf(currentCaracter.caracteristic.hp));
+        //tvCarHP.setText("HP : "+String.valueOf(currentCaracter.caracteristic.hp)+" / "+ String.valueOf(currentCaracter.caracteristic.hp));
         tvEnnemiHP=findViewById(R.id.EnnemiHP);
         tvLVL=findViewById(R.id.tvLVL);
         tvLVL.setText("Lvl : "+String.valueOf(currentCaracter.caracteristic.lvl));
@@ -240,14 +260,11 @@ public class SecondActivity extends AppCompatActivity {
 
         ScrollViewHistorique=findViewById(R.id.ScrollViewHistorique);
 
+        pbHPCar.setProgress(currentCaracter.caracteristic.currentHP);
+        pbHPCar.setMax(currentCaracter.caracteristic.hp);
 
-        if(db.getCurrentHP()!=0)
-        {
-            pbHPCar.setProgress(db.getCurrentHP());
-            currentCarHP=db.getCurrentHP();
-            tvCarHP.setText("HP : "+String.valueOf(currentCarHP)+" / "+ String.valueOf(currentCaracter.caracteristic.hp));
 
-        }
+        tvCarHP.setText("HP : "+String.valueOf(currentCaracter.caracteristic.hp)+" / "+ String.valueOf(currentCaracter.caracteristic.hp));
 
         //ScrollViewHistorique.fullScroll(ScrollView.FOCUS_DOWN);
         //endregion
@@ -497,10 +514,10 @@ public class SecondActivity extends AppCompatActivity {
 
     }
     private  void resetCarHp(){
-        currentCarHP=currentCaracter.caracteristic.hp;
+        currentCaracter.caracteristic.currentHP=currentCaracter.caracteristic.hp;
         pbHPCar.setMax(currentCaracter.caracteristic.hp);
         pbHPCar.setProgress(currentCaracter.caracteristic.hp);
-        tvCarHP.setText("HP : "+String.valueOf(currentCarHP)+" / "+String.valueOf(currentCarHP));
+        tvCarHP.setText("HP : "+String.valueOf(currentCaracter.caracteristic.currentHP)+" / "+String.valueOf(currentCaracter.caracteristic.hp));
 
     }
 
@@ -579,21 +596,21 @@ public class SecondActivity extends AppCompatActivity {
         else{
             if(currentCaracter.caracteristic.def<currentMonster.caracteristic.damages)
             {
-                currentCarHP = (currentCarHP - (int) currentMonster.caracteristic.damages) + currentCaracter.caracteristic.def;
+                currentCaracter.caracteristic.currentHP = (currentCaracter.caracteristic.currentHP - (int) currentMonster.caracteristic.damages) + currentCaracter.caracteristic.def;
                 tvDamages2.setTextColor(Color.parseColor("#ffff8800"));
             }
             else
                 defSupThanDamages=true;
         }
-        tvCarHP.setText("HP : "+String.valueOf(currentCarHP)+" / "+String.valueOf(currentCaracter.caracteristic.hp));
+        tvCarHP.setText("HP : "+String.valueOf(currentCaracter.caracteristic.currentHP)+" / "+String.valueOf(currentCaracter.caracteristic.hp));
 
         setAnimation2(defSupThanDamages,isDodge);
-        if(currentCarHP<=0){
+        if(currentCaracter.caracteristic.currentHP<=0){
             resetCarHp();
             setDeath();
         }
 
-        pbHPCar.setProgress(currentCarHP);
+        pbHPCar.setProgress(currentCaracter.caracteristic.currentHP);
     }
 
     private void setAttack(){
@@ -620,24 +637,24 @@ public class SecondActivity extends AppCompatActivity {
 
 
     private void setXP(){
-        xp=xp+currentMonster.xp;
-        if(xp>=pbXP.getMax())
+        currentCaracter.xp=currentCaracter.xp+currentMonster.xp;
+        if(currentCaracter.xp>=pbXP.getMax())
         {
-            xp = xp%pbXP.getMax();
+            currentCaracter.xp = currentCaracter.xp%pbXP.getMax();
             setLVL();
         }
 
-        pbXP.setProgress(xp);
+        pbXP.setProgress(currentCaracter.xp);
 
     }
 
     private void setLVL(){
         ptsARepartir+=5;
         currentCaracter.caracteristic.lvl++;
-        maxXP=maxXP*1.5;
-        maxXP=Math.round(maxXP);
+        currentCaracter.maxXP=currentCaracter.maxXP*1.5;
+        currentCaracter.maxXP=Math.round(currentCaracter.maxXP);
         tvLVL.setText("Lvl : "+String.valueOf(currentCaracter.caracteristic.lvl));
-        pbXP.setMax((int)maxXP);
+        pbXP.setMax((int)currentCaracter.maxXP);
         imgLvlUp.setVisibility(View.VISIBLE);
         final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
@@ -654,7 +671,7 @@ public class SecondActivity extends AppCompatActivity {
         super.onResume();
         pbHPCar.setMax(currentCaracter.caracteristic.hp);
         tvGold.setText(String.valueOf(currentCaracter.gold));
-        tvCarHP.setText("HP : "+String.valueOf(currentCarHP) + " / "+String.valueOf(currentCaracter.caracteristic.hp));
+        tvCarHP.setText("HP : "+String.valueOf(currentCaracter.caracteristic.currentHP) + " / "+String.valueOf(currentCaracter.caracteristic.hp));
     }
 
     public static void flipBt (View view,Button bt){
@@ -678,10 +695,12 @@ public class SecondActivity extends AppCompatActivity {
     @Override
     public void onStop() {
         super.onStop();
-        db.updateXP(xp);
+        db.SaveCar(currentCaracter);
+        /*db.updateXP(xp);
         db.updateMaxXP((int)maxXP);
         db.updateLvl(currentCaracter.caracteristic.lvl);
         db.updateGold(currentCaracter.gold);
         db.updateCurrentHP(currentCarHP);
+        db.updateMaxHP(currentCaracter.caracteristic.hp);*/
     }
 }

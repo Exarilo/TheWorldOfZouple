@@ -7,14 +7,17 @@ public class UserCaracter {
     String CaracterImg;
     String CaracterAttackImg;
     String CaracterDamagesImg;
+    int xp;
+    double maxXP;
     Caracteristic caracteristic;
     InventoryObject inventory;
     int gold;
+
     //int xp;
 
     //endregion
     //region constructor
-    public UserCaracter(String name,String CaracterImg,String CaracterAttackImg,String CaracterDamagesImg,int gold)
+    public UserCaracter(String name,String CaracterImg,String CaracterAttackImg,String CaracterDamagesImg,int gold,int xp,double maxXP)
     {
         this.name=name;
         this.CaracterImg=CaracterImg;
@@ -23,7 +26,8 @@ public class UserCaracter {
         this.gold=gold;
         this.caracteristic=new Caracteristic();
         this.inventory=new InventoryObject();
-
+        this.xp=xp;
+        this.maxXP=maxXP;
     }
 
     //region constructor
@@ -75,12 +79,26 @@ public class UserCaracter {
     //endregion
 
 
+    public void setXp(int xp) {
+        this.xp = xp;
+    }
 
+    public int getXp() {
+        return xp;
+    }
 
+    public double getMaxXP() {
+        return maxXP;
+    }
+
+    public void setMaxXP(double maxXP) {
+        this.maxXP = maxXP;
+    }
 
     //region Methode
-    public void setCaracteristic(int lvl,int hp,int def,double damages, int critRate,int dodgeRate ){
+    public void setCaracteristic(int lvl,int currentHP,int hp,int def,double damages, int critRate,int dodgeRate ){
         caracteristic.lvl=lvl;
+        caracteristic.currentHP=currentHP;
         caracteristic.hp=hp;
         caracteristic.def=def;
         caracteristic.damages=damages;
