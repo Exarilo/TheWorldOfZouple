@@ -26,9 +26,11 @@ import android.widget.Toast;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.Dictionary;
 import java.util.Enumeration;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -79,9 +81,9 @@ public class SecondActivity extends AppCompatActivity {
     private ImageView imgEnnemiAttack;
     private ImageView imgCaracter;
 
+    static boolean LoadMonster =false;
     static boolean ennemiDead;
-    static int initialEnnemiHP;
-    static int currentEnnemiHP;
+
 
 
 
@@ -118,7 +120,6 @@ public class SecondActivity extends AppCompatActivity {
 
 
 
-
         //create User
         UserCaracter userCaracter;
 
@@ -127,34 +128,6 @@ public class SecondActivity extends AppCompatActivity {
         currentCaracter=userCaracter;
 
         db.LoadCar(currentCaracter);
-
-/*
-        if(db.getXP()!=0){
-            xp=db.getXP();
-            maxXP=db.getMaxXP();
-        }
-
-                if(db.getCurrentHP()!=0 && db.getMaxHP()!=0)
-        {
-            pbHPCar.setProgress(db.getCurrentHP());
-
-            currentCarHP=db.getCurrentHP();
-            pbHPCar.setMax(db.getMaxHP());
-            tvCarHP.setText("HP : "+String.valueOf(currentCarHP)+" / "+ String.valueOf(db.getMaxHP()));
-
-        }
- userCaracter=new UserCaracter("Pingu","pingucaracter_foreground","spelldepart_foreground","pingucaracterdegats_foreground",db.getGold());
-        userCaracter.setCaracteristic(db.getLvl(),1000,10,400,0,0);
-
-
-        db.addData(String.valueOf(currentCaracter.caracteristic.lvl));
-        db.addData(String.valueOf(xp));
-        db.addData(String.valueOf(maxXP));
-        db.addData(String.valueOf(currentCarHP));
-
-        db.addData(String.valueOf(currentCaracter.caracteristic.hp));*/
-
-
 
 
         //create loot
@@ -168,41 +141,40 @@ public class SecondActivity extends AppCompatActivity {
 
         Monster monster;
         monster=new Monster("Monster0","larve_foreground","larveattack_foreground","larvedegats_foreground",49,50);
-        monster.setCaracteristic(1,1000,0,40,0,0);
+        monster.setCaracteristic(1,1000,1000,0,40,0,0);
         dic_monsters.put("Monster0",monster);
 
         monster=new Monster("Monster1","souris_foreground","sourisattack_foreground","sourisdegats_foreground",62,100);
-        monster.setCaracteristic(2,1500,0,60,0,0);
+        monster.setCaracteristic(2,1500,1500,0,60,0,0);
         dic_monsters.put("Monster1",monster);
 
         monster=new Monster("Monster2","canardchemine_foreground","canarchemineattack_foreground","canardcheminedegats_foreground",98,147);
-        monster.setCaracteristic(3,2000,0,80,0,0);
+        monster.setCaracteristic(3,2000,2000,0,80,0,0);
         dic_monsters.put("Monster2",monster);
 
         monster=new Monster("Monster3","extraterrestre_foreground","extraterrestreattack_foreground","extraterrestredegats_foreground",188,267);
-        monster.setCaracteristic(4,2500,0,125,0,0);
+        monster.setCaracteristic(4,2500,2500,0,125,0,0);
         dic_monsters.put("Monster3",monster);
 
         monster=new Monster("Monster4","alien_foreground","alienattack_foreground","aliendegats_foreground",275,398);
-        monster.setCaracteristic(5,3000,0,200,0,0);
+        monster.setCaracteristic(5,3000,3000,0,200,0,0);
         dic_monsters.put("Monster4",monster);
 
         monster=new Monster("Monster5","hypo_foreground","hyppoattack_foreground","hypodegats_foreground",386,482);
-        monster.setCaracteristic(6,3500,0,242,0,0);
+        monster.setCaracteristic(6,3500,3500,0,242,0,0);
         dic_monsters.put("Monster5",monster);
 
         monster=new Monster("Monster6","autruche_foreground","autrucheattack_foreground","autruchedegats_foreground",706,681);
-        monster.setCaracteristic(7,4000,0,326,0,0);
+        monster.setCaracteristic(7,4000,4000,0,326,0,0);
         dic_monsters.put("Monster6",monster);
 
         monster=new Monster("Monster7","robot_foreground","robotattack_foreground","robotdegats_foreground",952,952);
-        monster.setCaracteristic(7,4500,0,452,0,0);
+        monster.setCaracteristic(7,4500,4500,0,452,0,0);
         dic_monsters.put("Monster7",monster);
 
         monster=new Monster("Monster8","vampire_foreground","vampireattack_foreground","vampiredegats_foreground",1294,1411);
-        monster.setCaracteristic(8,5000,0,598,0,0);
+        monster.setCaracteristic(8,5000,5000,0,598,0,0);
         dic_monsters.put("Monster8",monster);
-
 
 
 
@@ -272,13 +244,21 @@ public class SecondActivity extends AppCompatActivity {
         //region Set initial values of static var
 
         ennemiDead=false;
-        initialEnnemiHP=pbHPennemi.getProgress();
-        currentEnnemiHP=initialEnnemiHP;
+
         //currentCarHP=currentCaracter.caracteristic.hp;
 
         //endregion
 
         changeMonster("Monster0");
+
+        //Loading spells for the inventory
+        SpellsActivity.initialiseSpells();
+        List<String> listSpells = db.LoadSpells();
+        for (String name:listSpells) {
+            if(SpellsActivity.dic_spells.containsKey(name))
+                currentCaracter.inventory.addSpell(SpellsActivity.dic_spells.get(name));
+        }
+
 
 
         //region click
@@ -393,13 +373,23 @@ public class SecondActivity extends AppCompatActivity {
         if(!dic_monsters.containsKey(name))
             return false;
         currentMonster = dic_monsters.get(name);
+        if(!LoadMonster){
+            db.LoadMonster(currentMonster);
+            LoadMonster=true;
+        }
+        else
+            resetEnnemiHp();
+
         int id= getResources().getIdentifier(currentMonster.monsterImg,"mipmap",getPackageName());
         if(id<=0)
             return false;
 
         imgMonster.setImageResource(id);
         tvEnnemiLVL.setText("Lvl : "+String.valueOf(currentMonster.caracteristic.lvl));
-        resetEnnemiHp();
+        pbHPennemi.setMax(currentMonster.caracteristic.hp);
+        pbHPennemi.setProgress(currentMonster.caracteristic.currentHP);
+        tvEnnemiHP.setText("HP : "+String.valueOf(currentMonster.caracteristic.currentHP)+" / "+String.valueOf(currentMonster.caracteristic.hp));
+
 
 
 
@@ -506,11 +496,11 @@ public class SecondActivity extends AppCompatActivity {
     }
     private  void resetEnnemiHp(){
         pbHPennemi.setMax(currentMonster.caracteristic.hp);
-        initialEnnemiHP=currentMonster.caracteristic.hp;
-        pbHPennemi.setProgress(initialEnnemiHP);
+        currentMonster.caracteristic.currentHP=currentMonster.caracteristic.hp;
+        pbHPennemi.setProgress(currentMonster.caracteristic.currentHP);
 
-        tvEnnemiHP.setText("HP : "+String.valueOf(currentMonster.caracteristic.hp)+" / "+String.valueOf(currentMonster.caracteristic.hp));
-        currentEnnemiHP=initialEnnemiHP;
+        tvEnnemiHP.setText("HP : "+String.valueOf(currentMonster.caracteristic.currentHP)+" / "+String.valueOf(currentMonster.caracteristic.hp));
+
 
     }
     private  void resetCarHp(){
@@ -527,21 +517,21 @@ public class SecondActivity extends AppCompatActivity {
         int randomCrit =new Random().nextInt(99);
 
         if(randomCrit <= currentCaracter.caracteristic.critRate - 1){
-            currentEnnemiHP=currentEnnemiHP-((int)Math.round(currentCaracter.caracteristic.damages*2));
+            currentMonster.caracteristic.currentHP=currentMonster.caracteristic.currentHP-((int)Math.round(currentCaracter.caracteristic.damages*2));
             tvDamages.setText(String.valueOf("- "+Math.round(currentCaracter.caracteristic.damages)*2));
             tvDamages.setTextColor(Color.parseColor("#FF0000"));
 
         }
         else {
-            currentEnnemiHP = currentEnnemiHP - (int) Math.round(currentCaracter.caracteristic.damages);
+            currentMonster.caracteristic.currentHP = currentMonster.caracteristic.currentHP - (int) Math.round(currentCaracter.caracteristic.damages);
             tvDamages.setText("- "+String.valueOf(Math.round(currentCaracter.caracteristic.damages)));
             tvDamages.setTextColor(Color.parseColor("#ffff8800"));
         }
-        tvEnnemiHP.setText("HP : "+String.valueOf(Math.round(currentEnnemiHP))+" / "+String.valueOf(currentMonster.caracteristic.hp));
+        tvEnnemiHP.setText("HP : "+String.valueOf(Math.round(currentMonster.caracteristic.currentHP))+" / "+String.valueOf(currentMonster.caracteristic.hp));
 
         setAnimation();
 
-        if(currentEnnemiHP<=0){
+        if(currentMonster.caracteristic.currentHP<=0){
             nbZoupleTue++;
             NbZoupleTueSuccess++;
             setGold();
@@ -557,7 +547,7 @@ public class SecondActivity extends AppCompatActivity {
             //currentMonster.caracteristic.setLvl(currentMonster.caracteristic.getLvl()+lvlUPMonster);
         }
 
-        pbHPennemi.setProgress(currentEnnemiHP);
+        pbHPennemi.setProgress(currentMonster.caracteristic.currentHP);
         ennemiDead=false;
         return ennemiDead;
 
@@ -696,6 +686,8 @@ public class SecondActivity extends AppCompatActivity {
     public void onStop() {
         super.onStop();
         db.SaveCar(currentCaracter);
+        db.SaveMonster(currentMonster);
+        db.SaveInventory(currentCaracter.inventory);
         /*db.updateXP(xp);
         db.updateMaxXP((int)maxXP);
         db.updateLvl(currentCaracter.caracteristic.lvl);

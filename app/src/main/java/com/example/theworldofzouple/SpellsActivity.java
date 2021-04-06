@@ -49,10 +49,12 @@ public class SpellsActivity extends AppCompatActivity {
     private TextView costSpell1;
 
     private Button btClose;
-    HashMap<String, Spell> dic_spells = new HashMap<String, Spell>();
+    static HashMap<String, Spell> dic_spells = new HashMap<String, Spell>();
     //static Spell currentSpell;
 
-
+    public HashMap<String, Spell> getSpells(){
+        return dic_spells;
+    }
     private int Golds;
 
     @Override
@@ -99,18 +101,8 @@ public class SpellsActivity extends AppCompatActivity {
         initialiseBtImg(AlreadyBuySpell11,btBuySpell11);
         initialiseBtImg(AlreadyBuySpell12,btBuySpell12);
 
-        dic_spells.put("Spell1",new Spell("Spell1","boulefeu2_foreground",1.2,1500));
-        dic_spells.put("Spell2",new Spell("Spell2","attackcaracter_foreground",1.4,5000));
-        dic_spells.put("Spell3",new Spell("Spell3","boulefeuforte_foreground",1.6,10000));
-        dic_spells.put("Spell4",new Spell("Spell4","boulefeu3_foreground",1.8,18000));
-        dic_spells.put("Spell5",new Spell("Spell5","boulefeu4_foreground",2,45000));
-        dic_spells.put("Spell6",new Spell("Spell6","boulefeu5_foreground",2.2,70000));
-;       dic_spells.put("Spell7",new Spell("Spell7","boulefeu6_foreground",2.4,120000));
-        dic_spells.put("Spell8",new Spell("Spell8","boulefeu7_foreground",2.6,210000));
-        dic_spells.put("Spell9",new Spell("Spell9","boulefeu8_foreground",2.8,350000));
-        dic_spells.put("Spell10",new Spell("Spell10","boulefeu9_foreground",3,570000));
-        dic_spells.put("Spell11",new Spell("Spell11","boulefeu10_foreground",3.5,770000));
-        dic_spells.put("Spell12",new Spell("Spell12","boulefeu11_foreground",4,1000000));
+
+
 
         btClose.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -120,7 +112,6 @@ public class SpellsActivity extends AppCompatActivity {
         });
 
         btBuySpell1.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
             public void onClick(View v) {
 
@@ -287,4 +278,20 @@ public class SpellsActivity extends AppCompatActivity {
             bt.setBackgroundResource(res);
         }
     }
+
+    public static void initialiseSpells(){
+        dic_spells.put("Spell1",new Spell("Spell1","boulefeu2_foreground",1.2,1500));
+        dic_spells.put("Spell2",new Spell("Spell2","attackcaracter_foreground",1.4,5000));
+        dic_spells.put("Spell3",new Spell("Spell3","boulefeuforte_foreground",1.6,10000));
+        dic_spells.put("Spell4",new Spell("Spell4","boulefeu3_foreground",1.8,18000));
+        dic_spells.put("Spell5",new Spell("Spell5","boulefeu4_foreground",2,45000));
+        dic_spells.put("Spell6",new Spell("Spell6","boulefeu5_foreground",2.2,70000));
+        dic_spells.put("Spell7",new Spell("Spell7","boulefeu6_foreground",2.4,120000));
+        dic_spells.put("Spell8",new Spell("Spell8","boulefeu7_foreground",2.6,210000));
+        dic_spells.put("Spell9",new Spell("Spell9","boulefeu8_foreground",2.8,350000));
+        dic_spells.put("Spell10",new Spell("Spell10","boulefeu9_foreground",3,570000));
+        dic_spells.put("Spell11",new Spell("Spell11","boulefeu10_foreground",3.5,770000));
+        dic_spells.put("Spell12",new Spell("Spell12","boulefeu11_foreground",4,1000000));
+    }
+
 }

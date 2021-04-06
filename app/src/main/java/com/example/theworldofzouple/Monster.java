@@ -93,8 +93,9 @@ public class Monster {
         listLoots.add(oneLoot);
     }
 
-    public void setCaracteristic(int lvl,int hp,int def,int damages, int critRate,int dodgeRate ){
+    public void setCaracteristic(int lvl,int currentHP,int hp,int def,int damages, int critRate,int dodgeRate ){
         caracteristic.lvl=lvl;
+        caracteristic.currentHP=currentHP;
         caracteristic.hp=hp;
         caracteristic.def=def;
         caracteristic.damages=damages;
