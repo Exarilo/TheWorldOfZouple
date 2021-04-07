@@ -88,6 +88,19 @@ public class SpellsActivity extends AppCompatActivity {
         btBuySpell11= findViewById(R.id.btBuySpell11);
         btBuySpell12= findViewById(R.id.btBuySpell12);
 
+
+        for (Spell sp:SecondActivity.currentCaracter.inventory.getSpellList()) {
+            String index= sp.name.substring(sp.name.length()-1);
+            String buttonID="btBuySpell"+index;
+
+            int resID = getResources().getIdentifier(buttonID, "id", getPackageName());
+            Button bt = ((Button) findViewById(resID));
+
+            initialiseBtImg(sp.isBuy,bt);
+
+        }
+
+
         initialiseBtImg(AlreadyBuySpell1,btBuySpell1);
         initialiseBtImg(AlreadyBuySpell2,btBuySpell2);
         initialiseBtImg(AlreadyBuySpell3,btBuySpell3);
@@ -273,6 +286,7 @@ public class SpellsActivity extends AppCompatActivity {
 
     public void initialiseBtImg(boolean bool,Button bt){
 
+
         if(bool==true){
             int res = getResources().getIdentifier("achetefini_foreground", "mipmap", getPackageName());
             bt.setBackgroundResource(res);
@@ -280,18 +294,18 @@ public class SpellsActivity extends AppCompatActivity {
     }
 
     public static void initialiseSpells(){
-        dic_spells.put("Spell1",new Spell("Spell1","boulefeu2_foreground",1.2,1500));
-        dic_spells.put("Spell2",new Spell("Spell2","attackcaracter_foreground",1.4,5000));
-        dic_spells.put("Spell3",new Spell("Spell3","boulefeuforte_foreground",1.6,10000));
-        dic_spells.put("Spell4",new Spell("Spell4","boulefeu3_foreground",1.8,18000));
-        dic_spells.put("Spell5",new Spell("Spell5","boulefeu4_foreground",2,45000));
-        dic_spells.put("Spell6",new Spell("Spell6","boulefeu5_foreground",2.2,70000));
-        dic_spells.put("Spell7",new Spell("Spell7","boulefeu6_foreground",2.4,120000));
-        dic_spells.put("Spell8",new Spell("Spell8","boulefeu7_foreground",2.6,210000));
-        dic_spells.put("Spell9",new Spell("Spell9","boulefeu8_foreground",2.8,350000));
-        dic_spells.put("Spell10",new Spell("Spell10","boulefeu9_foreground",3,570000));
-        dic_spells.put("Spell11",new Spell("Spell11","boulefeu10_foreground",3.5,770000));
-        dic_spells.put("Spell12",new Spell("Spell12","boulefeu11_foreground",4,1000000));
+        dic_spells.put("Spell1",new Spell("Spell1","boulefeu2_foreground",1.2,1500,false));
+        dic_spells.put("Spell2",new Spell("Spell2","attackcaracter_foreground",1.4,5000,false));
+        dic_spells.put("Spell3",new Spell("Spell3","boulefeuforte_foreground",1.6,10000,false));
+        dic_spells.put("Spell4",new Spell("Spell4","boulefeu3_foreground",1.8,18000,false));
+        dic_spells.put("Spell5",new Spell("Spell5","boulefeu4_foreground",2,45000,false));
+        dic_spells.put("Spell6",new Spell("Spell6","boulefeu5_foreground",2.2,70000,false));
+        dic_spells.put("Spell7",new Spell("Spell7","boulefeu6_foreground",2.4,120000,false));
+        dic_spells.put("Spell8",new Spell("Spell8","boulefeu7_foreground",2.6,210000,false));
+        dic_spells.put("Spell9",new Spell("Spell9","boulefeu8_foreground",2.8,350000,false));
+        dic_spells.put("Spell10",new Spell("Spell10","boulefeu9_foreground",3,570000,false));
+        dic_spells.put("Spell11",new Spell("Spell11","boulefeu10_foreground",3.5,770000,false));
+        dic_spells.put("Spell12",new Spell("Spell12","boulefeu11_foreground",4,1000000,false));
     }
 
 }

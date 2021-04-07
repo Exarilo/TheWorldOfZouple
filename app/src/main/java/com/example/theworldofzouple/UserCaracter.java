@@ -12,12 +12,13 @@ public class UserCaracter {
     Caracteristic caracteristic;
     InventoryObject inventory;
     int gold;
+    int ptsARepartir;
 
     //int xp;
 
     //endregion
     //region constructor
-    public UserCaracter(String name,String CaracterImg,String CaracterAttackImg,String CaracterDamagesImg,int gold,int xp,double maxXP)
+    public UserCaracter(String name,String CaracterImg,String CaracterAttackImg,String CaracterDamagesImg,int gold,int xp,double maxXP,int ptsARepartir)
     {
         this.name=name;
         this.CaracterImg=CaracterImg;
@@ -28,11 +29,21 @@ public class UserCaracter {
         this.inventory=new InventoryObject();
         this.xp=xp;
         this.maxXP=maxXP;
+        this.ptsARepartir=ptsARepartir;
     }
 
     //region constructor
 
     //region getter
+
+    public int getPtsARepartir() {
+        return ptsARepartir;
+    }
+
+    public void setPtsARepartir(int ptsARepartir) {
+        this.ptsARepartir = ptsARepartir;
+    }
+
     public String getName(){
         return  name;
     }

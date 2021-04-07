@@ -79,7 +79,7 @@ public class CaracterActivity extends AppCompatActivity {
         CaracterTvCritRate.setText(String.valueOf(SecondActivity.currentCaracter.caracteristic.critRate)+"%");
         CaracterTvDodgeRate.setText(String.valueOf(SecondActivity.currentCaracter.caracteristic.dodgeRate)+"%");
 
-        tvPtsARepartir.setText(String.valueOf(SecondActivity.ptsARepartir));
+        tvPtsARepartir.setText(String.valueOf(SecondActivity.currentCaracter.ptsARepartir));
         showPts();
 
         tvNbMort.setText(String.valueOf(SecondActivity.nbDeath));
@@ -130,13 +130,13 @@ public class CaracterActivity extends AppCompatActivity {
         //tvLVL.getText().toString()
     }
     public void showPts(){
-        if(SecondActivity.ptsARepartir>0) {
+        if(SecondActivity.currentCaracter.ptsARepartir>0) {
             tvPtsARepartir.setTextColor(Color.parseColor("#1B8601"));
 
             btUpgradeHP.setVisibility(View.VISIBLE);
             btUpgradeDef.setVisibility(View.VISIBLE);
             btUpgradeDamages.setVisibility(View.VISIBLE);
-            if(SecondActivity.ptsARepartir>1){
+            if(SecondActivity.currentCaracter.ptsARepartir>1){
                 btUpgradeCritRate.setVisibility(View.VISIBLE);
                 btUpgradeDodgeRate.setVisibility(View.VISIBLE);
             }
@@ -160,24 +160,24 @@ public class CaracterActivity extends AppCompatActivity {
 
     }
     public void Upgrade(String Tag){
-        if(SecondActivity.ptsARepartir<=0)
+        if(SecondActivity.currentCaracter.ptsARepartir<=0)
             return;
         if(Tag.compareToIgnoreCase( "upgradeHP")==0)
         {
             SecondActivity.currentCaracter.caracteristic.hp+=5;
-            SecondActivity.ptsARepartir-=1;
+            SecondActivity.currentCaracter.ptsARepartir-=1;
             CaracterTvMaxHP.setText(String.valueOf(SecondActivity.currentCaracter.caracteristic.hp));
         }
         else if(Tag.compareToIgnoreCase( "upgradeDef")==0)
         {
             SecondActivity.currentCaracter.caracteristic.def+=1;
-            SecondActivity.ptsARepartir-=1;
+            SecondActivity.currentCaracter.ptsARepartir-=1;
             CaracterTvDef.setText(String.valueOf(SecondActivity.currentCaracter.caracteristic.def));
         }
         else if(Tag.compareToIgnoreCase( "upgradeDamages")==0)
         {
             SecondActivity.currentCaracter.caracteristic.damages+=5;
-            SecondActivity.ptsARepartir-=1;
+            SecondActivity.currentCaracter.ptsARepartir-=1;
             CaracterTvDamages.setText(String.valueOf(Math.round(SecondActivity.currentCaracter.caracteristic.damages)));
         }
         else if(Tag.compareToIgnoreCase( "upgradeCritRate")==0)
@@ -186,7 +186,7 @@ public class CaracterActivity extends AppCompatActivity {
             if(SecondActivity.currentCaracter.caracteristic.critRate>100)
                 btUpgradeCritRate.setVisibility(View.INVISIBLE);
             else
-                SecondActivity.ptsARepartir-=2;
+                SecondActivity.currentCaracter.ptsARepartir-=2;
             //SecondActivity.currentCaracter.caracteristic.critRate+=1;
 
             CaracterTvCritRate.setText(String.valueOf(SecondActivity.currentCaracter.caracteristic.critRate)+"%");
@@ -197,12 +197,12 @@ public class CaracterActivity extends AppCompatActivity {
             if(SecondActivity.currentCaracter.caracteristic.dodgeRate>50)
                 btUpgradeDodgeRate.setVisibility(View.INVISIBLE);
             else
-                SecondActivity.ptsARepartir-=2;
+                SecondActivity.currentCaracter.ptsARepartir-=2;
             //SecondActivity.currentCaracter.caracteristic.dodgeRate+=1;
 
             CaracterTvDodgeRate.setText(String.valueOf(SecondActivity.currentCaracter.caracteristic.dodgeRate)+"%");
         }
-        tvPtsARepartir.setText(String.valueOf(SecondActivity.ptsARepartir));
+        tvPtsARepartir.setText(String.valueOf(SecondActivity.currentCaracter.ptsARepartir));
         showPts();
     }
 }

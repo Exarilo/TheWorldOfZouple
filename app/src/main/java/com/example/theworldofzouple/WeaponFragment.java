@@ -75,6 +75,7 @@ public class WeaponFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_weapon, container, false);
         ListView shopListView= view.findViewById(R.id.shopListView);
+
         List<Weapon>weaponsList=new ArrayList<>();
         weaponsList.add(new Weapon("Cure dent","curedent_foreground",100,1000,0));
         weaponsList.add(new Weapon("Baguette de pain","baguette_foreground",200,2000,0));
@@ -94,7 +95,7 @@ public class WeaponFragment extends Fragment {
         shopListView.setAdapter(new WeaponItemAdapter(getActivity(),weaponsList));
         shopListView.setOnItemClickListener(new AdapterView.OnItemClickListener()
         {
-            @Override public void onItemClick(AdapterView<?> arg0, View arg1,int position, long arg3)
+            @Override public void onItemClick(AdapterView<?> parent, View view, int position, long id)
             {
                 Toast.makeText(getContext(), "Stop Clicking me", Toast.LENGTH_SHORT).show();
             }

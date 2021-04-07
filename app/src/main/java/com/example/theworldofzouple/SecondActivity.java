@@ -90,7 +90,7 @@ public class SecondActivity extends AppCompatActivity {
     static int nbZoupleTue=0;
     static int nbGolds=0;
     static int lvlUPMonster=0;
-    static int ptsARepartir=0;
+
     static int nbDeath=0;
     static int NbZoupleTueSuccess=0;
     static int gold=1400000;
@@ -116,14 +116,14 @@ public class SecondActivity extends AppCompatActivity {
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 
-
+        db.LoadStatistics();
 
 
 
         //create User
         UserCaracter userCaracter;
 
-        userCaracter=new UserCaracter("Pingu","pingucaracter_foreground","spelldepart_foreground","pingucaracterdegats_foreground",0,0,100);
+        userCaracter=new UserCaracter("Pingu","pingucaracter_foreground","spelldepart_foreground","pingucaracterdegats_foreground",0,0,100,0);
         userCaracter.setCaracteristic(1,1000,1000,10,400,1,1);
         currentCaracter=userCaracter;
 
@@ -257,6 +257,9 @@ public class SecondActivity extends AppCompatActivity {
         for (String name:listSpells) {
             if(SpellsActivity.dic_spells.containsKey(name))
                 currentCaracter.inventory.addSpell(SpellsActivity.dic_spells.get(name));
+        }
+        for (Spell sp :currentCaracter.inventory.getSpellList()) {
+            sp.setisBuy(true);
         }
 
 
@@ -639,7 +642,7 @@ public class SecondActivity extends AppCompatActivity {
     }
 
     private void setLVL(){
-        ptsARepartir+=5;
+        currentCaracter.ptsARepartir+=5;
         currentCaracter.caracteristic.lvl++;
         currentCaracter.maxXP=currentCaracter.maxXP*1.5;
         currentCaracter.maxXP=Math.round(currentCaracter.maxXP);
@@ -688,6 +691,7 @@ public class SecondActivity extends AppCompatActivity {
         db.SaveCar(currentCaracter);
         db.SaveMonster(currentMonster);
         db.SaveInventory(currentCaracter.inventory);
+        db.SaveStatistics();
         /*db.updateXP(xp);
         db.updateMaxXP((int)maxXP);
         db.updateLvl(currentCaracter.caracteristic.lvl);

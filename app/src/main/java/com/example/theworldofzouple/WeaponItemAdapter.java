@@ -4,9 +4,11 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -69,16 +71,24 @@ public class WeaponItemAdapter extends BaseAdapter{
         int res = context.getResources().getIdentifier(itemImg, "mipmap", context.getPackageName());
         WeaponImg.setImageResource(res);
 
+
+
         Button btAchat= view.findViewById(R.id.btAchat);
+
 
         btAchat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Toast.makeText(context,"salut",Toast.LENGTH_LONG);
+
+
+                setAchat();
             }
         });
 
 
         return view;
+    }
+    public void setAchat(){
+        Toast.makeText(context,"salut",Toast.LENGTH_LONG);
     }
 }

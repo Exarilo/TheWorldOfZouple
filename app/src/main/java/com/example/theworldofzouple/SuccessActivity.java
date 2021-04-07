@@ -103,7 +103,7 @@ public class SuccessActivity extends AppCompatActivity {
         tvGoldLvl.setText(String.valueOf(goldRewardLvl));
         tvGoldDeath.setText(String.valueOf(goldRewardDeath));
 
-        tvNbZouple.setText("Tuer un total de "+String.valueOf(pbNbZoupleTue.getMax()+" zouples"));
+        tvNbZouple.setText("Tuer "+String.valueOf(pbNbZoupleTue.getMax()+" zouples"));
         tvNbDamages.setText("Atteindre "+String.valueOf(pbNbDamages.getMax())+" de degats");
         tvNbLvl.setText("Atteindre le niveau "+String.valueOf(pbNbLvl.getMax()));
         tvNbDeath.setText("Mourir "+String.valueOf(pbNbDeath.getMax()+" fois"));
@@ -172,7 +172,7 @@ public class SuccessActivity extends AppCompatActivity {
         pbNbZoupleTue.setProgress(SecondActivity.NbZoupleTueSuccess);
         nbZouplePourMission*=2;
         pbNbZoupleTue.setMax(nbZouplePourMission);
-        tvNbZouple.setText("Tuer un total de "+String.valueOf(pbNbZoupleTue.getMax()+" zouples"));
+        tvNbZouple.setText("Tuer "+String.valueOf(pbNbZoupleTue.getMax()+" zouples"));
         tvCurrentNbZouple.setText(String.valueOf(pbNbZoupleTue.getProgress())+" /"+String.valueOf(pbNbZoupleTue.getMax()));
         SecondActivity.currentCaracter.gold+=Integer.parseInt(tvGoldZouples.getText().toString());
         goldRewardZouple+=300;

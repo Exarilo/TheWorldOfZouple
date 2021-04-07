@@ -7,9 +7,12 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TableLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.tabs.TabItem;
 import com.google.android.material.tabs.TabLayout;
@@ -20,7 +23,7 @@ public class ShopActivity extends AppCompatActivity {
     private int Golds;
     private TextView tvGolds;
     private Button btCloseShop;
-
+   // private ListView shopListView;
 
     TabLayout tableLayout;
     private TabItem tab_Armes;
@@ -54,6 +57,9 @@ public class ShopActivity extends AppCompatActivity {
 
         Golds = SecondActivity.currentCaracter.gold;
 
+        btCloseShop=findViewById(R.id.btCloseShop);
+
+
 
         tvGolds=findViewById(R.id.tvGoldsShop);
         tvGolds.setText(String.valueOf(Golds));
@@ -66,6 +72,7 @@ public class ShopActivity extends AppCompatActivity {
         ShopViewPager=findViewById(R.id.ShopViewPager);
         PagerAdapter pagerAdapter =new PagerAdapter(getSupportFragmentManager(),tableLayout.getTabCount());
         ShopViewPager.setAdapter(pagerAdapter);
+
 
         //ShopViewPager.setCurrentItem(0, true);
         tableLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -84,8 +91,14 @@ public class ShopActivity extends AppCompatActivity {
 
             }
         });
-        btCloseShop=findViewById(R.id.btCloseShop);
-
+/*
+        shopListView.setOnItemClickListener(new AdapterView.OnItemClickListener()
+        {
+            @Override public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+            {
+                Toast.makeText(getBaseContext(), "Stop Clicking me", Toast.LENGTH_SHORT).show();
+            }
+        });*/
         btCloseShop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

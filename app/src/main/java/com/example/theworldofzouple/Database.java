@@ -28,6 +28,7 @@ public class Database extends SQLiteOpenHelper {
     public static final String UserCritRate = "CritRate ";
     public static final String UserDodgeRate = "DodgeRate ";
     public static final String UserAttackImg = "AttackImg ";
+    public static final String UserUpgradePts = "UpgradePts ";
 
 
     public static final String MonsterID = "ID";
@@ -50,8 +51,18 @@ public class Database extends SQLiteOpenHelper {
     public static final String InventoryType = "Type ";
     public static final String InventoryUserID = "UserID ";
 
+
+    public static final String StatisticID = "ID";
+    public static final String StatisticGlobalGolds = "GlobalGolds ";
+    public static final String StatisticGlobalKills = "GlobalKills ";
+    public static final String StatisticGlobalDeath = "GlobalDeath ";
+    public static final String StatisticUserID = "UserID ";
+
+
+
+
     public Database(@Nullable Context context) {
-        super(context, "ZoupleDatabase", null, 92);
+        super(context, "ZoupleDatabase", null, 101);
 
     }
 
@@ -60,7 +71,7 @@ public class Database extends SQLiteOpenHelper {
         String createTableUser= "CREATE TABLE " + "User" + "(ID INTEGER DEFAULT 1 ," + UserLvl + " Integer DEFAULT 1 ," + UserXP +
                 " Integer DEFAULT 0," + UserXPMax + " Integer DEFAULT 100 ," + UserGold+ " Integer DEFAULT 0 ," + UserCurrentHP + " Integer DEFAULT 1000 ," +
                 UserMaxHP +"Integer DEFAULT 1000 ," + UserDamages +" Integer DEFAULT 400 ," + UserDef + " Integer DEFAULT 10 ," + UserCritRate +" Integer DEFAULT 1 ," +
-                UserDodgeRate + " Integer DEFAULT 1 ," + UserAttackImg + " String DEFAULT 'spelldepart_foreground'  );";
+                UserDodgeRate + " Integer DEFAULT 1 ," + UserAttackImg + " String DEFAULT 'spelldepart_foreground' ," + UserUpgradePts +" Integer DEFAULT 0  );";
 
 
         String createTableMonster= "CREATE TABLE " + "Monster" + "(ID INTEGER DEFAULT 1 ," + MonsterLvl + " Integer DEFAULT 1 ," +  MonsterCurrentHP + " Integer DEFAULT 1000 ," +
@@ -73,9 +84,12 @@ public class Database extends SQLiteOpenHelper {
         String createTableInventory= "CREATE TABLE " + "Inventory" + "(ID INTEGER PRIMARY KEY AUTOINCREMENT ," + InventoryType +" Integer DEFAULT 1 ," + InventoryName + " String DEFAULT 'Item_Name',"
                 + InventoryUserID +" Integer DEFAULT 1 );";
 
+        String createTableStatistics= "CREATE TABLE " + "Statistics" + "(ID INTEGER DEFAULT 1 ," + StatisticGlobalGolds +" Integer DEFAULT 0 ," + StatisticGlobalKills + " Integer DEFAULT 0,"
+                + StatisticGlobalDeath + " Integer DEFAULT 0," + StatisticUserID +" Integer DEFAULT 1 );";
 
         db.execSQL(createTableUser);
         db.execSQL(createTableMonster);
+        db.execSQL(createTableStatistics);
         db.execSQL(createTableInventory);
     }
 
@@ -84,6 +98,7 @@ public class Database extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS " + "User");
         db.execSQL("DROP TABLE IF EXISTS " + "Monster");
         db.execSQL("DROP TABLE IF EXISTS " + "Inventory");
+        db.execSQL("DROP TABLE IF EXISTS " + "Statistics");
         onCreate(db);
     }
 
@@ -112,6 +127,8 @@ public class Database extends SQLiteOpenHelper {
             contentValues.put(UserCritRate, user.caracteristic.critRate);
             contentValues.put(UserDodgeRate, user.caracteristic.dodgeRate);
             contentValues.put(UserAttackImg, user.CaracterAttackImg);
+            contentValues.put(UserUpgradePts, user.ptsARepartir);
+
 
 
             db.update("User", contentValues, "ID= ? ", new String[]{"1"});
@@ -124,7 +141,7 @@ public class Database extends SQLiteOpenHelper {
 
         SQLiteDatabase db = this.getReadableDatabase();
 
-        String[] allColumns_User = { "ID", "Lvl", "XP", "XPMax", "Gold","CurrentHP","MaxHP","Damages","Def","CritRate","DodgeRate","AttackImg"};
+        String[] allColumns_User = { "ID", "Lvl", "XP", "XPMax", "Gold","CurrentHP","MaxHP","Damages","Def","CritRate","DodgeRate","AttackImg","UpgradePts"};
 
 
         Cursor cursor =db.query("User", allColumns_User, "ID = ?",new String[]{"1"},null,null,null);
@@ -140,6 +157,8 @@ public class Database extends SQLiteOpenHelper {
             user.caracteristic.critRate=cursor.getInt(cursor.getColumnIndex("CritRate"));
             user.caracteristic.dodgeRate=cursor.getInt(cursor.getColumnIndex("DodgeRate"));
             user.CaracterAttackImg=cursor.getString(cursor.getColumnIndex("AttackImg"));
+            user.ptsARepartir=cursor.getInt(cursor.getColumnIndex("UpgradePts"));
+
 
 
 
@@ -254,6 +273,45 @@ public class Database extends SQLiteOpenHelper {
 
         return listSpells;
     }
+    public boolean SaveStatistics(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Long numIdStatistics = DatabaseUtils.queryNumEntries(db,"Statistics",null);
+        if (numIdStatistics < 1) {
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(StatisticID, 1);
+            long result = db.insert("Statistics", "ID", contentValues);
+        }
+        numIdStatistics = DatabaseUtils.queryNumEntries(db,"Statistics",null);
+        if (numIdStatistics >= 1) {
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(StatisticID, 1);
+            contentValues.put(StatisticGlobalGolds, SecondActivity.nbGolds);
+            contentValues.put(StatisticGlobalKills, SecondActivity.nbZoupleTue);
+            contentValues.put(StatisticGlobalDeath, SecondActivity.nbDeath);
+            contentValues.put(StatisticUserID,1);
+            db.update("Statistics", contentValues, "ID= ? ", new String[]{"1"});
+            return true;
+        }
+        return false;
+    }
+    public boolean LoadStatistics(){
 
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        String[] allColumns_numIdMonster = { "ID", "GlobalGolds","GlobalKills","GlobalDeath","UserID"};
+
+
+        Cursor cursor =db.query("Statistics", allColumns_numIdMonster, "ID = ?",new String[]{"1"},null,null,null);
+        if( cursor != null && cursor.moveToFirst() ){
+            SecondActivity.nbGolds=cursor.getInt(cursor.getColumnIndex("GlobalGolds"));
+            SecondActivity.nbZoupleTue=cursor.getInt(cursor.getColumnIndex("GlobalKills"));
+            SecondActivity.nbDeath=cursor.getInt(cursor.getColumnIndex("GlobalDeath"));
+            cursor.close();
+            return true;
+
+        }
+
+        return false;
+    }
 
 }

@@ -7,7 +7,9 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +19,7 @@ import java.util.List;
  * Use the {@link ArmorFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
+
 public class ArmorFragment extends Fragment {
 
 
@@ -24,6 +27,7 @@ public class ArmorFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private Button btAchat;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -83,6 +87,11 @@ public class ArmorFragment extends Fragment {
 
 
         shopListView.setAdapter(new ArmorItemAdapter(getActivity(),armorsList));
+
+
         return view;
     }
+
+
+
 }

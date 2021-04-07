@@ -101,7 +101,7 @@
         android:id="@+id/btBuySpell1"
         android:layout_width="82dp"
         android:layout_height="69dp"
-
+        android:tag="1"
         android:background="@mipmap/buy_foreground"
         app:layout_constraintBottom_toTopOf="@id/Hgl2SpellActivity"
         app:layout_constraintEnd_toStartOf="@id/Vgl1SpellActivity2"
@@ -157,6 +157,7 @@
         android:id="@+id/btBuySpell2"
         android:layout_width="82dp"
         android:layout_height="69dp"
+        android:tag="2"
         app:layout_constraintBottom_toTopOf="@id/Hgl2SpellActivity"
         app:layout_constraintEnd_toStartOf="@id/Vgl2SpellActivity3"
         app:layout_constraintStart_toEndOf="@id/Vgl1SpellActivity2"
@@ -211,6 +212,7 @@
         android:id="@+id/btBuySpell3"
         android:layout_width="82dp"
         android:layout_height="69dp"
+        android:tag="3"
         android:background="@mipmap/buy_foreground"
         app:layout_constraintBottom_toTopOf="@id/Hgl2SpellActivity"
         app:layout_constraintEnd_toEndOf="parent"
@@ -265,7 +267,7 @@
         android:id="@+id/btBuySpell4"
         android:layout_width="82dp"
         android:layout_height="69dp"
-
+        android:tag="4"
         android:background="@mipmap/buy_foreground"
         app:layout_constraintBottom_toTopOf="@id/Hgl3SpellActivity"
         app:layout_constraintEnd_toStartOf="@id/Vgl1SpellActivity2"
@@ -320,7 +322,7 @@
         android:id="@+id/btBuySpell5"
         android:layout_width="82dp"
         android:layout_height="69dp"
-
+        android:tag="5"
         android:background="@mipmap/buy_foreground"
         app:layout_constraintBottom_toTopOf="@id/Hgl3SpellActivity"
         app:layout_constraintEnd_toStartOf="@id/Vgl2SpellActivity3"
@@ -376,7 +378,7 @@
         android:id="@+id/btBuySpell6"
         android:layout_width="82dp"
         android:layout_height="69dp"
-
+        android:tag="6"
         android:background="@mipmap/buy_foreground"
         app:layout_constraintBottom_toTopOf="@id/Hgl3SpellActivity"
         app:layout_constraintEnd_toEndOf="parent"
@@ -434,7 +436,7 @@
         android:id="@+id/btBuySpell7"
         android:layout_width="82dp"
         android:layout_height="69dp"
-
+        android:tag="7"
         android:background="@mipmap/buy_foreground"
         app:layout_constraintBottom_toTopOf="@id/Hgl4SpellActivity"
         app:layout_constraintEnd_toStartOf="@id/Vgl1SpellActivity2"
@@ -490,7 +492,7 @@
         android:id="@+id/btBuySpell8"
         android:layout_width="82dp"
         android:layout_height="69dp"
-
+        android:tag="8"
         android:background="@mipmap/buy_foreground"
         app:layout_constraintBottom_toTopOf="@id/Hgl4SpellActivity"
         app:layout_constraintEnd_toStartOf="@id/Vgl2SpellActivity3"
@@ -547,7 +549,7 @@
         android:id="@+id/btBuySpell9"
         android:layout_width="82dp"
         android:layout_height="69dp"
-
+        android:tag="9"
         android:background="@mipmap/buy_foreground"
         app:layout_constraintBottom_toTopOf="@id/Hgl4SpellActivity"
         app:layout_constraintEnd_toEndOf="parent"
@@ -603,7 +605,7 @@
         android:id="@+id/btBuySpell10"
         android:layout_width="82dp"
         android:layout_height="69dp"
-
+        android:tag="10"
         android:background="@mipmap/buy_foreground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/Vgl1SpellActivity2"
@@ -657,7 +659,7 @@
         android:id="@+id/btBuySpell11"
         android:layout_width="82dp"
         android:layout_height="69dp"
-
+        android:tag="11"
         android:background="@mipmap/buy_foreground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/Vgl2SpellActivity3"
@@ -713,7 +715,7 @@
         android:id="@+id/btBuySpell12"
         android:layout_width="82dp"
         android:layout_height="69dp"
-
+        android:tag="12"
         android:background="@mipmap/buy_foreground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
