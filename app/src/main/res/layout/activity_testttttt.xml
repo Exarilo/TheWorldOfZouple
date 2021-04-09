@@ -557,7 +557,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight=".80"
-            android:background="@drawable/bordericontopleftright"
+            android:background="@drawable/bordericon"
             android:foreground="@mipmap/caracter_foreground" />
         <View
             android:id="@+id/dividerPerso"
@@ -578,7 +578,7 @@
             android:autoSizeStepGranularity="2sp"
             android:autoSizeTextType="uniform"
             android:maxLines="1"
-            android:background="@drawable/bordericonbottomleftright"
+            android:background="@drawable/bordericon"
             android:textColor="@android:color/background_dark"
             android:textStyle="bold" />
     </LinearLayout>
@@ -595,7 +595,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight=".80"
-            android:background="@drawable/bordericontopleftright"
+            android:background="@drawable/bordericon"
             android:foreground="@mipmap/grimmoire_foreground" />
         <View
             android:id="@+id/dividerSorts"
@@ -614,7 +614,7 @@
             android:autoSizeStepGranularity="2sp"
             android:autoSizeTextType="uniform"
             android:maxLines="1"
-            android:background="@drawable/bordericonbottomleftright"
+            android:background="@drawable/bordericon"
             android:textColor="@android:color/background_dark"
             android:textStyle="bold" />
     </LinearLayout>
@@ -631,7 +631,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight=".80"
-            android:background="@drawable/bordericontopleftright"
+            android:background="@drawable/bordericon"
             android:foreground="@mipmap/inventory_foreground" />
         <View
             android:id="@+id/dividerInventaire"
@@ -650,7 +650,7 @@
             android:autoSizeStepGranularity="2sp"
             android:autoSizeTextType="uniform"
             android:maxLines="1"
-            android:background="@drawable/bordericonbottomleftright"
+            android:background="@drawable/bordericon"
             android:textColor="@android:color/background_dark"
             android:textStyle="bold" />
     </LinearLayout>
@@ -667,7 +667,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight=".80"
-            android:background="@drawable/bordericontopleftright"
+            android:background="@drawable/bordericon"
             android:foreground="@mipmap/shop_foreground" />
         <View
             android:id="@+id/dividerBoutique"
@@ -686,7 +686,7 @@
             android:autoSizeStepGranularity="2sp"
             android:autoSizeTextType="uniform"
             android:maxLines="1"
-            android:background="@drawable/bordericonbottomleftright"
+            android:background="@drawable/bordericon"
             android:textColor="@android:color/background_dark"
             android:textStyle="bold" />
     </LinearLayout>
@@ -703,7 +703,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight=".80"
-            android:background="@drawable/bordericontopleftright"
+            android:background="@drawable/bordericon"
             android:foreground="@mipmap/craft_foreground" />
         <View
             android:id="@+id/dividerCraft"
@@ -722,7 +722,7 @@
             android:autoSizeStepGranularity="2sp"
             android:autoSizeTextType="uniform"
             android:maxLines="1"
-            android:background="@drawable/bordericonbottomleftright"
+            android:background="@drawable/bordericon"
             android:textColor="@android:color/background_dark"
             android:textStyle="bold" />
     </LinearLayout>
