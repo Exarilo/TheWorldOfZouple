@@ -7,6 +7,8 @@
     android:background="@android:color/holo_blue_dark"
     tools:context=".SecondActivity">
 
+
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/VglIcone1"
         android:layout_width="wrap_content"

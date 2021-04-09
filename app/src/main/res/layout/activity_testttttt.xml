@@ -7,6 +7,19 @@
     android:background="@android:color/holo_blue_dark"
     tools:context=".SecondActivity">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@mipmap/background_foreground"
+
+        app:layout_constraintBottom_toTopOf="@+id/Hgl4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LayoutToolbar">
+
+
+    </ImageView>
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/VglIcone1"
         android:layout_width="wrap_content"
@@ -36,7 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.94" />
+        app:layout_constraintGuide_percent="0.99" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Vgl2"
@@ -63,21 +76,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.2897264" />
+        app:layout_constraintGuide_percent="0.29" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Hgl3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.72" />
+        app:layout_constraintGuide_percent="0.71" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/Hgl4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.82" />
+        app:layout_constraintGuide_percent="0.85" />
 
     <LinearLayout
         android:id="@+id/layoutFirstLine"
@@ -394,6 +407,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="LvL : 1"
+
                     android:textColor="@color/colorPrimary"
 
                     android:autoSizeMaxTextSize="100sp"
@@ -418,6 +432,7 @@
                     android:id="@+id/EnnemiHP"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+
                     android:text="HP : 1000 / 1000"
                     android:autoSizeMaxTextSize="100sp"
                     android:autoSizeMinTextSize="2sp"
@@ -496,6 +511,8 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="vertical"
+        android:layout_marginBottom="15dp"
+
         app:layout_constraintBottom_toTopOf="@+id/Hgl4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -509,7 +526,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.80"
+            android:layout_weight="0.50"
             android:orientation="horizontal">
 
             <Button
@@ -517,25 +534,40 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight=".50"
+                android:layout_margin="5dp"
+                android:background="@drawable/buttonstyleleft"
                 android:text="ATTAQUER" />
 
             <Button
                 android:id="@+id/btRunAway"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@drawable/buttonstyleright"
                 android:layout_weight=".50"
 
                 android:text="FUIR" />
         </LinearLayout>
 
 
-        <Button
-            android:id="@+id/button7"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight=".20"
-            android:text="CONSOMMABLE" />
+            android:layout_weight="0.50"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight=".20"
+
+                android:background="@drawable/buttonstylebot"
+                android:text="CONSOMMABLE" />
+        </LinearLayout>
     </LinearLayout>
+
 
 
 
@@ -547,25 +579,21 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toStartOf="@id/VglIcone1"
         app:layout_constraintTop_toBottomOf="@+id/Hgl4"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/bordericon"
         android:orientation="vertical">
         <Button
             android:id="@+id/btCaracter"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight=".80"
-            android:background="@drawable/bordericon"
             android:foreground="@mipmap/caracter_foreground" />
-        <View
-            android:id="@+id/dividerPerso"
-            android:layout_width="match_parent"
-            android:layout_height="10dp"
-            android:outlineSpotShadowColor="@android:color/background_dark"
 
-            android:background="?android:attr/listDivider" />
+
         <TextView
             android:id="@+id/textView9"
             android:layout_width="match_parent"
@@ -573,35 +601,33 @@
             android:layout_weight=".20"
             android:text="Personnage"
             android:gravity="center"
+            android:layout_marginBottom="5dp"
             android:autoSizeMaxTextSize="100sp"
             android:autoSizeMinTextSize="10sp"
             android:autoSizeStepGranularity="2sp"
             android:autoSizeTextType="uniform"
             android:maxLines="1"
-            android:background="@drawable/bordericon"
             android:textColor="@android:color/background_dark"
             android:textStyle="bold" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="15dp"
         app:layout_constraintStart_toEndOf="@id/VglIcone1"
         app:layout_constraintEnd_toStartOf="@id/VglIcone2"
         app:layout_constraintTop_toBottomOf="@+id/Hgl4"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/bordericon"
         android:orientation="vertical">
         <Button
             android:id="@+id/btSpells"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight=".80"
-            android:background="@drawable/bordericon"
+
             android:foreground="@mipmap/grimmoire_foreground" />
-        <View
-            android:id="@+id/dividerSorts"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="?android:attr/listDivider" />
+
         <TextView
             android:id="@+id/textView5"
             android:layout_width="match_parent"
@@ -614,30 +640,28 @@
             android:autoSizeStepGranularity="2sp"
             android:autoSizeTextType="uniform"
             android:maxLines="1"
-            android:background="@drawable/bordericon"
+            android:layout_marginBottom="5dp"
+
             android:textColor="@android:color/background_dark"
             android:textStyle="bold" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="15dp"
         app:layout_constraintStart_toEndOf="@id/VglIcone2"
         app:layout_constraintEnd_toStartOf="@id/VglIcone3"
         app:layout_constraintTop_toBottomOf="@+id/Hgl4"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/bordericon"
         android:orientation="vertical">
         <Button
             android:id="@+id/btInventory"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight=".80"
-            android:background="@drawable/bordericon"
             android:foreground="@mipmap/inventory_foreground" />
-        <View
-            android:id="@+id/dividerInventaire"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="?android:attr/listDivider" />
+
         <TextView
             android:id="@+id/textView10"
             android:layout_width="match_parent"
@@ -650,30 +674,28 @@
             android:autoSizeStepGranularity="2sp"
             android:autoSizeTextType="uniform"
             android:maxLines="1"
-            android:background="@drawable/bordericon"
+            android:layout_marginBottom="5dp"
             android:textColor="@android:color/background_dark"
             android:textStyle="bold" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="15dp"
         app:layout_constraintStart_toEndOf="@id/VglIcone3"
         app:layout_constraintEnd_toStartOf="@id/VglIcone4"
         app:layout_constraintTop_toBottomOf="@+id/Hgl4"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/bordericon"
         android:orientation="vertical">
         <Button
             android:id="@+id/btShop"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight=".80"
-            android:background="@drawable/bordericon"
+
             android:foreground="@mipmap/shop_foreground" />
-        <View
-            android:id="@+id/dividerBoutique"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="?android:attr/listDivider" />
+
         <TextView
             android:id="@+id/textView11"
             android:layout_width="match_parent"
@@ -686,30 +708,29 @@
             android:autoSizeStepGranularity="2sp"
             android:autoSizeTextType="uniform"
             android:maxLines="1"
-            android:background="@drawable/bordericon"
+            android:layout_marginBottom="5dp"
+
             android:textColor="@android:color/background_dark"
             android:textStyle="bold" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="15dp"
         app:layout_constraintStart_toEndOf="@id/VglIcone4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Hgl4"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/bordericon"
         android:orientation="vertical">
         <Button
             android:id="@+id/btCraft"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight=".80"
-            android:background="@drawable/bordericon"
+
             android:foreground="@mipmap/craft_foreground" />
-        <View
-            android:id="@+id/dividerCraft"
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="?android:attr/listDivider" />
+
         <TextView
             android:id="@+id/textView14"
             android:layout_width="match_parent"
@@ -722,7 +743,7 @@
             android:autoSizeStepGranularity="2sp"
             android:autoSizeTextType="uniform"
             android:maxLines="1"
-            android:background="@drawable/bordericon"
+            android:layout_marginBottom="5dp"
             android:textColor="@android:color/background_dark"
             android:textStyle="bold" />
     </LinearLayout>
